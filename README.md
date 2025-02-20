@@ -101,7 +101,7 @@ A publisher is a type of a Tabsdata function that reads data from an external sy
 
 In ``publisher.py`` we are defining a publisher with the name ``publish_t1`` that reads ``persons.csv`` from local system, drops the columns containing personally identifiable information, and saves the resultant table as ``persons_t1`` in the Tabsdata server.
 
-To run this publisher in Tabsdata, we need to first register it with a collection inside Tabsdata. Publishers write all of their output tables to the collection that they are registered with.
+To run this publisher in Tabsdata, we need to first register it with a collection inside Tabsdata.
 
 Use the following command to register ``publish_t1`` publisher with the ``tutorial`` collection:
 
@@ -116,7 +116,7 @@ A subscriber is a type of a Tabsdata function that reads data from one or more t
 
 In ``subscriber.py`` we are defining a subscriber with the name ``subscribe_t1`` that reads ``persons`` table from Tabsdata, and writes it as ``persons_t1_output.jsonl`` in the local system.
 
-To run this susbcriber in Tabsdata, we need to first register it with a collection inside Tabsdata. Subscribers can read data from any Tabsdata collection.
+To run this susbcriber in Tabsdata, we need to first register it with a collection inside Tabsdata.
 
 Use the following command to register ``subscribe_t1`` subscriber with the ``tutorial`` collection:
 
