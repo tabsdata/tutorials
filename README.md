@@ -18,7 +18,7 @@ With the context set, let’s dive in!
 
 We will be working with a publisher that reads a file ``persons.csv`` from the local file system, drops some columns related to personally identifiable information from it, and writes the resultant data to a Tabsdata table. We will also be working with a subscriber that reads the Tabsdata table created by the publisher and writes it to the local file system.
 
-# Pre-requisites
+# Step 1. Pre-requisites
 
 ## 1. Install Tabsdata and Start the Server
 
@@ -72,7 +72,7 @@ Run this command in your CLI from the working directory, to save the full path t
 export TDX=`pwd`
 ```
 
-# Step 1. Login and Create a Collection
+# Step 2. Login and Create a Collection
 
 We are required to be logged into the Tabsdata server to interact with the Tabsdata system.
 
@@ -95,7 +95,7 @@ $ td collection create tutorial
 Now that we have created a collection, we’re ready to implement a publisher.
 
 
-# Step 2. Register the Publisher
+# Step 3. Register the Publisher
 
 A publisher is a type of a Tabsdata function that reads data from an external system and writes the data as one or more Tabsdata tables.
 
@@ -110,7 +110,7 @@ $ td fn register --collection tutorial --fn-path publisher.py::publish_t1
 ```
 
 
-# Step 3. Register the Subscriber
+# Step 4. Register the Subscriber
 
 A subscriber is a type of a Tabsdata function that reads data from one or more tables in the Tabsdata server and writes them to an external system.
 
@@ -126,7 +126,7 @@ $ td fn register --collection tutorial --fn-path subscriber.py::subscribe_t1
 
 
 
-# Step 4. Trigger the Publisher
+# Step 5. Trigger the Publisher
 
 
 A trigger executes a Tabsdata function. Once triggered, a function takes its input data, processes it as defined, and creates the output data.
