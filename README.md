@@ -139,7 +139,7 @@ Run the following CLI command to trigger the publisher:
 $ td fn trigger --collection tutorial --name publish_t2
 ```
 
-After running the above we would see the output file ``persons_t2_output.jsonl`` in our working directory. The functions make take a couple of seconds to execute. 
+After running the above we would see the output file ``persons_t2_output.jsonl`` in our working directory, containing the data from ``persons.csv`` without the personally identifiable information. The functions make take a couple of seconds to execute.
 
 You can see the status whether the functions have finsihed executing by using the following command:
 
