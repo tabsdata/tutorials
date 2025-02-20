@@ -133,7 +133,7 @@ A trigger executes a Tabsdata function. Once triggered, a function takes its inp
 
 A trigger can be initiated through a CLI command or by a new commit <add hyperlink> to its associated table. Consequently, changes on tables can automatically trigger functions, which in turn change other tables that trigger their assocaited functions, leading to a cascading workflow of updates. You can read more about triggers here. <add hyperlink>
 
-Due to this cascading workflow of updates, when we trigger ``publish_t1``, a new commit for the table ``persons_t1`` is generated inside the Tabsdata server. This in turn triggers the function ``subscribe_t1``, generating an updated output file ``persons_t1_output.jsonl`` in the local system.
+Due to this cascading workflow of updates, when we trigger ``publish_t1``, a new commit for the table ``persons_t1`` is generated inside the Tabsdata server. This in turn triggers the function ``subscribe_t1``, generating the output file ``persons_t1_output.jsonl`` in the local system.
 
 Use the following command to trigger the publisher:
 
@@ -163,6 +163,6 @@ We have successfully created a publisher and a subscriber, registered them with 
 Here are a couple of experiements you can try:
 
 * Make some changes to the ``persons.csv`` file and trigger the publisher again. You should see the changes reflected in ``persons_t1_output.jsonl`` once both the publisher and subscriber have finished executing. 
-* Make some changes in the columns filtered by the publisher, for example, dropping one more column or one less, and trigger the publisher. You should see the changes reflected in ``persons_t1_output.jsonl``. 
+* Make some changes in the columns filtered by the publisher, for example, dropping one more column or one less. After making the changes, trigger the publisher. You should see the changes reflected in ``persons_t1_output.jsonl`` output file.
 * Add a Tabsdata transformer <add hyperlink> in the mix. Perform complex transformations on ``persons_t1`` table using a Tabsdata tranformer, and connect the output table from the transformer to a subscriber.
-* Read files from and write files to different external systems beyond local file system. You can read more about them here, <add hyperlink>
+* Read files from and write files to different external systems beyond local file system. You can read more about them here. <add hyperlink>
