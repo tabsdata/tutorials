@@ -116,14 +116,14 @@ Now that we have created a collection, we’re ready to register the publisher w
 
 A publisher is a type of a Tabsdata function that reads data from an external system and writes the data as one or more Tabsdata tables.
 
-In ``publisher.py`` file in the github repo we are defining a publisher with the name ``publish_t1`` that reads ``persons.csv`` from local system, drops the columns containing personally identifiable information, and saves the resultant table as ``persons_t1`` in the Tabsdata server.
+In ``publisher.py`` file in the github repo we are defining a publisher with the name ``publish_t2`` that reads ``persons.csv`` from local system, drops the columns containing personally identifiable information, and saves the resultant table as ``persons_t2`` in the Tabsdata server.
 
 To run this publisher in Tabsdata, we need to first register it with a collection inside Tabsdata.
 
-Run the following CLI command from your working directory to register ``publish_t1`` publisher with the ``tutorial`` collection:
+Run the following CLI command from your working directory to register ``publish_t2`` publisher with the ``tutorial`` collection:
 
 ```
-$ td fn register --collection tutorial --fn-path publisher.py::publish_t1
+$ td fn register --collection tutorial --fn-path publisher.py::publish_t2
 ```
 
 
@@ -131,14 +131,14 @@ $ td fn register --collection tutorial --fn-path publisher.py::publish_t1
 
 A subscriber is a type of a Tabsdata function that reads data from one or more tables in the Tabsdata server and writes them to an external system.
 
-In ``subscriber.py`` we are defining a subscriber with the name ``subscribe_t1`` that reads ``persons_t1`` table from Tabsdata, and writes it as ``persons_t1_output.jsonl`` in the local system.
+In ``subscriber.py`` we are defining a subscriber with the name ``subscribe_t2`` that reads ``persons_t2`` table from Tabsdata, and writes it as ``persons_t2_output.jsonl`` in the local system.
 
 To run this susbcriber in Tabsdata, we need to first register it with a collection inside Tabsdata.
 
-Run the following CLI command from your working directory to register ``subscribe_t1`` subscriber with the ``tutorial`` collection:
+Run the following CLI command from your working directory to register ``subscribe_t2`` subscriber with the ``tutorial`` collection:
 
 ```
-$ td fn register --collection tutorial --fn-path subscriber.py::subscribe_t1
+$ td fn register --collection tutorial --fn-path subscriber.py::subscribe_t2
 ```
 
 
@@ -150,15 +150,15 @@ A trigger runs a Tabsdata function. Once triggered, a function takes its input d
 
 A trigger can be initiated through a CLI command or by a new commit to its associated table. Consequently, changes to their input tables can automatically trigger functions, which in turn change other tables that trigger their associated functions, leading to a cascading workflow of updates. You can read more about triggers [here](https://docs.tabsdata.com/latest/guide/05_working_with_triggers/main.html).
 
-Due to this cascading workflow of updates, when we trigger ``publish_t1``, a new commit for the table ``persons_t1`` is generated inside the Tabsdata server. This in turn triggers the function ``subscribe_t1``, generating the output file ``persons_t1_output.jsonl`` in the local system.
+Due to this cascading workflow of updates, when we trigger ``publish_t2``, a new commit for the table ``persons_t2`` is generated inside the Tabsdata server. This in turn triggers the function ``subscribe_t2``, generating the output file ``persons_t2_output.jsonl`` in the local system.
 
 Run the following CLI command to trigger the publisher:
 
 ```
-$ td fn trigger --collection tutorial --name publish_t1
+$ td fn trigger --collection tutorial --name publish_t2
 ```
 
-After running the above we would see the output file ``persons_t1_output.jsonl`` in our working directory. The functions make take a couple of seconds to execute. 
+After running the above we would see the output file ``persons_t2_output.jsonl`` in our working directory. The functions make take a couple of seconds to execute. 
 
 You can see the status whether the functions have finsihed executing by using the following command:
 
@@ -179,7 +179,7 @@ We have successfully created a publisher and a subscriber, registered them with 
 
 For the next step, here are a couple of experiements you can try:
 
-* Make some changes to the ``persons.csv`` file and trigger the publisher again. You should see the changes reflected in ``persons_t1_output.jsonl`` once both the publisher and subscriber have finished executing. 
-* Make some changes in the publisher code to modify the columns filtered by the publisher, for example, dropping one more column or one less. After making the changes, trigger the publisher. You should see the changes reflected in ``persons_t1_output.jsonl`` output file.
-* Add a Tabsdata [transformer](https://docs.tabsdata.com/latest/guide/04_working_with_functions/working_with_transformers/main.html) in the mix. Perform complex transformations on ``persons_t1`` table using a Tabsdata tranformer, and connect the output table from the transformer to a subscriber.
+* Make some changes to the ``persons.csv`` file and trigger the publisher again. You should see the changes reflected in ``persons_t2_output.jsonl`` once both the publisher and subscriber have finished executing. 
+* Make some changes in the publisher code to modify the columns filtered by the publisher, for example, dropping one more column or one less. After making the changes, trigger the publisher. You should see the changes reflected in ``persons_t2_output.jsonl`` output file.
+* Add a Tabsdata [transformer](https://docs.tabsdata.com/latest/guide/04_working_with_functions/working_with_transformers/main.html) in the mix. Perform complex transformations on ``persons_t2`` table using a Tabsdata tranformer, and connect the output table from the transformer to a subscriber.
 * Read files from and write files to different external systems beyond local file system. You can read more about them [here](https://docs.tabsdata.com/latest/guide/supported_sources_and_destinations/main.html).
