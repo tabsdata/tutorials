@@ -75,9 +75,18 @@ Since Tabsdata operates at the server level, we are required to give a full syst
 
 Run this command in your CLI from the working directory, to save the full path to your working directory in the environment variable ``TDX``. I have used this variable in the Python code for both publisher and subscriber.
 
+For Linux or MacOS:
+
 ```
 export TDX=`pwd`
 ```
+
+For Windows:
+
+```
+set TDX=%CD%
+```
+
 
 # Step 2. Login and Create a Collection
 
