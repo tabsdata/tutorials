@@ -20,7 +20,10 @@ With the context set, let’s dive in!
 
 ----
 
-We will be working with a publisher that reads a file ``persons.csv`` from the local file system, drops some columns related to personally identifiable information from it, and writes the resultant data to a Tabsdata table. We will also be working with a subscriber that reads the Tabsdata table created by the publisher and writes it to the local file system.
+We will be working with two Tabsdata functions:
+
+* A publisher that reads a file ``persons.csv`` from the local file system, drops some columns related to personally identifiable information from it, and writes the resultant data to a Tabsdata table.
+* A subscriber that reads the Tabsdata table created by the publisher and writes it to the local file system.
 
 # Step 1. Pre-requisites
 
