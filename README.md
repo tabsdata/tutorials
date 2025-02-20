@@ -97,7 +97,7 @@ Now that we have created a collection, we’re ready to register a publisher wit
 
 A publisher is a type of a Tabsdata function that reads data from an external system and writes the data as one or more Tabsdata tables.
 
-In ``publisher.py`` file in the github repo we are defining a publisher with the name ``publish_t2`` that reads ``persons.csv`` from local system, drops the columns containing personally identifiable information, and saves the resultant table as ``persons_t2`` in the Tabsdata server.
+In ``publisher.py`` file in the github repo, we are defining a publisher with the name ``publish_t2`` that reads ``persons.csv`` from local system, drops the columns containing personally identifiable information, and saves the resultant table as ``persons_t2`` in the Tabsdata server.
 
 To run this publisher in Tabsdata, we need to first register it with a collection inside Tabsdata.
 
@@ -127,7 +127,7 @@ $ td fn register --collection tutorial --fn-path subscriber.py::subscribe_t2
 # Step 5. Trigger the Publisher
 
 
-A trigger runs a Tabsdata function. Once triggered, a function takes its input data, processes it as defined, and creates a [new commit](https://docs.tabsdata.com/latest/guide/06_working_with_tables/table_frame_1.html#table-commits) for its output data.
+A trigger runs a Tabsdata function. Once triggered, a function takes its input data, processes it as defined, and creates a [new commit](https://docs.tabsdata.com/latest/guide/06_working_with_tables/table_frame_1.html#table-commits) for its output data. A new table commit is generated whenever a publisher is successfully executed.
 
 A trigger can be initiated through a CLI command or by a new commit to its associated table. Consequently, changes to their input tables can automatically trigger functions, which in turn change other tables that trigger their associated functions, leading to a cascading workflow of updates. You can read more about triggers [here](https://docs.tabsdata.com/latest/guide/05_working_with_triggers/main.html).
 
