@@ -12,12 +12,11 @@ Before we start, here is a brief overview of some key concepts that we’ll be c
 
 You can find detailed information on the key concepts in the documentation here. <add hyperlink>
 
-—
-
 With the context set, let’s dive in!
 
+----
 
-In this tutorial you will be working with a publisher that reads a file ``persons.csv`` from the local file system, drops some columns related to personally identifiable information from it, and writes the resultant data to a Tabsdata table. You will also be working with a subscriber that reads the Tabsdata table created by the publisher and writes it to the local file system.
+In this tutorial we will be working with a publisher that reads a file ``persons.csv`` from the local file system, drops some columns related to personally identifiable information from it, and writes the resultant data to a Tabsdata table. We will also be working with a subscriber that reads the Tabsdata table created by the publisher and writes it to the local file system.
 
 # Pre-requisites
 
@@ -65,7 +64,7 @@ Your working directly would have the following files after cloning:
 
 ## 3. Save the working directory path in a variable
 
-Since Tabsdata operates at the server level, you are required to give a full system path in your Python code when defining input and output for publishers and subscribers. Storing your working directory path in an environment variable streamlines that process.
+Since Tabsdata operates at the server level, we are required to give a full system path in our Python code when defining input and output for publishers and subscribers. Storing our working directory path in an environment variable streamlines that process.
 
 Run this command in your CLI from the working directory, to save the full path to your working directory in the environment variable ``TDX``.
 
@@ -75,13 +74,15 @@ export TDX=`pwd`
 
 # Step 1. Login and Create a Collection
 
-You are required to be logged into the Tabsdata server to interact with the Tabsdata system. If you are not logged in, use the following command to login to Tabsdata:
+We are required to be logged into the Tabsdata server to interact with the Tabsdata system.
+
+If you are not logged in, use the following command to login to Tabsdata:
 
 ```
 $ td login localhost --user admin --password tabsdata
 ```
 
-Collections are logical containers for Tabsdata tables and functions. You use collections to enable different business domains to have their own organizational space. You can read more about them here. <add hyperlink>
+Collections are logical containers for Tabsdata tables and functions. We use collections to enable different business domains to have their own organizational space. You can read more about them here. <add hyperlink>
 
 **Note**: If you have completed Getting Started<add hyperlink>, then you would already have a collection called ``tutorial`` and don't need to do this step.
 
@@ -91,18 +92,18 @@ To create a collection called ``tutorial``, run the following command:
 $ td collection create tutorial
 ```
 
-Now that you have created a collection, you’re ready to implement a publisher.
+Now that we have created a collection, we’re ready to implement a publisher.
 
 
 # Step 2. Register the Publisher
 
 A publisher is a type of a Tabsdata function that reads data from an external system and writes the data as one or more Tabsdata tables.
 
-In ``publisher.py`` you are defining a publisher with the name ``publish_t1`` that reads ``persons.csv`` from local system, drops the columns containing personally identifiable information, and saves the resultant table as ``persons_t1`` in the Tabsdata server.
+In ``publisher.py`` we are defining a publisher with the name ``publish_t1`` that reads ``persons.csv`` from local system, drops the columns containing personally identifiable information, and saves the resultant table as ``persons_t1`` in the Tabsdata server.
 
-To run this publisher in Tabsdata, you need to first register it with a collection inside Tabsdata. Publishers write all of their output tables to the collection that they are registered with.
+To run this publisher in Tabsdata, we need to first register it with a collection inside Tabsdata. Publishers write all of their output tables to the collection that they are registered with.
 
-Use the following command to register your ``publish_t1`` publisher with the ``tutorial`` collection:
+Use the following command to register ``publish_t1`` publisher with the ``tutorial`` collection:
 
 ```
 $ td fn register --collection tutorial --fn-path publisher.py::publish_t1
@@ -113,11 +114,11 @@ $ td fn register --collection tutorial --fn-path publisher.py::publish_t1
 
 A subscriber is a type of a Tabsdata function that reads data from one or more tables in the Tabsdata server and writes them to an external system.
 
-In ``subscriber.py`` you are defining a subscriber with the name ``subscribe_t1`` that reads ``persons`` table from Tabsdata, and writes it as ``persons_t1_output.jsonl`` in the local system.
+In ``subscriber.py`` we are defining a subscriber with the name ``subscribe_t1`` that reads ``persons`` table from Tabsdata, and writes it as ``persons_t1_output.jsonl`` in the local system.
 
-To run this susbcriber in Tabsdata, you need to first register it with a collection inside Tabsdata. Subscribers can read data from any Tabsdata collection.
+To run this susbcriber in Tabsdata, we need to first register it with a collection inside Tabsdata. Subscribers can read data from any Tabsdata collection.
 
-Use the following command to register your ``subscribe_t1`` subscriber with the ``tutorial`` collection:
+Use the following command to register ``subscribe_t1`` subscriber with the ``tutorial`` collection:
 
 ```
 $ td fn register --collection tutorial --fn-path subscriber.py::subscribe_t1
@@ -132,7 +133,7 @@ A trigger executes a Tabsdata function. Once triggered, a function takes its inp
 
 A trigger can be initiated through a CLI command or by a new commit <add hyperlink> to its associated table. Consequently, changes on tables can automatically trigger functions, which in turn change other tables that trigger their assocaited functions, leading to a cascading workflow of updates. You can read more about triggers here. <add hyperlink>
 
-Due to this cascading workflow of updates, when you trigger ``publish_t1``, a new commit for the table ``persons_t1`` is generated inside the Tabsdata server. This in turn triggers the function ``subscribe_t1``, generating an updated output file ``persons_t1_output.jsonl`` in the local system.
+Due to this cascading workflow of updates, when we trigger ``publish_t1``, a new commit for the table ``persons_t1`` is generated inside the Tabsdata server. This in turn triggers the function ``subscribe_t1``, generating an updated output file ``persons_t1_output.jsonl`` in the local system.
 
 Use the following command to trigger the publisher:
 
@@ -140,7 +141,9 @@ Use the following command to trigger the publisher:
 $ td fn trigger --collection tutorial --name publish_t1
 ```
 
-After running the above you would see the output file ``persons_t1_output.jsonl`` in your working directory. The functins make take a couple of seconds to execute. You can see the status whether the functions have finsihed executing by using the following command:
+After running the above we would see the output file ``persons_t1_output.jsonl`` in our working directory. The functions make take a couple of seconds to execute. 
+
+You can see the status whether the functions have finsihed executing by using the following command:
 
 ```
 $ td exec list-trxs
@@ -152,8 +155,8 @@ Sample output:
 
 **Mission Accomplished!!**
 
+We have successfully created a publisher and a subscriber, registered them with a Tabsdata collection, and triggered the functions successfully.
 
-You have successfully created a publisher and a subscriber, registered them with a Tabsdata collection, and triggered the functions successfully.
 
 ## Next Steps:
 
