@@ -114,7 +114,7 @@ $ td fn register --collection tutorial --fn-path publisher.py::publish_t1
 
 A subscriber is a type of a Tabsdata function that reads data from one or more tables in the Tabsdata server and writes them to an external system.
 
-In ``subscriber.py`` we are defining a subscriber with the name ``subscribe_t1`` that reads ``persons`` table from Tabsdata, and writes it as ``persons_t1_output.jsonl`` in the local system.
+In ``subscriber.py`` we are defining a subscriber with the name ``subscribe_t1`` that reads ``persons_t1`` table from Tabsdata, and writes it as ``persons_t1_output.jsonl`` in the local system.
 
 To run this susbcriber in Tabsdata, we need to first register it with a collection inside Tabsdata.
 
