@@ -1,4 +1,4 @@
-In this tutorial, we will walk through a simple and common use case: taking a raw data file, filtering some columns from it, and sharing it with the downstream users. To achieve this, we will be using your preferred Python IDE and CLI to work with the Tabsdata system and various Tabsdata functions.
+In this tutorial, we will walk through a simple and common use case: taking a raw data file, filtering some columns from it, and sharing it with the downstream users. To achieve this, we will be using our respective preferred Python IDE and CLI to work with the Tabsdata system and various Tabsdata functions.
 
 Before we start, here is a brief overview of some key concepts that we’ll be covering in this article:
 
