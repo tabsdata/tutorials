@@ -87,7 +87,7 @@ To create a collection called ``tutorial``, run the following command:
 $ td collection create tutorial
 ```
 
-**Note**: If you have completed [Getting Started](https://docs.tabsdata.com/latest/guide/02_getting_started/main.html), then you would already have a collection called ``tutorial`` and don't need to do this step.
+**Note**: If you have completed [Getting Started](https://docs.tabsdata.com/latest/guide/02_getting_started/main.html), you would already have a collection called ``tutorial`` in your system and don't need to do this step.
 
 
 Now that we have created a collection, we’re ready to register a publisher with the collection.
