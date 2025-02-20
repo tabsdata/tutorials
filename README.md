@@ -13,7 +13,7 @@ To achieve this, we will be using a Python IDE and CLI to work with the Tabsdata
 To install Tabsdata, run the following command in your CLI:
 
 ```
-`$` pip install tabsdata
+$ pip install tabsdata
 ```
 
 **Important:** Your virtual environment or alternative installation location must have **Python 3.12 or later**.
@@ -38,7 +38,7 @@ $ tdserver status
 If you haven't already, copy the github repo to the working directory in your system.
 
 ```
-git clone https://github.com/tabsdata/tutorial_2
+$ git clone https://github.com/tabsdata/tutorial_2
 ```
 
 Your working directly should have the following files after cloning:
