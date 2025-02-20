@@ -73,7 +73,7 @@ Your working directly should have the following files after cloning:
 
 Since Tabsdata operates at the server level, we are required to give a full system path in our Python code when defining input and output for publishers and subscribers. Storing our working directory path in an environment variable streamlines that process.
 
-Run this command in your CLI from the working directory, to save the full path to your working directory in the environment variable ``TDX``.
+Run this command in your CLI from the working directory, to save the full path to your working directory in the environment variable ``TDX``. I have used this variable in the Python code for both publisher and subscriber.
 
 ```
 export TDX=`pwd`
@@ -91,15 +91,16 @@ $ td login localhost --user admin --password tabsdata
 
 Collections are logical containers for Tabsdata tables and functions. Hence, before creating any tabsdata functions, we need to create a collection. You can read more about them [here](https://docs.tabsdata.com/latest/guide/03_key_concepts/main.html#collections).
 
-**Note**: If you have completed [Getting Started](https://docs.tabsdata.com/latest/guide/02_getting_started/main.html), then you would already have a collection called ``tutorial`` and don't need to do this step.
-
 To create a collection called ``tutorial``, run the following command:
 
 ```
 $ td collection create tutorial
 ```
 
-Now that we have created a collection, we’re ready to implement a publisher.
+**Note**: If you have completed [Getting Started](https://docs.tabsdata.com/latest/guide/02_getting_started/main.html), then you would already have a collection called ``tutorial`` and don't need to do this step.
+
+
+Now that we have created a collection, we’re ready to register the publisher with the collection.
 
 
 # Step 3. Register the Publisher
@@ -142,7 +143,7 @@ A trigger can be initiated through a CLI command or by a new commit to its assoc
 
 Due to this cascading workflow of updates, when we trigger ``publish_t1``, a new commit for the table ``persons_t1`` is generated inside the Tabsdata server. This in turn triggers the function ``subscribe_t1``, generating the output file ``persons_t1_output.jsonl`` in the local system.
 
-Use the following command to trigger the publisher:
+Run the following CLI command to trigger the publisher:
 
 ```
 $ td fn trigger --collection tutorial --name publish_t1
@@ -170,6 +171,6 @@ We have successfully created a publisher and a subscriber, registered them with 
 For the next step, here are a couple of experiements you can try:
 
 * Make some changes to the ``persons.csv`` file and trigger the publisher again. You should see the changes reflected in ``persons_t1_output.jsonl`` once both the publisher and subscriber have finished executing. 
-* Make some changes in the columns filtered by the publisher, for example, dropping one more column or one less. After making the changes, trigger the publisher. You should see the changes reflected in ``persons_t1_output.jsonl`` output file.
+* Make some changes in the publisher code to modify the columns filtered by the publisher, for example, dropping one more column or one less. After making the changes, trigger the publisher. You should see the changes reflected in ``persons_t1_output.jsonl`` output file.
 * Add a Tabsdata [transformer](https://docs.tabsdata.com/latest/guide/04_working_with_functions/working_with_transformers/main.html) in the mix. Perform complex transformations on ``persons_t1`` table using a Tabsdata tranformer, and connect the output table from the transformer to a subscriber.
 * Read files from and write files to different external systems beyond local file system. You can read more about them [here](https://docs.tabsdata.com/latest/guide/supported_sources_and_destinations/main.html).
