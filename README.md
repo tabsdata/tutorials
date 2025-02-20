@@ -13,7 +13,7 @@ To achieve this, we will be using a Python IDE and CLI to work with the Tabsdata
 To install Tabsdata, run the following command in your CLI:
 
 ```
-$ pip install tabsdata
+`$` pip install tabsdata
 ```
 
 **Important:** Your virtual environment or alternative installation location must have **Python 3.12 or later**.
@@ -59,13 +59,13 @@ Run this command in your CLI from the working directory, to save the full path t
 For Linux or MacOS:
 
 ```
-export TDX=`pwd`
+$ export TDX=`pwd`
 ```
 
 For Windows:
 
 ```
-set TDX=%CD%
+$ set TDX=%CD%
 ```
 
 
