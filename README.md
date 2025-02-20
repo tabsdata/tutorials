@@ -1,7 +1,7 @@
 In this tutorial, we’ll walk through a simple yet common use case, following these steps:
 
 * Read a raw CSV file, containing some dummy personal details of individuals, from a source system.
-* Filter out columns that contain personally identifiable information (PII).
+* Filter out columns that contain personally identifiable information.
 * Push the cleaned data to a destination system.
 
 To achieve this, we will be using a Python IDE and CLI to work with the Tabsdata system and various Tabsdata functions. Let’s dive in!
