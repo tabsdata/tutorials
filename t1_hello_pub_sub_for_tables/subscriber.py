@@ -9,5 +9,5 @@ import tabsdata as td
     destination = td.LocalFileDestination(os.path.join(os.getenv("TDX"), "tutorials", "t1_hello_pub_sub_for_tables","persons_t1_output.jsonl")), 
 )
 
-def subscribe_t1(persons_t1: td.TableFrame):
-    return persons_t1
+def subscribe_t1(tf: td.TableFrame):
+    return tf
