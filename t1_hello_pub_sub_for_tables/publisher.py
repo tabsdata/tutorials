@@ -6,10 +6,10 @@ import tabsdata as td
     source = td.LocalFileSource(os.path.join(os.getenv("TDX"), "tutorials", "t1_hello_pub_sub_for_tables", "persons.csv")),
 
     # Name of the table created in the Tabsdata collection.
-    tables = ["persons_t2"],
+    tables = ["persons_t1"],
 )
 
-def publish_t2(tf:td.TableFrame):
+def publish_t1(tf:td.TableFrame):
     
     # Drop columns from the input file before publishing to Tabsdata.
     tf = tf.drop("name","surname","first_name","last_name","full_name","phone_number","telephone","email")
