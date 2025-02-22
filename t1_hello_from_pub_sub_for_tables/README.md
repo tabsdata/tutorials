@@ -38,17 +38,10 @@ $ tdserver status
 If you haven't already, copy the github repo to the working directory in your system.
 
 ```
-$ git clone https://github.com/tabsdata/tutorial_2
+$ git clone https://github.com/tabsdata/tutorials
 ```
 
-Your working directly should have the following files after cloning:
-
-* persons.csv
-* publisher.py
-* subscriber.py
-* README.md
-
-
+Your working directly should have the "t1_hello_from_pub_sub_for_tables" folder containing a CSV and python files.
 
 ## 3. Save the working directory path in a variable
 
