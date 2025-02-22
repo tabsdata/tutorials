@@ -41,7 +41,7 @@ If you haven't already, copy the github repo to the working directory in your sy
 $ git clone https://github.com/tabsdata/tutorials
 ```
 
-Your working directly should have the "t1_hello_from_pub_sub_for_tables" folder containing a CSV and python files.
+Your working directly should have the "t1_hello_pub_sub_for_tables" folder containing a CSV and python files.
 
 ## 3. Save the working directory path in a variable
 
