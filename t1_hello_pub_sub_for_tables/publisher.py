@@ -3,7 +3,7 @@ import tabsdata as td
 
 @td.publisher(
     # Absolute system path to the file to be imported by the Publisher.
-    source = td.LocalFileSource(os.path.join(os.getenv("TDX"), "tutorials", "t1_hello_pub_sub_for_tables", "persons.csv")),
+    source = td.LocalFileSource(os.path.join(os.getenv("TDX"), "persons.csv")),
 
     # Name of the table created in the Tabsdata collection.
     tables = ["persons_t1"],

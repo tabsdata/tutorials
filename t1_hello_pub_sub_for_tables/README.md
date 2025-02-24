@@ -49,13 +49,13 @@ If you haven't already, copy the github repo to the working directory in your sy
 $ git clone https://github.com/tabsdata/tutorials
 ```
 
-Your working directly should have the "tutorials" folder containing "t1_hello_pub_sub_for_tables" folder that has README, CSV and python files.
+Your working directly should have the ``tutorials`` folder containing ``t1_hello_pub_sub_for_tables`` folder that has README, CSV and python files.
 
-## 4. Save the directory path of "t1_hello_pub_sub_for_tables" in an environment variable
+## 4. Save the directory path of ``t1_hello_pub_sub_for_tables`` in an environment variable
 
 Since Tabsdata operates at the server level, you are required to give a full system path in your Python code when defining input and output for the Tabsdata functions. Storing our working directory path in an environment variable streamlines that process.
 
-Open "t1_hello_pub_sub_for_tables" folder in your CLI and save the full path this folder in the environment variable ``TDX``.
+Open ``t1_hello_pub_sub_for_tables`` folder in your CLI and save the full path this folder in the environment variable ``TDX``.
 
 For Linux or MacOS:
 
