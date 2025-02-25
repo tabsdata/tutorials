@@ -1,4 +1,6 @@
-# Tutorial 1: Hello Pub/Sub for Tables
+# README
+
+## Tutorial 1: Hello Pub/Sub for Tables
 
 This first tutorial sets the ground by introducing Pub/Sub for Tables. We create the following Tabsdata functions:
 
