@@ -15,5 +15,5 @@ def publish_t1(tf: td.TableFrame):
     # tf = tf.drop("name")
     # tf = tf.drop(["name","surname","first_name","last_name","full_name","phone_number","telephone","email"])
 
-    # return tf.drop("name")
-    return tf.filter(td.col("name").str.starts_with("A"))
+    return tf.drop("name")
+    # return tf.filter(td.col("name").str.starts_with("A"))
