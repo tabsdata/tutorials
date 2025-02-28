@@ -12,8 +12,6 @@ import tabsdata as td
 def publish_t1(tf: td.TableFrame):
     
     # Drop columns from the input file before publishing to Tabsdata.
-    # tf = tf.drop("name")
-    # tf = tf.drop(["name","surname","first_name","last_name","full_name","phone_number","telephone","email"])
+    tf = tf.drop("name")
 
-    return tf.drop("name")
-    # return tf.filter(td.col("name").str.starts_with("A"))
+    return tf
