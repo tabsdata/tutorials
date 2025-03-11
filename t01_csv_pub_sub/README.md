@@ -130,8 +130,6 @@ where,
 
 **tables** defines the name of the table (`CUSTOMER_LEADS`) to be created by the publisher.
 
-<br />
-
 ## Check the Publisher Output:
 
 The Tabsdata table `CUSTOMER_LEADS` has been created in the `CUSTOMERS` collection. This table can now be subscribed to, by various stakeholders within the organization.
