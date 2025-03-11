@@ -49,9 +49,9 @@ git clone https://github.com/tabsdata/tutorials
 
 ## 4. Save the working directory path in an environment variable
 
-As shared earlier, our data input in this example is a directory in the local file system, and the data output is another directory in the local file system. To define these input and output directories we will use an environment variable called TDX. You can choose to define the absolute working directory of your input and output files in any other manner of your choice.
+As shared earlier, our data input in this example is present in a directory in the local file system, and the data output is sent to another directory in the local file system. To define these input and output directories we will use an environment variable called `TDX`. You can choose to define the absolute working directory of your input and output files in any other manner of your choice.
 
-To store the value of your working directory in the variable TDX, run the following command in your CLI from the directory where you have copied the Github repo:
+To store the value of your working directory in the variable `TDX`, run the following command in your CLI from the directory where you have copied the Github repo:
 
 For Linux or MacOS:
 
@@ -69,7 +69,7 @@ cd t01_csv_pub_sub
 set TDX=%CD%
 ```
 
-If you run an `ls` on `t01_csv_pub_sub` would would see the following files and folders:
+If you run an `ls` on `t01_csv_pub_sub` you would see the following files and folders:
 
 ```
 README.md
@@ -130,6 +130,7 @@ where,
 
 **tables** defines the name of the table (`CUSTOMER_LEADS`) to be created by the publisher.
 
+<br />
 
 **Check the Publisher Output:**
 
