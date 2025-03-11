@@ -132,7 +132,7 @@ where,
 
 <br />
 
-**Check the Publisher Output:**
+## Check the Publisher Output:
 
 The Tabsdata table `CUSTOMER_LEADS` has been created in the `CUSTOMERS` collection. This table can now be subscribed to, by various stakeholders within the organization.
 
@@ -177,7 +177,7 @@ where,
 
 **destination** parameter defines the path to the folder, the file name, and the file format, to be written by the subscriber.
 
-**Check the Subscriber Output:**
+## Check the Subscriber Output:
 
 Once executed, the subscriber would have generated the output file `customer_leads.jsonl` in the `output` directory.
 
@@ -246,7 +246,7 @@ Once the publisher executes, all the downstream functions that are dependent on 
 
 In our current example, since `susbcribe_customers` is dependent on the `CUSTOMER_LEADS` table, the subscriber would get executed to generate a new version of `customer_leads.jsonl` file in the local file system. You can read more about the automated dependency management in the Tabsdata documentation.
 
-**Check the Output:**
+## Check the Output:
 
 Once the publisher has been executed, you can check the `customer_leads.jsonl` file in the `output` folder to see if the changes are getting reflected.
 
