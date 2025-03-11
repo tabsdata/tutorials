@@ -1,8 +1,8 @@
-In this tutorial, we’ll walk through a simple yet common use case, following these steps:
+In this tutorial, we’ll explore how Tabsdata enables Pub/Sub for Tables.
 
-* Read a raw CSV file, containing some dummy personal details of individuals, from a source system.
-* Filter out columns that contain personally identifiable information.
-* Push the cleaned data to a destination system.
+We'll start by setting up the systema and creating a publisher that reads data from a CSV file stored in a local input directory. This data will be published as a table called CUSTOMER_LEADS within a collection named CUSTOMERS. In Tabsdata, collections are containers for related tables, to make data organization and management more efficient.
+
+On the subscriber side, we'll set up a subscriber that reads data from this table and writes it to a local output directory. In a real-world scenario, your data source could be a database, an S3 bucket, or another storage location, while the subscriber could write data to various endpoints such as a database or file system.
 
 To achieve this, we will be using a Python IDE and CLI to work with the Tabsdata system and various Tabsdata functions.
 
@@ -11,19 +11,19 @@ Through this article you will understand how Tabsdata can help you
 * connect with external systems with ease through our built-in connectors, and
 * process data as tables when defining Tabsdata functions.
 
-Let’s dive in! We’ll start with setting up the system to prepare us to work with the Tabsdata functions.
+Let’s dive in! We’ll start by setting up the system to prepare us to work with the Tabsdata functions.
 
 # Step 1. Setting up the system
 
 ## 1. Install Tabsdata
 
-To install Tabsdata, run the following command in your CLI:
+To install/update the Tabsdata Python package, run this command in your CLI:
 
 ```
-$ pip install tabsdata
+$ pip install tabsdata --upgrade
 ```
 
-**Important:** Your virtual environment or alternative installation location must have **Python 3.12 or later**.
+Please note that you need **Python 3.12 or later**, to install the package. Additionally, you need **Tabsdata python package 0.9.2 or later** to successfully run the functions from this article.
 
 ## 2. Start the Tabsdata Server
 
@@ -43,25 +43,23 @@ $ tdserver status
 
 ## 3. Copy the github repo
 
-If you haven't already, copy the github repo to the working directory in your system.
+If you haven't already, copy the github repo to your system.
 
 ```
 $ git clone https://github.com/tabsdata/tutorials
 ```
 
-Your working directly should have the ``tutorials`` folder containing ``tutorial_1`` folder that has README, CSV and python files.
+## 4. Save the working directory path in an environment variable
 
-## 4. Save the directory path of ``tutorial_1`` in an environment variable
+Remember that our data source is actually a directory on the file system, and our subscriber’s output system is also a directory on the file system for this example. To define these input and output directories we will use an environment variable called TDX. You can choose to define the absolute working directory of your input and output files in any other manner of your choice.
 
-Since Tabsdata operates at the server level, you are required to give a full system path in your Python code when defining input and output for the Tabsdata functions. Storing our working directory path in an environment variable streamlines that process.
-
-Open ``tutorial_1`` folder in your CLI and save the full path this folder in the environment variable ``TDX``.
+To store the value of your working directory in the variable TDX, run the following command in your CLI from the directory where you have copied the Github repo:
 
 For Linux or MacOS:
 
 ```
 cd tutorials
-cd tutorial_1
+cd t01_csv_pub_sub
 $ export TDX=`pwd`
 ```
 
@@ -69,176 +67,243 @@ For Windows:
 
 ```
 cd tutorials
-cd tutorial_1
+cd t01_csv_pub_sub
 $ set TDX=%CD%
 ```
 
+If you run an `ls` on `t01_csv_pub_sub` would would see the following files and folders:
+
+```
+README.md
+input/
+|__ customers.csv
+input_02/
+|__ customers.csv
+publisher.py
+subscriber.py
+```
+
+Here the folders input and input_02 contain the `customers.csv` file that serve as input files for our tutorial. We'll start by using the file in the `input` folder. Towards the end of the article, we'll use the one in `input_02`. Python source files - publisher.py and subscriber.py contain the publisher and subscriber functions. Feel free to take a peak at them, they are pretty straightforward.
+
 ## 5. Login to the Tabsdata server
 
-You are required to login to the Tabsdata server to interact with the Tabsdata system.
-
-To login to the server, run the following command in your CLI:
+Before you can use Tabsdata, you must login to the server which can be done as follows:
 
 ```
 $ td login localhost --user admin --password tabsdata
 ```
 
 
-# Step 2. Create a Collection
+# Step 2: Publishing the CSV to Tabsdata
 
-Collections are logical containers for Tabsdata tables and functions. Hence, before creating any tabsdata functions, we need to create a collection. You can read more about them [here](https://docs.tabsdata.com/latest/guide/03_key_concepts/main.html#collections).
+Once set up, we can now use Tabsdata to process the CSV file to remove the PII columns and publish the resultant data as a table.
 
-To create a collection called ``tutorial``, run the following command:
+Tabsdata organizes data using collections, which act as containers for structured datasets. Hence, before publishing the data, we first create a `CUSTOMERS` collection to store the table to be created inside Tabsdata. To do that, run the following command in your CLI:
 
 ```
-$ td collection create tutorial
+td collection create CUSTOMERS
 ```
 
-**Note**: If you have completed [Getting Started](https://docs.tabsdata.com/latest/guide/02_getting_started/main.html), you would already have a collection called ``tutorial`` in your system and don't need to do this step.
+Once the `CUSTOMERS` collection has been created, you can publish the CSV as a Tabsdata table. To do that, run the following CLI commands from your working directory:
 
+```
+td fn register --collection CUSTOMERS --fn-path publisher.py::publish_customers
+td fn trigger --collection CUSTOMERS --name publish_customers
+```
 
-Now that we have created a collection, we’re ready to register a publisher with the collection.
+In the above commands you are first registering the function `publish_customers` with the Tabsdata collection and then triggering its execution. You can read more about these steps in the [Tabsdata documentation](https://docs.tabsdata.com/latest/guide/04_working_with_functions/main_1.html).
 
-
-# Step 3. Register the Publisher
-
-A publisher is a type of a Tabsdata function that reads data from an external system and writes the data as one or more Tabsdata tables. You need a publisher to read the persons.csv file from your source, which is the local file system in this example, into the Tabsdata collection.
-
-In ``publisher.py`` file in the github repo, we are defining a publisher with the name ``publish_t1`` that reads ``persons.csv`` from local system, drops the columns containing personally identifiable information, and saves the resultant table as ``persons_t1`` in the Tabsdata server.
-
-The publisher code is divided in two parts: decorator and the decorated function
-
-**Decorator**
-
-This part of the code defines the input and output of the publisher.
+The Tabsdata function `publish_customers` reads the `customers.csv` file from the source system, removes the PII from it, and writes the data as a table in the `CUSTOMERS` collection as a table called `CUSTOMER_LEADS`. The function is defined in the `publisher.py` file in the working directory, with the following Python code:
 
 ```
 @td.publisher(
-    # Absolute system path to the file to be imported by the Publisher.
-    source = td.LocalFileSource(os.path.join(os.getenv("TDX"), "persons.csv")),
-
-    # Name of the table created in the Tabsdata collection.
-    tables = ["persons_t1"],
+    source = td.LocalFileSource(os.path.join(os.getenv("TDX"), "input",  "persons.csv")),
+    tables = ["CUSTOMER_LEADScustomers_withoutpii"],
 )
-```
-**source** parameter defines the path to the file to be imported by the publisher. LocalFileSource is the built-in Tabsdata connector to read data from Local File System. Tabsdata has similar connectors for other file storage systems, such as AWS and Azure, and databases, such as MySQL, MariaDB, Oracle, and, Postgres. You can read more about them in the [documentation](https://docs.tabsdata.com/latest/guide/04_working_with_functions/working_with_publishers/reading_from_file_storage/main.html).
 
-**tables** parameter defines the names of tables created in the Tabsdata collection. The table names are required to be unique within a Tabsdata collection.
-
-**Decorated Function**
-
-This part of the code defines how the publisher should process the data.
-
-```
-def publish_t1(tf:td.TableFrame):
-    
-    # Drop columns from the input file before publishing to Tabsdata.
-    tf = tf.drop("name","surname","first_name","last_name","full_name","phone_number","telephone","email")
-
+def publish_customers(tf: td.TableFrame):
+    tf = tf.drop(["NAMEname","surname","FIRST_NAMEfirst_name","last_name","full_name","phone_number","telephone","email","username","password"])
     return tf
 
 ```
+where,
+**source** defines the location of the file.
+**tables** defines the name of the table [`CUSTOMERS_LEADS`] created in the `CUSTOMERS` collection.
+
 In this example, we drop the columns related to personally identifiable information, before publishing the data to Tabsdata. Dropping columns is one of the many operations supported on the tables. Many projections, filters, aggregation, and join functions are also supported. Full list can be found in the [documentation](https://docs.tabsdata.com/latest/guide/06_working_with_tables/table_frame_1.html#table-operations).
 
-The publisher name ``publish_t1`` is also defined here. The function names are required to be unique within a Tabsdata collection.
 
-To run this publisher in Tabsdata, we need to first register it with a collection inside Tabsdata.
+**Check the Publisher Output:**
 
-Run the following CLI command from your working directory to register ``publish_t1`` publisher with the ``tutorial`` collection:
+The Tabsdata table `CUSTOMER_LEADS` has been created in the `CUSTOMERS` collection. This table can now be subscribed to, by various stakeholders within the organization.
+
+To check the schema of the table in Tabsdata, run this command in your CLI:
+
+$ td table schema --collection CUSTOMERS --name CUSTOMERS_LEADS
+
+To check the sample of the table in Tabsdata, run this command in your CLI:
+
+$ td table sample --collection CUSTOMERS --name CUSTOMERS_LEADS
+
+
+# Step 3: Subscribing to the Table in Tabsdata
+
+Now that the customer data, excluding PII, is available in the Tabsdata system as a table, it’s ready for subscription. For instance, if the sales team requests customer data in JSON list format for their SaaS software, you can simply point them to the `CUSTOMER_LEADS` table in Tabsdata. They can then subscribe to this table to receive the data. To simulate this process and subscribe to the `CUSTOMER_LEADS` table, run the following CLI commands from your working directory:
 
 ```
-$ td fn register --collection tutorial --fn-path publisher.py::publish_t1
+td fn register --collection CUSTOMERS --fn-path subscriber.py::subscribe_customers
+td fn trigger --collection CUSTOMERS --name subscribe_customers
 ```
 
+In the above commands you are first registering the function `subscribe_customers` with the Tabsdata collection and then triggering its execution. You can read more about these steps in the Tabsdata documentation.
 
-# Step 4. Register the Subscriber
-
-A subscriber is a type of a Tabsdata function that reads data from one or more tables in the Tabsdata server and writes them to an external system.
-
-In ``subscriber.py`` we are defining a subscriber with the name ``subscribe_t1`` that reads ``persons_t1`` table from Tabsdata, and writes it as ``persons_t1_output.jsonl`` in the local system.
-
-The subscriber code is divided in two parts: decorator and the decorated function
-
-**Decorator**
-
-The subscriber code is divided in two parts: decorator and the decorated function
+The Tabsdata function `subscribe_customers` reads the `CUSTOMERS_LEADS` table from Tabsdata, and writes it as `CUSTOMERS_LEADS.jsonl` in the local file system. It is defined in the `subscriber.py` file in the working directory, with the following Python code:
 
 ```
 @td.subscriber(
-    # Name of the table to be exported from Tabsdata.
-    tables = ["persons_t1"],
-
-    # Absolute system path to the file to be written by the Subscriber.
-    destination = td.LocalFileDestination(os.path.join(os.getenv("TDX"), "persons_t1_output.jsonl")), 
+    tables = ["CUSTOMERS_LEADS"],
+    destination = td.LocalFileDestination(os.path.join(os.getenv("TDX"), "output","CUSTOMERS_LEADS.jsonl")), 
 )
+
+def subscribe_customers(tf: td.TableFrame):
+    return tf
 ```
 
-**tables** parameter defines the tables to be read by the subscriber. They can be from any collection in the Tabsdata system. To read tables from outside the collection that the subscriber is going to be registered in, use the syntax "<collection_name>/<input_table_2>".
+where,
+**tables** defines the name of the table [`CUSTOMERS_LEADS`] to be read from the Tabsdata collection.
+**destination** parameter defines the path to the folder, the file name, and the file format, to be written by the subscriber.
 
-**destination** parameter defines the path to the folder, the file name, and the file format, to be written by the subscriber. LocalFileDestination is the built-in Tabsdata connector to write data to Local File System. Tabsdata has similar connectors for other file storage systems, such as AWS and Azure, and databases, such as MySQL, MariaDB, Oracle, and, Postgres. You can read more about them in the [documentation](https://docs.tabsdata.com/latest/guide/04_working_with_functions/working_with_subscribers/writing_to_file_storage/main.html).
+**Check the Subscriber Output:**
 
-**Decorated Function:**
+Once executed, the subscriber would have generated the output file `customer_leads.jsonl` in the `output` directory.
 
-This part of the code defines how the subscriber should process the data.
-
-```
-def subscribe_t1(persons_t1: td.TableFrame):
-    return persons_t1
-```
-
-In this example, we are not performing any processing with the subscriber. However, you can perform all table operations inside the subscriber as well. Full list of all the supported operations can be found in the [documentation](https://docs.tabsdata.com/latest/guide/06_working_with_tables/table_frame_1.html#table-operations).
-
-The subscriber name subscribe_t1 is also defined here. The function names are required to be unique within a Tabsdata collection.
-
-
-To run this susbcriber in Tabsdata, we need to first register it with a collection inside Tabsdata.
-
-Run the following CLI command from your working directory to register ``subscribe_t1`` subscriber with the ``tutorial`` collection:
+Here is some sample data from `customer_leads.jsonl`:
 
 ```
-$ td fn register --collection tutorial --fn-path subscriber.py::subscribe_t1
+  {
+    "identifier": "74-93/03",
+    "gender": "Male",
+    "gender_code": 0,
+    "gender_symbol": "♀",
+    "sex": "Male",
+    "birthdate": "1985-10-11",
+    "nationality": "Portuguese",
+    "language": "Italian",
+    "locale": "Locale.EN",
+    "blood_type": "O−",
+    "height": 1.59,
+    "weight": 57,
+    "university": "Clayton State University",
+    "academic_degree": "Master",
+    "title": "Sir",
+    "occupation": "Hod Carrier",
+    "political_views": "Liberal",
+    "worldview": "Atheism"
+  }
+  {
+    "identifier": "68-52/94",
+    "gender": "Female",
+    "gender_code": 9,
+    "gender_symbol": "♀",
+    "sex": "Other",
+    "birthdate": "2003-10-16",
+    "nationality": "Costa Rican",
+    "language": "Swati",
+    "locale": "Locale.EN",
+    "blood_type": "B−",
+    "height": 1.75,
+    "weight": 83,
+    "university": "Clayton State University",
+    "academic_degree": "PhD",
+    "title": "M.D.",
+    "occupation": "Aeronautical Engineer",
+    "political_views": "Liberal",
+    "worldview": "Pantheism"
+  }
 ```
 
+Only the selected columns from the `customers.csv` have been exported, and the `jsonl` file is ready for consumption.
 
-# Step 5. Trigger the Publisher
+# Step 4: Automate Data Engineering
 
+What happens when there is an update in your input data? How do you update the data used by the downstream users?
 
-A trigger runs a Tabsdata function. Once triggered, a function takes its input data, processes it as defined, and creates a [new commit](https://docs.tabsdata.com/latest/guide/06_working_with_tables/table_frame_1.html#table-commits) for its output data. A new table commit is generated whenever a publisher is successfully executed.
+Let’s say there is an update in your CSV file, and the `gender_code` column stops being in the raw CSV files. For the purposes of this example, you can download the new `persons.csv` from here and replace the one in your working directory.
 
-A trigger can be initiated through a CLI command or by a new commit to its associated table. Consequently, changes to their input tables can automatically trigger functions, which in turn change other tables that trigger their associated functions, leading to a cascading workflow of updates. You can read more about triggers [here](https://docs.tabsdata.com/latest/guide/05_working_with_triggers/main.html).
-
-Due to this cascading workflow of updates, when you trigger ``publish_t1``, a new commit for the table ``persons_t1`` is generated inside the Tabsdata server. This in turn triggers the function ``subscribe_t1``, generating the output file ``persons_t1_output.jsonl`` in the local system.
-
-Run the following CLI command to trigger the publisher:
+Once the new input file is available, you just need to execute the publisher `publish_customers` using the command below to update the data files used by the downstream users.
 
 ```
-$ td fn trigger --collection tutorial --name publish_t1
+td fn trigger --collection CUSTOMERS --name publish_customers
 ```
 
-After running the above you would see the output file ``persons_t1_output.jsonl`` in our working directory, containing the data from ``persons.csv`` without the personally identifiable information. The functions make take a couple of seconds to execute.
+Once the publisher executes, all the downstream functions that are dependent on the output table `CUSTOMERS_LEADS` from `publish_customers` would get executed to generate their respective output data.
 
-You can see the status whether the functions have finsihed executing by using the following command:
+In our current example, since `susbcribe_customers` is dependent on the `CUSTOMERS_LEADS` table, the subscriber would get executed to generate a new version of `CUSTOMERS_LEADS.jsonl` file in the local file system. You can read more about the automated dependency management in the Tabsdata documentation.
+
+**Check the Output:**
+
+Once the publisher has been executed, you can check the `customer_leads.jsonl` file in the `output` folder to see if the changes are getting reflected.
+
+Here is some sample data from the new `customer_leads.jsonl`:
 
 ```
-$ td exec list-trxs
+  {
+    "identifier": "74-93/03",
+    "gender": "Male",
+    "gender_symbol": "♀",
+    "sex": "Male",
+    "birthdate": "1985-10-11",
+    "nationality": "Portuguese",
+    "language": "Italian",
+    "locale": "Locale.EN",
+    "blood_type": "O−",
+    "height": 1.59,
+    "weight": 57,
+    "university": "Clayton State University",
+    "academic_degree": "Master",
+    "title": "Sir",
+    "occupation": "Hod Carrier",
+    "political_views": "Liberal",
+    "worldview": "Atheism"
+  }
+  {
+    "identifier": "68-52/94",
+    "gender": "Female",
+    "gender_symbol": "♀",
+    "sex": "Other",
+    "birthdate": "2003-10-16",
+    "nationality": "Costa Rican",
+    "language": "Swati",
+    "locale": "Locale.EN",
+    "blood_type": "B−",
+    "height": 1.75,
+    "weight": 83,
+    "university": "Clayton State University",
+    "academic_degree": "PhD",
+    "title": "M.D.",
+    "occupation": "Aeronautical Engineer",
+    "political_views": "Liberal",
+    "worldview": "Pantheism"
+  }
 ```
 
-Sample output:
+The above users were not present in the JSON file before, and have been added after the publisher was triggered with the new `persons.csv` file.
 
-![Sample output for execution list](https://docs.tabsdata.com/latest/_images/transf_trx.png)
+This implies that after executing the publisher with the new input data, changes percolated downstream. In a real world environment, this would ensure that all the teams within an organization are looking at the same version of data.
+
+Important: If for any reason, the downstream team wishes to subscribe to the older version of the table, then can use simple Table commits syntax in Tabsdata to do that. You can read more about it in the Tabsdata documentation.
+
 
 **Mission Accomplished!!**
 
-We have successfully created a publisher and a subscriber, registered them with a Tabsdata collection, triggered the functions successfully, and verified the output.
+We have successfully implemented a Pub/Sub for Tables using Tabsdata. We published the data from a CSV file as a table after selecting certain columns from it. We then subscribed to the resultant table. We also automated data engineering by automatically updating the output data whenever the input data changed.
 
 
 ## Next Steps:
 
 For the next step, here are a couple of experiements you can try:
 
-* Make some changes to the ``persons.csv`` file and trigger the publisher again. You should see the changes reflected in ``persons_t1_output.jsonl`` once both the publisher and subscriber have finished executing. 
-* Make some changes in the publisher code to modify the columns filtered by the publisher, for example, dropping one more column or one less. After making the changes, trigger the publisher. You should see the changes reflected in ``persons_t1_output.jsonl`` output file.
-* Add a Tabsdata [transformer](https://docs.tabsdata.com/latest/guide/04_working_with_functions/working_with_transformers/main.html) in the mix. Perform complex transformations on ``persons_t1`` table using a Tabsdata tranformer, and connect the output table from the transformer to a subscriber.
+* Add a Tabsdata [transformer](https://docs.tabsdata.com/latest/guide/04_working_with_functions/working_with_transformers/main.html) in the mix. Perform complex transformations on ``CUSTOMER_LEADS`` table using a Tabsdata tranformer, and connect the output table from the transformer to a subscriber.
 * Read files from and write files to different external systems beyond local file system. You can read more about them [here](https://docs.tabsdata.com/latest/guide/supported_sources_and_destinations/main.html).
 
 
