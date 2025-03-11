@@ -12,6 +12,6 @@ import tabsdata as td
 def publish_customers(tf: td.TableFrame):
     
     # Drop columns from the input file before publishing to Tabsdata.
-    tf = tf.select(["identifier","gender","nationality","language","occupation"])
+    tf = tf.select(["IDENTIFIER", "GENDER", "NATIONALITY", "LANGUAGE", "OCCUPATION"])
 
     return tf

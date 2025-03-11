@@ -83,7 +83,7 @@ publisher.py
 subscriber.py
 ```
 
-Here the folders `input` and `input_02` contain the `customers.csv` file that serve as input files for our tutorial. We'll start by using the file in the `input` folder. Towards the end of the tutorial, we'll use the one in `input_02`. Python source files - `publisher.py` and `subscriber.py` - contain the publisher and subscriber functions. Feel free to take a peak at them, they are pretty straightforward.
+Here the folders `input` and `input_02` contain the `customers.csv` file that serve as input files for our tutorial. We'll start by using the file in the `input` folder. Towards the end of the tutorial, we'll use the one in `input_02`. Python source files - `publisher.py` and `subscriber.py` - contain the publisher and subscriber functions. Feel free to take a peak at them - they are pretty straightforward.
 
 ## 5. Login to the Tabsdata server
 
@@ -113,7 +113,7 @@ td fn trigger --collection CUSTOMERS --name publish_customers
 
 In the above commands you are first registering the function `publish_customers` with the Tabsdata collection and then triggering its execution. You can read more about these steps in the [Tabsdata documentation](https://docs.tabsdata.com/latest/guide/04_working_with_functions/main_1.html).
 
-The Tabsdata function `publish_customers` reads the `customers.csv` file from the source system, selects certain columns from it, and writes the data as a table in the `CUSTOMERS` collection as a table called `CUSTOMER_LEADS`. The function is defined in the `publisher.py` file in the working directory, with the following Python code:
+The Tabsdata function `publish_customers` reads the `customers.csv` file from the local file system, selects certain columns from it, and writes the data as a table in the `CUSTOMERS` collection as a table called `CUSTOMER_LEADS`. The function is defined in the `publisher.py` file in the working directory, with the following Python code:
 
 ```
 @td.publisher(
@@ -130,9 +130,7 @@ where,
 
 **source** defines the location of the file.
 
-**tables** defines the name of the table (`CUSTOMER_LEADS`) created in the `CUSTOMERS` collection.
-
-In this example, we drop the columns related to personally identifiable information, before publishing the data to Tabsdata. Dropping columns is one of the many operations supported on the tables. Many projections, filters, aggregation, and join functions are also supported. Full list can be found in the [documentation](https://docs.tabsdata.com/latest/guide/06_working_with_tables/table_frame_1.html#table-operations).
+**tables** defines the name of the table (`CUSTOMER_LEADS`) to be created by the publisher.
 
 
 **Check the Publisher Output:**
@@ -153,14 +151,14 @@ td table sample --collection CUSTOMERS --name CUSTOMER_LEADS
 
 # Step 3: Subscribing to the Table in Tabsdata
 
-Now that the customer data, is available in the Tabsdata system as a table, it’s ready for subscription. For instance, if the sales team requests customer data in JSON list format for their SaaS software, you can simply point them to the `CUSTOMER_LEADS` table in Tabsdata. They can then subscribe to this table to receive the data. To simulate this process and subscribe to the `CUSTOMER_LEADS` table, run the following CLI commands from your working directory:
+Now that the customer data is available in the Tabsdata system as a table, it’s ready for subscription. For instance, if the sales team requests customer data in JSON list format for their SaaS software, you can simply point them to the `CUSTOMER_LEADS` table in Tabsdata. They can then subscribe to this table to receive the data. To simulate this process and subscribe to the `CUSTOMER_LEADS` table, run the following CLI commands from your working directory:
 
 ```
 td fn register --collection CUSTOMERS --fn-path subscriber.py::subscribe_customers
 td fn trigger --collection CUSTOMERS --name subscribe_customers
 ```
 
-In the above commands you are first registering the function `subscribe_customers` with the Tabsdata collection and then triggering its execution. You can read more about these steps in the Tabsdata documentation.
+In the above commands you are first registering the function `subscribe_customers` with the Tabsdata collection and then triggering its execution. You can read more about these steps in the [Tabsdata documentation](https://docs.tabsdata.com/latest/guide/04_working_with_functions/main_1.html).
 
 The Tabsdata function `subscribe_customers` reads the `CUSTOMER_LEADS` table from Tabsdata, and writes it as `customer_leads.jsonl` in the local file system. It is defined in the `subscriber.py` file in the working directory, with the following Python code:
 
@@ -175,7 +173,9 @@ def subscribe_customers(tf: td.TableFrame):
 ```
 
 where,
-**tables** defines the name of the table [`CUSTOMER_LEADS`] to be read from the Tabsdata collection.
+
+**tables** defines the name of the table ()`CUSTOMER_LEADS`) to be read from the Tabsdata collection.
+
 **destination** parameter defines the path to the folder, the file name, and the file format, to be written by the subscriber.
 
 **Check the Subscriber Output:**
@@ -227,13 +227,15 @@ Here is some sample data from `customer_leads.jsonl`:
   }
 ```
 
-Only the selected columns from the `customers.csv` have been exported, and the `jsonl` file is ready for consumption.
+As you see from the output file, only the columns selected from the `customers.csv` defined in `publisher.py` file have been exported, and the `jsonl` file is ready for consumption.
 
 # Step 4: Automate Data Engineering
 
 What happens when there is an update in your input data? How do you update the data used by the downstream users?
 
-Let’s say there is an update in your CSV file, and the `gender_code` column stops being in the raw CSV files. For the purposes of this example, you can download the new `customers.csv` from here and replace the one in your working directory.
+Let’s say there is an update in your CSV file, and 10 new customers get added to the CSV file. The `customers.csv` file in the `input_02` folder presents one such scenario. The file has 10 new customers in addition to the customers present in the `customers.csv` file in the `input` folder.
+
+To simulate the new customers data being available as input, you need to replace the `customers.csv` file in the `input` folder with the one in `input_02`. Now, the `customers.csv` in the `input` folder would also have the data of 10 new customers.
 
 Once the new input file is available, you just need to execute the publisher `publish_customers` using the command below to update the data files used by the downstream users.
 
@@ -301,12 +303,12 @@ Important: If for any reason, the downstream team wishes to subscribe to the old
 
 **Mission Accomplished!!**
 
-We have successfully implemented a Pub/Sub for Tables using Tabsdata. We published the data from a CSV file as a table after selecting certain columns from it. We then subscribed to the resultant table. We also automated data engineering by automatically updating the output data whenever the input data changed.
+We have successfully implemented a Pub/Sub for Tables using Tabsdata. We published the data from a CSV file as a table after selecting certain columns from it. We then subscribed to the resultant table. We also automated data engineering by automatically updating the output data when the input data changed.
 
 
 ## Next Steps:
 
-For the next step, here are a couple of experiements you can try:
+For the next steps, here are a couple of experiements you can try:
 
 * Add a Tabsdata [transformer](https://docs.tabsdata.com/latest/guide/04_working_with_functions/working_with_transformers/main.html) in the mix. Perform complex transformations on ``CUSTOMER_LEADS`` table using a Tabsdata tranformer, and connect the output table from the transformer to a subscriber.
 * Read files from and write files to different external systems beyond local file system. You can read more about them [here](https://docs.tabsdata.com/latest/guide/supported_sources_and_destinations/main.html).
