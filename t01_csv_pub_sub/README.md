@@ -171,7 +171,7 @@ def subscribe_customers(tf: td.TableFrame):
 
 where,
 
-**tables** defines the name of the table ()`CUSTOMER_LEADS`) to be read from the Tabsdata collection.
+**tables** defines the name of the table (`CUSTOMER_LEADS`) to be read from the Tabsdata collection.
 
 **destination** parameter defines the path to the folder, the file name, and the file format, to be written by the subscriber.
 
@@ -295,10 +295,10 @@ The above users were not present in the JSON file before, and have been added af
 
 This implies that after executing the publisher with the new input data, changes percolated downstream. In a real world environment, this would ensure that all the teams within an organization are looking at the same version of data.
 
-Important: If for any reason, the downstream team wishes to subscribe to the older version of the table, then can use simple Table commits syntax in Tabsdata to do that. You can read more about it in the Tabsdata documentation.
+**Note:** If for any reason, the downstream team wishes to subscribe to the older version of the table, then can use simple Table commits syntax in Tabsdata to do that. You can read more about it in the Tabsdata documentation.
 
 
-**Mission Accomplished!!**
+### Mission Accomplished!!
 
 We have successfully implemented a Pub/Sub for Tables using Tabsdata. We published the data from a CSV file as a table after selecting certain columns from it. We then subscribed to the resultant table. We also automated data engineering by automatically updating the output data when the input data changed.
 
