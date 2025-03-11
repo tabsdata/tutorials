@@ -140,11 +140,16 @@ To check the schema of the table in Tabsdata, run this command in your CLI:
 td table schema --collection CUSTOMERS --name CUSTOMER_LEADS
 ```
 
+Output:
+![schema](assets/table_schema.png)
+
 To check the sample of the table in Tabsdata, run this command in your CLI:
 
 ```
 td table sample --collection CUSTOMERS --name CUSTOMER_LEADS
 ```
+Output:
+![schema](assets/table_sample.png)
 
 # Step 3: Subscribing to the Table in Tabsdata
 
