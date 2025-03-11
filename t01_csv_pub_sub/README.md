@@ -4,8 +4,6 @@ We'll start by setting up the system and creating a publisher that reads data fr
 
 In a real-world scenario, your data source could be a database, an S3 bucket, or another storage location, while the subscriber could write data to various endpoints such as a database or file system.
 
-To achieve this, we will be using a Python IDE and CLI to work with the Tabsdata system and various Tabsdata functions.
-
 Through this article you will understand how Tabsdata can help you
 
 * connect with external systems with ease through our built-in connectors, and
