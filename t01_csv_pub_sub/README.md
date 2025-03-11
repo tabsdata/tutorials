@@ -141,15 +141,18 @@ td table schema --collection CUSTOMERS --name CUSTOMER_LEADS
 ```
 
 Output:
-![schema](assets/table_schema.png)
+
+<img src="./assets/table_schema.png" alt="Schema" width="300">
 
 To check the sample of the table in Tabsdata, run this command in your CLI:
 
 ```
 td table sample --collection CUSTOMERS --name CUSTOMER_LEADS
 ```
+
 Output:
-![schema](assets/table_sample.png)
+
+<img src="./assets/table_sample.png" alt="Sample" height="300">
 
 # Step 3: Subscribing to the Table in Tabsdata
 
