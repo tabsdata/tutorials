@@ -103,11 +103,7 @@ README file.
 Before you can use Tabsdata, you must login to the server which can be done as follows:
 
 ```
-td login localhost --user admin
-```
-When prompted for password please put:
-```
-tabsdata
+td login localhost --user admin --password tabsdata
 ```
 
 ## Step 2: Publishing the input CSV as a table
