@@ -79,9 +79,12 @@ input_02/
 |__ customers.csv
 publisher.py
 subscriber.py
+assets/
+|_table_sample.png 
+|_table_schema.png
 ```
 
-Here the folders `input` and `input_02` contain the `customers.csv` file that serve as input files for our tutorial. We'll start by using the file in the `input` folder. Towards the end of the tutorial, we'll use the one in `input_02`. Python source files - `publisher.py` and `subscriber.py` - contain the publisher and subscriber functions. Feel free to take a peak at them - they are pretty straightforward.
+Here the folders `input` and `input_02` contain the `customers.csv` file that serve as input files for our tutorial. We'll start by using the file in the `input` folder. Towards the end of the tutorial, we'll use the one in `input_02`. Python source files - `publisher.py` and `subscriber.py` - contain the publisher and subscriber functions. Feel free to take a peak at them - they are pretty straightforward. The assets folder is to hold some image assets for the README file.
 
 ## 5. Login to the Tabsdata server
 
