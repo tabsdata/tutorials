@@ -73,7 +73,7 @@ README.md
 input/
 |__ customers.csv
 input_02/
-|__ customers.csv
+|__ customers_new.csv
 publisher.py
 subscriber.py
 assets/
@@ -81,7 +81,7 @@ assets/
 |_table_schema.png
 ```
 
-Here the folders `input` and `input_02` contain the `customers.csv` file that serve as input files for our tutorial. We'll start by using the file in the `input` folder. Towards the end of the tutorial, we'll use the one in `input_02`. Python source files - `publisher.py` and `subscriber.py` - contain the publisher and subscriber functions. Feel free to take a peak at them - they are pretty straightforward. The assets folder is to hold some image assets for the README file.
+Here the folders `input` and `input_02` contain the `customers.csv` and `custoemrs_new.csv` files respectively that serve as input files for our tutorial. We'll start by using the file in the `input` folder. Towards the end of the tutorial, we'll use the file in `input_02`. Python source files - `publisher.py` and `subscriber.py` - contain the publisher and subscriber functions. Feel free to take a peak at them - they are pretty straightforward. The assets folder is to hold some image assets for the README file.
 
 ## 5. Login to the Tabsdata server
 
@@ -215,7 +215,7 @@ Here are details of 3 of these new customers from the 20 who have been added:
 
 <br/>
 
-**Important:** To simulate the new customers data being available as input, you need to replace the `customers.csv` file in the `input` folder with the one in `input_02`. With this the `customers.csv` in the `input` folder would also have the data of 20 new customers.
+**Important:** To simulate the new customers data being available as input, you need to replace the `customers.csv` file in the `input` folder with the `customers_new.csv` file in `input_02` and rename the it to `customers.csv`. With this, the new `customers.csv` in the `input` folder would have the data of 20 new customers.
 
 Once the new input file is available, you just need to execute the publisher `publish_customers` using the command below to update the data files used by the downstream users.
 
