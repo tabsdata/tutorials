@@ -144,6 +144,8 @@ Output:
 
 <img src="./assets/table_schema.png" alt="Schema" width="300">
 
+The columns `$td.id` and `$td.src` are internal columns created by Tabsdata to track row level lineage and provenance of data.
+
 To check the sample of the table in Tabsdata, run this command in your CLI:
 
 ```
