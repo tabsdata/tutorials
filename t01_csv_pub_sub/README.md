@@ -1,6 +1,6 @@
 In this tutorial, we’ll explore how Tabsdata enables Pub/Sub for Tables.
 
-We'll start by setting up the system and creating a publisher that reads data from a CSV file called `customers.csv` stored in an input directory in the local file system. This data will be published as a table called CUSTOMER_LEADS within a collection called CUSTOMERS. Collections are containers for related tables in Tabsdata, to make data organization and management more efficient. On the subscriber side, we'll set up a subscriber that reads data from this table and writes it to an output directory in the local file system. 
+We'll start by setting up the system and creating a publisher that reads data from a CSV file called `customers.csv` stored in an input directory in the local file system. This data will be published as a table called `CUSTOMER_LEADS` within a collection called `CUSTOMERS`. Collections are containers for related tables in Tabsdata, to make data organization and management more efficient. On the subscriber side, we'll set up a subscriber that reads data from this table and writes it to an output directory in the local file system. 
 
 In a real-world scenario, your data source could be a database, an S3 bucket, or another storage location, while the subscriber could write data to various endpoints such as a database or file system.
 
