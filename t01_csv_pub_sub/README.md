@@ -55,11 +55,11 @@ gh repo clone tabsdata/tutorials
 
 ### 1.4 Setting up directory path for referencing files
 
-In this tutorial, our data source is a CSV file on our file system in a particular input directory. Similarly, our
+In this tutorial, our data source for the publisher is a CSV file on our file system in a particular input directory. Similarly, our
 table subscriber will capture the table data in a JSON format file in a particular output directory.
 
 For convenience we will use an environment variable called `TDX` for referencing the input and output location used
-by the publisher and subscriber functions. Before we can do that, let's setup this variable to point to the base
+by the publisher and subscriber functions. To do that, let's setup this variable to point to the base
 directory of this tutorial. You can do this using the appropriate commands from below:
 
 For Linux or macOS:
@@ -92,8 +92,7 @@ assets/
 |_table_schema.png
 ```
 
-Here the folder `input` contains two files `customers_01.csv` and `customers_02.csv` that serve as input files. To begin, we'll duplicate `customers_01.csv` as `customers.csv` within the `input` folder, to be used by the publisher function. Later we will replace the `customers.csv` file with `customers_02.csv` by overwriting it to demonstrate that the newly published
-data is automatically delivered to the subscriber.
+Here the folder `input` contains two files `customers_01.csv` and `customers_02.csv` that serve as input files. To begin with, we'll duplicate `customers_01.csv` as `customers.csv` within the `input` folder, to be used by the publisher function. Later we will replace the `customers.csv` file with `customers_02.csv` by overwriting it to demonstrate another core functionality of the system.
 
 There are two Python source files - `publisher.py` and `subscriber.py` - which contain the publisher and subscriber
 functions. Feel free to take a peak at them - they are pretty straightforward. The assets folder has images for this
@@ -104,9 +103,12 @@ README file.
 Before you can use Tabsdata, you must login to the server which can be done as follows:
 
 ```
-td login localhost --user admin --password tabsdata
+td login localhost --user admin
 ```
-
+When prompted for password please put:
+```
+tabsdata
+```
 
 ## Step 2: Publishing the input CSV as a table
 
