@@ -8,12 +8,6 @@ Finally, we'll implement automated data engineering using Tabsdata to streamline
 
 In a real-world scenario, your data source could be a database, an S3 bucket, or another storage location, while the subscriber could write data to various endpoints such as a database or file system.
 
-Through this article you will understand how Tabsdata
-
-* connects with external systems with ease through our built-in connectors, 
-* processes data as tables when defining Tabsdata functions, and
-* automates data engineering.
-
 Let’s dive in! We’ll start by setting up the system to prepare us to work with the Tabsdata functions.
 
 # Step 1. Setting up the system
