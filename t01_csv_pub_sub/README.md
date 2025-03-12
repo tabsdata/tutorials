@@ -2,9 +2,9 @@
 
 In this tutorial, we’ll explore how Tabsdata enables Pub/Sub for Tables.
 
-We will start by setting up the Tabsdata server and registering a publisher that reads data from a CSV file, selects
+We will start by setting up Tabsdata and registering a publisher that reads data from a CSV file, selects
 some aspects of it, and publishes it as a table within the system. Following that, we will register a subscriber that
-subscribes to this published table, and exports it to the file system in a JOSN lines format. We will then demonstrate
+subscribes to this published table, and exports it to the file system in a JSON format. We will then demonstrate
 that when the publisher is rerun to load new data, the subscriber automatically receives it in their external system.
 
 In a real-world scenario, your data source could be a database, an S3 bucket, or another storage location, while the 
@@ -39,18 +39,24 @@ To verify that the Tabsdata server instance is running:
 tdserver status
 ```
 
-### 1.3 Copy the github repo
+### 1.3 Copy the GitHub repo
 
-If you haven't already, copy the github repo to your system.
+If you haven't already, copy the GitHub repo to your system.
 
+SSH:
 ```
-git clone https://github.com/tabsdata/tutorials
+git clone git@github.com:tabsdata/tutorials.git
+```
+
+GitHub CLI:
+```
+gh repo clone tabsdata/tutorials
 ```
 
 ### 1.4 Setting up directory path for referencing files
 
 In this tutorial, our data source is a CSV file on our file system in a particular input directory. Similarly, our
-table subscriber will use capture the table data in a JSON line format file in a particular output directory.
+table subscriber will capture the table data in a JSON format file in a particular output directory.
 
 For convenience we will use an environment variable called `TDX` for referencing the input and output location used
 by the publisher and subscriber functions. Before we can do that, let's setup this variable to point to the base
@@ -72,7 +78,7 @@ cd t01_csv_pub_sub
 set TDX=%CD%
 ```
 
-If you run an `ls` on `t01_csv_pub_sub` you would see the following files and folders:
+If you run an `ls` (for Linux or macOS) or `dir` (Windows) on `t01_csv_pub_sub` you would see the following files and folders:
 
 ```
 README.md
@@ -86,9 +92,7 @@ assets/
 |_table_schema.png
 ```
 
-Here the folder `input` contains two files `customers_01.csv` and `customers_02.csv` that serve as input files. In
-order to use these files, we will copy them over to `input/customers.csv` which will be used by the publisher function.
-Later we will replace this file by `customers_02.csv` by overwriting it to demonstrate that the newly published
+Here the folder `input` contains two files `customers_01.csv` and `customers_02.csv` that serve as input files. To begin, we'll duplicate `customers_01.csv` as `customers.csv` within the `input` folder, to be used by the publisher function. Later we will replace the `customers.csv` file with `customers_02.csv` by overwriting it to demonstrate that the newly published
 data is automatically delivered to the subscriber.
 
 There are two Python source files - `publisher.py` and `subscriber.py` - which contain the publisher and subscriber
@@ -121,8 +125,8 @@ it read the CSV file and publish it to a table within Tabsdata.
 
 ### 2.1 Creating a collection
 
-In order to register our first publisher, we must create a collection. By default there are no collections within
-Tabsdata unless you create one. You can see this by running the following command:
+In order to register our first publisher, we must create a collection. By default there are no collections within a 
+Tabsdata server until you create one. You can see this by running the following command:
 
 ```
 td collection list
@@ -162,7 +166,7 @@ def publish_customers(tf: td.TableFrame):
 ```
 
 Here the `@td.publisher` decorator defines the following metadata:
-* Data will be read from a a local file located at `$TDX/input/customers.csv`
+* Data will be read from a local file located at `$TDX/input/customers.csv`
 * And the output of this function will be publised as a table called `CUSTOMER_LEADS`
 
 The function definition is very simple in this case with the following details:
@@ -207,7 +211,7 @@ cp $TDX/input/customers_01.csv $TDX/input/customers.csv
 
 For Windows:
 ```
-copy $TDX\input\customers_01.csv $TDX\input\customers.csv
+copy %TDX%\input\customers_01.csv %TDX%\input\customers.csv
 ```
 
 With this input CSV file now in place, let's trigger our publisher. This can be done using the following command:
@@ -324,7 +328,7 @@ ls $TDX/output
 
 For Windows:
 ```
-dir $TDX\output
+dir %TDX%\output
 ```
 
 
@@ -388,7 +392,7 @@ cp $TDX/input/customers_02.csv $TDX/input/customers.csv
 
 For Windows:
 ```
-copy $TDX\input\customers_02.csv $TDX\input\customers.csv
+copy %TDX%\input\customers_02.csv %TDX%\input\customers.csv
 ```
 
 This will overwrite the `customers.csv` file that was previously copied from `customers_01.csv` file for our first
@@ -406,7 +410,7 @@ cp $TDX/output/customer_leads.jsonl $TDX/output/customer_leads_01.jsonl
 
 For Windows:
 ```
-copy $TDX\output\customer_leads.jsonl $TDX\output\customer_leads_01.jsonl
+copy %TDX%\output\customer_leads.jsonl %TDX%\output\customer_leads_01.jsonl
 ```
 
 ## 4.3 Trigger the pub/sub workflow
@@ -467,5 +471,5 @@ For the next steps, here are a couple of experiements you can try:
 I hope this gave you a good introduction to the Tabsdata system! I'd love to hear your thoughts—let us know how we can
 improve, what use cases you'd like us to cover in future blogs, or any other questions or feedback you have. Join the
 conversation on [Discord](https://discord.gg/XRC5XZWppc),
-[Github Discussions](https://github.com/tabsdata/tabsdata/discussions) or reach out to us
+[GitHub Discussions](https://github.com/tabsdata/tabsdata/discussions) or reach out to us
 [here](https://www.tabsdata.com/contact).
