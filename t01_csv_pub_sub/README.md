@@ -214,6 +214,8 @@ Here are details of 3 of these new customers from the 20 who have been added:
 | 92-54/93     | Perry       | Herman  | Amina        | Montgomery| Lory Justice      | Other  | 0            | ♀               | Female | +1-817-696-6699| +1-213-091-1513 | dynamic2052@duck.com          | 2018-12-24 | Salvadorian  | Greek     | Locale.EN  | B+          | 1.66   | 42     | University of South Florida (USF)                   | Bachelor           | B.Sc  | Town Planner           | Libertarian        | Secular humanism    | excitement_1908      | ]X4&n9yn     |
 
 
+
+
 To simulate the new customers data being available as input, you need to replace the `customers.csv` file in the `input` folder with the one in `input_02`. Now, the `customers.csv` in the `input` folder would also have the data of 20 new customers.
 
 Once the new input file is available, you just need to execute the publisher `publish_customers` using the command below to update the data files used by the downstream users.
