@@ -43,12 +43,12 @@ tdserver status
 
 If you haven't already, copy the GitHub repo to your system.
 
-SSH:
+Using SSH:
 ```
 git clone git@github.com:tabsdata/tutorials.git
 ```
 
-GitHub CLI:
+Using GitHub CLI:
 ```
 gh repo clone tabsdata/tutorials
 ```
