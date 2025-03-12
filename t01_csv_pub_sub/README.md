@@ -10,7 +10,7 @@ that when the publisher is rerun to load new data, the subscriber automatically 
 In a real-world scenario, your data source could be a database, an S3 bucket, or another storage location, while the 
 subscriber could write data to various endpoints such as a database or file system.
 
-Let’s dive in! We’ll start by setting up the system to prepare us to work with the Tabsdata functions.
+Let’s dive in!
 
 ## Step 1. Setting up the system
 
