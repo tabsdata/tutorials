@@ -355,11 +355,11 @@ present in the `customers_01.csv` file that we loaded via the publisher when we 
 
 Here are details of 3 new customers from the 20 who have been added:
 
-| IDENTIFIER | NAME       | SURNAME | FIRST_NAME | LAST_NAME | FULL_NAME       | GENDER | GENDER_CODE | GENDER_SYMBOL | SEX    | PHONE_NUMBER  | TELEPHONE      | EMAIL                          | BIRTHDATE  | NATIONALITY | LANGUAGE | LOCALE    | BLOOD_TYPE | HEIGHT | WEIGHT | UNIVERSITY                                         | ACADEMIC_DEGREE | TITLE | OCCUPATION           | POLITICAL_VIEWS | WORLDVIEW          | USERNAME          | PASSWORD     |
-|-------------|------------|---------|-------------|-----------|------------------|--------|--------------|----------------|--------|----------------|-----------------|-------------------------------|------------|--------------|-----------|------------|-------------|--------|--------|-----------------------------------------------------|------------------|-------|----------------------|------------------|---------------------|--------------------|--------------|
-| 21-12/62     | Dakota      | Baxter  | Louetta      | Myers     | Tracy Ball        | Other  | 1            | ♂               | Female | +12272974320   | +16146882188    | drainage2086@duck.com         | 2022-11-04 | Swiss        | Zulu      | Locale.EN  | A+          | 1.79   | 38     | Western Connecticut State University (WCSU)        | PhD               | Mr.   | Medical Technician     | Moderate          | Pantheism           | networks_1867       | Gvwp+R+N     |
-| 97-89/11     | Christinia  | Espinoza| Elden        | Alvarado  | Gerald Wolfe      | Female | 0            | ⚲               | Other  | +1-402-266-2114| +1-479-878-9781 | livestock1811@example.org     | 2014-05-09 | Dominican    | Yiddish   | Locale.EN  | A+          | 1.80   | 74     | Florida Gulf Coast University (FGCU)               | PhD               | Ms.   | Maid                  | Socialist          | Atheism             | throw_1882          | }&<h*EYp     |
-| 92-54/93     | Perry       | Herman  | Amina        | Montgomery| Lory Justice      | Other  | 0            | ♀               | Female | +1-817-696-6699| +1-213-091-1513 | dynamic2052@duck.com          | 2018-12-24 | Salvadorian  | Greek     | Locale.EN  | B+          | 1.66   | 42     | University of South Florida (USF)                   | Bachelor           | B.Sc  | Town Planner           | Libertarian        | Secular humanism    | excitement_1908      | ]X4&n9yn     |
+| IDENTIFIER | NAME       | GENDER | EMAIL                        | BIRTHDATE | NATIONALITY | LANGUAGE | BLOOD_TYPE | HEIGHT | WEIGHT | UNIVERSITY                            | ACADEMIC_DEGREE | TITLE | OCCUPATION         |
+|-------------|------------|--------|-----------------------------|------------|--------------|-----------|-------------|--------|--------|----------------------------------------|------------------|-------|---------------------|
+| 21-12/62     | Louetta M   | Female | drainage2086@duck.com       | 4-Nov      | Swiss        | Zulu      | A+          | 1.79   | 38     | Western Connecticut State University (WCSU) | PhD              | Mr.   | Medical Technician  |
+| 97-89/11     | Elden A     | Female | livestock1811@example.org   | 9-May      | Dominican    | Yiddish   | A+          | 1.8    | 74     | Florida Gulf Coast University (FGCU)  | PhD              | Ms.   | Professor            |
+| 92-54/93     | Amina M     | Female | dynamic2052@duck.com        | 24-Dec     | Salvadorian  | Greek     | B+          | 1.66   | 42     | University of South Florida (USF)     | Bachelor          | B.Sc  | Town Planner         |
 
 <br/>
 
@@ -410,9 +410,9 @@ Once the publisher has been executed, you can check the `customer_leads.jsonl` f
 Here is some sample data from the new `customer_leads.jsonl`:
 
 ```
-{"IDENTIFIER":"21-12/62","GENDER":"Other","NATIONALITY":"Swiss","LANGUAGE":"Zulu","OCCUPATION":"Medical Technician"}
-{"IDENTIFIER":"97-89/11","GENDER":"Female","NATIONALITY":"Dominican","LANGUAGE":"Yiddish","OCCUPATION":"Maid"}
-{"IDENTIFIER":"92-54/93","GENDER":"Other","NATIONALITY":"Salvadorian","LANGUAGE":"Greek","OCCUPATION":"Town Planner"}
+{"IDENTIFIER":"21-12/62","GENDER":"Female","NATIONALITY":"Swiss","LANGUAGE":"Zulu","OCCUPATION":"Medical Technician"}
+{"IDENTIFIER":"97-89/11","GENDER":"Female","NATIONALITY":"Dominican","LANGUAGE":"Yiddish","OCCUPATION":"Professor"}
+{"IDENTIFIER":"92-54/93","GENDER":"Female","NATIONALITY":"Salvadorian","LANGUAGE":"Greek","OCCUPATION":"Town Planner"}
 ```
 
 The above users were not present in the JSON file before, and have been added after the publisher was triggered with
