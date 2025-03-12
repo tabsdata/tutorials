@@ -192,46 +192,9 @@ Once executed, the subscriber would have generated the output file `customer_lea
 Here is some sample data from `customer_leads.jsonl`:
 
 ```
-  {
-    "identifier": "74-93/03",
-    "gender": "Male",
-    "gender_code": 0,
-    "gender_symbol": "♀",
-    "sex": "Male",
-    "birthdate": "1985-10-11",
-    "nationality": "Portuguese",
-    "language": "Italian",
-    "locale": "Locale.EN",
-    "blood_type": "O−",
-    "height": 1.59,
-    "weight": 57,
-    "university": "Clayton State University",
-    "academic_degree": "Master",
-    "title": "Sir",
-    "occupation": "Hod Carrier",
-    "political_views": "Liberal",
-    "worldview": "Atheism"
-  }
-  {
-    "identifier": "68-52/94",
-    "gender": "Female",
-    "gender_code": 9,
-    "gender_symbol": "♀",
-    "sex": "Other",
-    "birthdate": "2003-10-16",
-    "nationality": "Costa Rican",
-    "language": "Swati",
-    "locale": "Locale.EN",
-    "blood_type": "B−",
-    "height": 1.75,
-    "weight": 83,
-    "university": "Clayton State University",
-    "academic_degree": "PhD",
-    "title": "M.D.",
-    "occupation": "Aeronautical Engineer",
-    "political_views": "Liberal",
-    "worldview": "Pantheism"
-  }
+{"IDENTIFIER":"74-93/03","GENDER":"Male","NATIONALITY":"Portuguese","LANGUAGE":"Italian","OCCUPATION":"Hod Carrier"}
+{"IDENTIFIER":"68-52/94","GENDER":"Female","NATIONALITY":"Costa Rican","LANGUAGE":"Swati","OCCUPATION":"Aeronautical Engineer"}
+{"IDENTIFIER":"37-41/89","GENDER":"Male","NATIONALITY":"Cuban","LANGUAGE":"Luxembourgish","OCCUPATION":"Telex Operator"}
 ```
 
 As you see from the output file, only the columns selected from the `customers.csv` defined in `publisher.py` file have been exported, and the `jsonl` file is ready for consumption.
@@ -240,9 +203,19 @@ As you see from the output file, only the columns selected from the `customers.c
 
 What happens when there is an update in your input data? How do you update the data used by the downstream users?
 
-Let’s say there is an update in your CSV file, and 10 new customers get added to the CSV file. The `customers.csv` file in the `input_02` folder presents one such scenario. The file has 10 new customers in addition to the customers present in the `customers.csv` file in the `input` folder.
+Let’s say there is an update in your CSV file, and 20 new customers get added to the CSV file. The `customers.csv` file in the `input_02` folder presents one such scenario. The file has 20 new customers in addition to the customers present in the `customers.csv` file in the `input` folder.
 
-To simulate the new customers data being available as input, you need to replace the `customers.csv` file in the `input` folder with the one in `input_02`. Now, the `customers.csv` in the `input` folder would also have the data of 10 new customers.
+Here are details of these 20 new customers:
+
+| IDENTIFIER | NAME       | SURNAME | FIRST_NAME | LAST_NAME | FULL_NAME       | GENDER | GENDER_CODE | GENDER_SYMBOL | SEX    | PHONE_NUMBER  | TELEPHONE      | EMAIL                          | BIRTHDATE  | NATIONALITY | LANGUAGE | LOCALE    | BLOOD_TYPE | HEIGHT | WEIGHT | UNIVERSITY                                         | ACADEMIC_DEGREE | TITLE | OCCUPATION           | POLITICAL_VIEWS | WORLDVIEW          | USERNAME          | PASSWORD     |
+|-------------|------------|---------|-------------|-----------|------------------|--------|--------------|----------------|--------|----------------|-----------------|-------------------------------|------------|--------------|-----------|------------|-------------|--------|--------|-----------------------------------------------------|------------------|-------|----------------------|------------------|---------------------|--------------------|--------------|
+| 21-12/62     | Dakota      | Baxter  | Louetta      | Myers     | Tracy Ball        | Other  | 1            | ♂               | Female | +12272974320   | +16146882188    | drainage2086@duck.com         | 2022-11-04 | Swiss        | Zulu      | Locale.EN  | A+          | 1.79   | 38     | Western Connecticut State University (WCSU)        | PhD               | Mr.   | Medical Technician     | Moderate          | Pantheism           | networks_1867       | Gvwp+R+N     |
+| 97-89/11     | Christinia  | Espinoza| Elden        | Alvarado  | Gerald Wolfe      | Female | 0            | ⚲               | Other  | +1-402-266-2114| +1-479-878-9781 | livestock1811@example.org     | 2014-05-09 | Dominican    | Yiddish   | Locale.EN  | A+          | 1.80   | 74     | Florida Gulf Coast University (FGCU)               | PhD               | Ms.   | Maid                  | Socialist          | Atheism             | throw_1882          | }&<h*EYp     |
+| 92-54/93     | Perry       | Herman  | Amina        | Montgomery| Lory Justice      | Other  | 0            | ♀               | Female | +1-817-696-6699| +1-213-091-1513 | dynamic2052@duck.com          | 2018-12-24 | Salvadorian  | Greek     | Locale.EN  | B+          | 1.66   | 42     | University of South Florida (USF)                   | Bachelor           | B.Sc  | Town Planner           | Libertarian        | Secular humanism    | excitement_1908      | ]X4&n9yn     |
+| 88-86/07     | Abe         | Leonard | Savanna      | Mercado   | Doria Carrillo    | Female | 0            | ♂               | Male   | +12054533594   | +1-808-018-2386 | cad1976@example.org            | 2007-04-01 | Costa Rican  | Croatian  | Locale.EN  | B+          | 1.52   | 44     | University of California, Santa Barbara (UC Santa Barbara) | PhD     | M.Des  | Tacker                 | Moderate           | Deism                | edges_1941         | bPL^IZb4     |
+
+
+To simulate the new customers data being available as input, you need to replace the `customers.csv` file in the `input` folder with the one in `input_02`. Now, the `customers.csv` in the `input` folder would also have the data of 20 new customers.
 
 Once the new input file is available, you just need to execute the publisher `publish_customers` using the command below to update the data files used by the downstream users.
 
@@ -261,44 +234,9 @@ Once the publisher has been executed, you can check the `customer_leads.jsonl` f
 Here is some sample data from the new `customer_leads.jsonl`:
 
 ```
-  {
-    "identifier": "74-93/03",
-    "gender": "Male",
-    "gender_symbol": "♀",
-    "sex": "Male",
-    "birthdate": "1985-10-11",
-    "nationality": "Portuguese",
-    "language": "Italian",
-    "locale": "Locale.EN",
-    "blood_type": "O−",
-    "height": 1.59,
-    "weight": 57,
-    "university": "Clayton State University",
-    "academic_degree": "Master",
-    "title": "Sir",
-    "occupation": "Hod Carrier",
-    "political_views": "Liberal",
-    "worldview": "Atheism"
-  }
-  {
-    "identifier": "68-52/94",
-    "gender": "Female",
-    "gender_symbol": "♀",
-    "sex": "Other",
-    "birthdate": "2003-10-16",
-    "nationality": "Costa Rican",
-    "language": "Swati",
-    "locale": "Locale.EN",
-    "blood_type": "B−",
-    "height": 1.75,
-    "weight": 83,
-    "university": "Clayton State University",
-    "academic_degree": "PhD",
-    "title": "M.D.",
-    "occupation": "Aeronautical Engineer",
-    "political_views": "Liberal",
-    "worldview": "Pantheism"
-  }
+{"IDENTIFIER":"21-12/62","GENDER":"Other","NATIONALITY":"Swiss","LANGUAGE":"Zulu","OCCUPATION":"Medical Technician"}
+{"IDENTIFIER":"97-89/11","GENDER":"Female","NATIONALITY":"Dominican","LANGUAGE":"Yiddish","OCCUPATION":"Maid"}
+{"IDENTIFIER":"92-54/93","GENDER":"Other","NATIONALITY":"Salvadorian","LANGUAGE":"Greek","OCCUPATION":"Town Planner"}
 ```
 
 The above users were not present in the JSON file before, and have been added after the publisher was triggered with the new `customers.csv` file.
