@@ -213,8 +213,7 @@ Here are details of 3 of these new customers from the 20 who have been added:
 | 97-89/11     | Christinia  | Espinoza| Elden        | Alvarado  | Gerald Wolfe      | Female | 0            | ⚲               | Other  | +1-402-266-2114| +1-479-878-9781 | livestock1811@example.org     | 2014-05-09 | Dominican    | Yiddish   | Locale.EN  | A+          | 1.80   | 74     | Florida Gulf Coast University (FGCU)               | PhD               | Ms.   | Maid                  | Socialist          | Atheism             | throw_1882          | }&<h*EYp     |
 | 92-54/93     | Perry       | Herman  | Amina        | Montgomery| Lory Justice      | Other  | 0            | ♀               | Female | +1-817-696-6699| +1-213-091-1513 | dynamic2052@duck.com          | 2018-12-24 | Salvadorian  | Greek     | Locale.EN  | B+          | 1.66   | 42     | University of South Florida (USF)                   | Bachelor           | B.Sc  | Town Planner           | Libertarian        | Secular humanism    | excitement_1908      | ]X4&n9yn     |
 
-
-
+<br/>
 
 To simulate the new customers data being available as input, you need to replace the `customers.csv` file in the `input` folder with the one in `input_02`. Now, the `customers.csv` in the `input` folder would also have the data of 20 new customers.
 
