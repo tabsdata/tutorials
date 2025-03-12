@@ -1,13 +1,14 @@
 In this tutorial, we’ll explore how Tabsdata enables Pub/Sub for Tables.
 
-We'll start by setting up the system and creating a publisher that reads data from a CSV file called `customers.csv` stored in an input directory in the local file system. This data will be published as a table called `CUSTOMER_LEADS` within a collection called `CUSTOMERS`. Collections are containers for related tables in Tabsdata, to make data organization and management more efficient. On the subscriber side, we'll set up a subscriber that reads data from this table and writes it to an output directory in the local file system. 
+We'll start by setting up the system and creating a publisher that reads data from a CSV file called `customers.csv` stored in an input directory in the local file system and selects certain columns of interest from it. This data will be published as a table called `CUSTOMER_LEADS` within a collection called `CUSTOMERS`. Collections are containers for related tables in Tabsdata, to make data organization and management more efficient. Next, we'll configure a subscriber to read data from this table and write it to an output directory on the local file system. Finally, we'll implement automated data engineering using Tabsdata to streamline the propagation of changes in the input files to downstream users.
 
 In a real-world scenario, your data source could be a database, an S3 bucket, or another storage location, while the subscriber could write data to various endpoints such as a database or file system.
 
-Through this article you will understand how Tabsdata can help you
+Through this article you will understand how Tabsdata
 
-* connect with external systems with ease through our built-in connectors, and
-* process data as tables when defining Tabsdata functions.
+* connects with external systems with ease through our built-in connectors, 
+* processes data as tables when defining Tabsdata functions, and
+* automates data engineering.
 
 Let’s dive in! We’ll start by setting up the system to prepare us to work with the Tabsdata functions.
 
@@ -31,13 +32,11 @@ To start the Tabsdata server, use the following command:
 tdserver start
 ```
 
-
 To verify that the Tabsdata server instance is running:
 
 ```
 tdserver status
 ```
-
 
 ## 3. Copy the github repo
 
