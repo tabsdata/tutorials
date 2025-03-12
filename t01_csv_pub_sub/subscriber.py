@@ -6,7 +6,7 @@ import tabsdata as td
     tables = ["CUSTOMER_LEADS"],
 
     # Absolute system path to the file to be written by the Subscriber.
-    destination = td.LocalFileDestination(os.path.join(os.getenv("TDX"), "output", "CUSTOMER_LEADS.jsonl")),
+    destination = td.LocalFileDestination(os.path.join(os.getenv("TDX"), "output", "customer_leads.jsonl")),
 )
 
 def subscribe_customers(tf: td.TableFrame):
