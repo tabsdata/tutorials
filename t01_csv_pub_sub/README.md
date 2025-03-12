@@ -215,7 +215,7 @@ Here are details of 3 of these new customers from the 20 who have been added:
 
 <br/>
 
-To simulate the new customers data being available as input, you need to replace the `customers.csv` file in the `input` folder with the one in `input_02`. Now, the `customers.csv` in the `input` folder would also have the data of 20 new customers.
+**Important:** To simulate the new customers data being available as input, you need to replace the `customers.csv` file in the `input` folder with the one in `input_02`. With this the `customers.csv` in the `input` folder would also have the data of 20 new customers.
 
 Once the new input file is available, you just need to execute the publisher `publish_customers` using the command below to update the data files used by the downstream users.
 
