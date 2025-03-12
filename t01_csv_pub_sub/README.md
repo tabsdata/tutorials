@@ -1,18 +1,20 @@
+# Tutorial 1: Pre-processing, Publishing and Subscribing a CSV (`t01_csv_pub_sub`)
+
 In this tutorial, we’ll explore how Tabsdata enables Pub/Sub for Tables.
 
-We'll start by setting up the system and creating a publisher that reads data from a CSV file called `customers.csv` stored in an input directory in the local file system and selects certain columns of interest from it. This data will be published as a table called `CUSTOMER_LEADS` within a collection called `CUSTOMERS`. Collections are containers for related tables in Tabsdata, to make data organization and management more efficient. 
+We will start by setting up the Tabsdata server and registering a publisher that reads data from a CSV file, selects
+some aspects of it, and publishes it as a table within the system. Following that, we will register a subscriber that
+subscribes to this published table, and exports it to the file system in a JOSN lines format. We will then demonstrate
+that when the publisher is rerun to load new data, the subscriber automatically receives it in their external system.
 
-Next, we'll configure a subscriber to read data from this table and write it to an output directory on the local file system. 
-
-Finally, we'll implement automated data engineering using Tabsdata to streamline the propagation of changes in the input files to downstream users.
-
-In a real-world scenario, your data source could be a database, an S3 bucket, or another storage location, while the subscriber could write data to various endpoints such as a database or file system.
+In a real-world scenario, your data source could be a database, an S3 bucket, or another storage location, while the 
+subscriber could write data to various endpoints such as a database or file system.
 
 Let’s dive in! We’ll start by setting up the system to prepare us to work with the Tabsdata functions.
 
-# Step 1. Setting up the system
+## Step 1. Setting up the system
 
-## 1.1 Install/Update Tabsdata
+### 1.1 Install/Update Tabsdata
 
 To install/update the Tabsdata Python package, run this command in your CLI:
 
@@ -340,9 +342,10 @@ Here is some sample data from `customer_leads.jsonl`:
 {"IDENTIFIER":"37-41/89","GENDER":"Male","NATIONALITY":"Cuban","LANGUAGE":"Luxembourgish","OCCUPATION":"Telex Operator"}
 ```
 
-As you see from the output file, only the columns selected from the `customers.csv` defined in `publisher.py` file have been exported, and the `jsonl` file is ready for consumption.
+As you see from the output file, only the columns selected from the `customers.csv` defined in `publisher.py` file have
+been exported, and the `jsonl` file is ready for consumption.
 
-# Step 4: Automate Data Engineering
+## Step 4: Automatic execution of dependencies
 
 What happens when there is an update in your input data? How do you update the data used by the downstream users?
 
@@ -359,8 +362,6 @@ Here are details of 3 new customers from the 20 who have been added:
 | 92-54/93     | Perry       | Herman  | Amina        | Montgomery| Lory Justice      | Other  | 0            | ♀               | Female | +1-817-696-6699| +1-213-091-1513 | dynamic2052@duck.com          | 2018-12-24 | Salvadorian  | Greek     | Locale.EN  | B+          | 1.66   | 42     | University of South Florida (USF)                   | Bachelor           | B.Sc  | Town Planner           | Libertarian        | Secular humanism    | excitement_1908      | ]X4&n9yn     |
 
 <br/>
-
-**Important:** To simulate the new customers data being available as input, you need to replace the `customers.csv` file in the `input` folder with the `customers_new.csv` file in `input_02` and rename the it to `customers.csv`. With this, the new `customers.csv` in the `input` folder would have the data of 20 new customers.
 
 ## 4.1 Provisioning new input file
 
