@@ -56,7 +56,7 @@ For convenience we will use an environment variable called `TDX` for referencing
 by the publisher and subscriber functions. Before we can do that, let's setup this variable to point to the base
 directory of this tutorial. You can do this using the appropriate commands from below:
 
-For Linux or MacOS:
+For Linux or macOS:
 
 ```
 cd tutorials
@@ -88,7 +88,7 @@ assets/
 
 Here the folder `input` contains two files `customers_01.csv` and `customers_02.csv` that serve as input files. In
 order to use these files, we will copy them over to `input/customers.csv` which will be used by the publisher function.
-Later we will replace this file by `customers_02.cvs` by overwriting it to demonstrate that the newly published
+Later we will replace this file by `customers_02.csv` by overwriting it to demonstrate that the newly published
 data is automatically delivered to the subscriber.
 
 There are two Python source files - `publisher.py` and `subscriber.py` - which contain the publisher and subscriber
@@ -200,8 +200,14 @@ Before we manually trigger the publisher function, we must make sure that the in
 path. For our first run we will copy the provided sample input file `customers_01.csv` to the input location using
 the following command:
 
+For Linux or macOS:
 ```
 cp $TDX/input/customers_01.csv $TDX/input/customers.csv
+```
+
+For Windows:
+```
+copy $TDX\input\customers_01.csv $TDX\input\customers.csv
 ```
 
 With this input CSV file now in place, let's trigger our publisher. This can be done using the following command:
@@ -311,9 +317,16 @@ the generated output.
 We begin by making sure that there is no output directory present on our system. The following command should error
 out:
 
+For Linux or macOS:
 ```
 ls $TDX/output
 ```
+
+For Windows:
+```
+dir $TDX\output
+```
+
 
 If this directory exists, go ahead and delete it. When the subscribe function is triggerd it will create the necessary
 output directory store the output file.
@@ -368,8 +381,14 @@ Here are details of 3 new customers from the 20 who have been added:
 Before we can demonstrate the automatic execution of this workflow, we must provision the new input file in the correct
 location for the publisher to read and publish it accordingly. This can be done using the following command:
 
+For Linux or macOS:
 ```
 cp $TDX/input/customers_02.csv $TDX/input/customers.csv
+```
+
+For Windows:
+```
+copy $TDX\input\customers_02.csv $TDX\input\customers.csv
 ```
 
 This will overwrite the `customers.csv` file that was previously copied from `customers_01.csv` file for our first
@@ -380,8 +399,14 @@ execution.
 When this new workflow executes, the subscriber will overwrite the output file `$TDX/output/customer_leads.jsonl` with
 new data. Hence, let's create a backup of this file for later comparison using the following command:
 
+For Linux or macOS:
 ```
 cp $TDX/output/customer_leads.jsonl $TDX/output/customer_leads_01.jsonl
+```
+
+For Windows:
+```
+copy $TDX\output\customer_leads.jsonl $TDX\output\customer_leads_01.jsonl
 ```
 
 ## 4.3 Trigger the pub/sub workflow
