@@ -246,7 +246,7 @@ td exec list-trxs
 
 Output:
 
-<img src="./assets/function_pulished.png" alt="Function Published" height="100">
+<img src="./assets/function_published.png" alt="Function Published" height="100">
 
 If the function has finished executing, you will see Published in the status.
 
