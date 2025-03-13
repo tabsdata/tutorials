@@ -234,8 +234,17 @@ With this input CSV file now in place, let's trigger our publisher. This can be 
 td fn trigger --collection CUSTOMERS --name publish_customers
 ```
 
-Once a function is triggerd, a detailed execution plan is created and set in motion by Tabsdata. You can read more
-about this in [Tabsdata documentation](https://docs.tabsdata.com/latest/guide/04_working_with_functions/main_1.html).
+You can see the status whether the functions have finished executing by using the following command:
+
+```
+td exec list-trxs
+```
+
+Output:
+
+<img src="./assets/function_pulished.png" alt="Function Published" height="100">
+
+If the function has finished executing, you will see Published in the status.
 
 
 ### 2.4 Checking the publisher output
