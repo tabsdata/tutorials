@@ -171,7 +171,7 @@ some selected columns of this data to a table. For convenience, we have this fun
 )
 
 def publish_customers(tf: td.TableFrame):
-    tf = tf.select(["IDENTIFIER", "GENDER", "NATIONALITY", "LANGUAGE", "OCCUPATION"])
+    tf = tf.select(["IDENTIFIER", "NATIONALITY", "BLOOD_TYPE", "WEIGHT","ACADEMIC_DEGREE"])
     return tf
 
 ```
