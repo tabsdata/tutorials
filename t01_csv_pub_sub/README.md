@@ -5,7 +5,7 @@ In this tutorial, we’ll explore how Tabsdata enables Pub/Sub for Tables.
 We will start by setting up Tabsdata and registering a publisher that reads data from a CSV file, selects
 some aspects of it, and publishes it as a table within the system. Following that, we will register a subscriber that
 subscribes to this published table, and exports it to the file system in a JSON format. We will then demonstrate
-that when the publisher is rerun to load new data, the subscriber automatically receives it in their external system.
+that when the publisher is rerun to load new data, the subscriber automatically writes it to the external system.
 
 In a real-world scenario, your data source could be a database, an S3 bucket, or another storage location, while the 
 subscriber could write data to various endpoints such as a database or file system.
@@ -38,6 +38,10 @@ To verify that the Tabsdata server instance is running:
 ```
 tdserver status
 ```
+
+Output:
+
+<img src="./assets/tdserver_status.png" alt="Server Status" height="100">
 
 ### 1.3 Copy the GitHub repo
 
@@ -106,6 +110,11 @@ Before you can use Tabsdata, you must login to the server which can be done as f
 td login localhost --user admin --password tabsdata
 ```
 
+Output:
+```
+Login successful.
+```
+
 ## Step 2: Publishing the input CSV as a table
 
 
@@ -143,6 +152,10 @@ more details about this collection using the `info` command as follows:
 ```
 td collection info CUSTOMERS
 ```
+
+Output:
+
+<img src="./assets/collection_info.png" alt="Collection Info" height="100">
 
 ### 2.2 Registering the publisher function
 
@@ -189,6 +202,9 @@ You can now verify that the function was registered successfully by running the 
 ```
 td fn list --collection CUSTOMERS
 ```
+Output:
+
+<img src="./assets/list_function_pulisher.png" alt="Collection Info" height="100">
 
 This should confirm that the function `publish_customers` has been registered within the collection `CUSTOMERS`.
 
