@@ -41,7 +41,9 @@ tdserver status
 
 Output:
 
-<img src="./assets/tdserver_status.png" alt="Server Status" height="100">
+<img src="./assets/tdserver_status.png" alt="Server Status" height="80">
+
+The presence of supervisor and apiserv confirms that the server is running.
 
 ### 1.3 Copy the GitHub repo
 
@@ -157,6 +159,8 @@ Output:
 
 <img src="./assets/collection_info.png" alt="Collection Info" height="100">
 
+This output confirms that the collection called `CUSTOMERS` has been created.
+
 ### 2.2 Registering the publisher function
 
 We will now register a publisher function that reads data from a CSV file on a specific input directory and publishes
@@ -204,9 +208,9 @@ td fn list --collection CUSTOMERS
 ```
 Output:
 
-<img src="./assets/list_function_pulisher.png" alt="Collection Info" height="100">
+<img src="./assets/list_function_pulisher.png" alt="List functions" height="100">
 
-This should confirm that the function `publish_customers` has been registered within the collection `CUSTOMERS`.
+This output confirms that the function `publish_customers` has been registered within the collection `CUSTOMERS`.
 
 
 ### 2.3 Triggering the publisher for the first time
@@ -273,7 +277,7 @@ td table sample --collection CUSTOMERS --name CUSTOMER_LEADS
 
 Output:
 
-<img src="./assets/table_sample.png" alt="Sample" height="300">
+<img src="./assets/table_sample.png" alt="Sample" height="200">
 
 ## Step 3: Subscribing to a published Table in Tabsdata
 
@@ -334,7 +338,7 @@ td fn list --collection CUSTOMERS
 ```
 Output:
 
-<img src="./assets/list_function_both.png" alt="List both functions" height="60">
+<img src="./assets/list_function_both.png" alt="List both functions" height="150">
 
 This should confirm that the `subscribe_customers` has been registered within the collection `CUSTOMERS`.
 
