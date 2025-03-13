@@ -340,7 +340,7 @@ Output:
 
 <img src="./assets/list_function_both.png" alt="List both functions" height="150">
 
-This should confirm that the `subscribe_customers` has been registered within the collection `CUSTOMERS`.
+This output confirms that the `subscribe_customers` has been registered within the collection `CUSTOMERS`.
 
 ### 3.2 Triggering the subscriber for the first time
 
@@ -388,9 +388,9 @@ directory.
 Here is some sample data from `customer_leads.jsonl`:
 
 ```
-{"FIRST_NAME":"Peter","LAST_NAME":"Gutierres","COMPANY_NAME":"Niagara Custombuilt Mfg Co","EMAIL":"peter_gutierres@yahoo.com","WEB":"http://www.niagaracustombuiltmfgco.co.uk"}
-{"FIRST_NAME":"Octavio","LAST_NAME":"Salvadore","COMPANY_NAME":"Practical Periphrals","EMAIL":"octavio.salvadore@yahoo.com","WEB":"http://www.practicalperiphrals.co.uk"}
-{"FIRST_NAME":"Martha","LAST_NAME":"Teplica","COMPANY_NAME":"Curtin, Patricia M Esq","EMAIL":"mteplica@teplica.co.uk","WEB":"http://www.curtinpatriciamesq.co.uk"}
+{"FIRST_NAME":"Peter","LAST_NAME":"Gutierres","COMPANY_NAME":"Niagara Custombuilt Mfg Co","EMAIL":"peter_gutierres@yahoo.com","WEB":"https://www.niagaracustombuiltmfgco.co.uk"}
+{"FIRST_NAME":"Octavio","LAST_NAME":"Salvadore","COMPANY_NAME":"Practical Periphrals","EMAIL":"octavio.salvadore@yahoo.com","WEB":"https://www.practicalperiphrals.co.uk"}
+{"FIRST_NAME":"Martha","LAST_NAME":"Teplica","COMPANY_NAME":"Curtin, Patricia M Esq","EMAIL":"mteplica@teplica.co.uk","WEB":"https://www.curtinpatriciamesq.co.uk"}
 ```
 
 As you see from the output file, only the columns selected from the `customers.csv` defined in `publisher.py` file have
@@ -408,9 +408,9 @@ Here are details of 3 new customers from the 20 who have been added:
 
 | First Name | Last Name  | Company                       | Address         | Ward                              | County         | Postal Code | Phone 1       | Phone 2       | Email                         | Website                                   |
 |-------------|-------------|--------------------------------|------------------|--------------------------------------|----------------|----------------|------------------|------------------|--------------------------------------|------------------------------------------------|
-| Aleshia     | Tomkiewicz | Alan D Rosenburg Cpa Pc       | 14 Taylor St      | St. Stephens Ward                | Kent            | CT2 7PP          | 01835-703597   | 01944-369967   | atomkiewicz@hotmail.com   | [alandrosenburgcpapc.co.uk](http://www.alandrosenburgcpapc.co.uk) |
-| Evan         | Zigomalas     | Cap Gemini America                | 5 Binney St        | Abbey Ward                            | Buckinghamshire | HP11 2AX          | 01937-864715   | 01714-737668   | evan.zigomalas@gmail.com      | [capgeminiamerica.co.uk](http://www.capgeminiamerica.co.uk) |
-| France       | Andrade         | "Elliott, John W Esq"              | 8 Moor Place      | East Southbourne and Tuckton W | Bournemouth     | BH6 3BE          | 01347-368222   | 01935-821636   | france.andrade@hotmail.com    | [elliottjohnwesq.co.uk](http://www.elliottjohnwesq.co.uk) |
+| Aleshia     | Tomkiewicz | Alan D Rosenburg Cpa Pc       | 14 Taylor St      | St. Stephens Ward                | Kent            | CT2 7PP          | 01835-703597   | 01944-369967   | atomkiewicz@hotmail.com   | [alandrosenburgcpapc.co.uk](https://www.alandrosenburgcpapc.co.uk) |
+| Evan         | Zigomalas     | Cap Gemini America                | 5 Binney St        | Abbey Ward                            | Buckinghamshire | HP11 2AX          | 01937-864715   | 01714-737668   | evan.zigomalas@gmail.com      | [capgeminiamerica.co.uk](https://www.capgeminiamerica.co.uk) |
+| France       | Andrade         | "Elliott, John W Esq"              | 8 Moor Place      | East Southbourne and Tuckton W | Bournemouth     | BH6 3BE          | 01347-368222   | 01935-821636   | france.andrade@hotmail.com    | [elliottjohnwesq.co.uk](https://www.elliottjohnwesq.co.uk) |
 
 <br/>
 
@@ -481,9 +481,9 @@ Once the publisher has been executed, you can check the `customer_leads.jsonl` f
 Here is some sample data from the new `customer_leads.jsonl`:
 
 ```
-{"FIRST_NAME":"Aleshia","LAST_NAME":"Tomkiewicz","COMPANY_NAME":"Alan D Rosenburg Cpa Pc","EMAIL":"atomkiewicz@hotmail.com","WEB":"http://www.alandrosenburgcpapc.co.uk"}
-{"FIRST_NAME":"Evan","LAST_NAME":"Zigomalas","COMPANY_NAME":"Cap Gemini America","EMAIL":"evan.zigomalas@gmail.com","WEB":"http://www.capgeminiamerica.co.uk"}
-{"FIRST_NAME":"France","LAST_NAME":"Andrade","COMPANY_NAME":"Elliott, John W Esq","EMAIL":"france.andrade@hotmail.com","WEB":"http://www.elliottjohnwesq.co.uk"}
+{"FIRST_NAME":"Aleshia","LAST_NAME":"Tomkiewicz","COMPANY_NAME":"Alan D Rosenburg Cpa Pc","EMAIL":"atomkiewicz@hotmail.com","WEB":"https://www.alandrosenburgcpapc.co.uk"}
+{"FIRST_NAME":"Evan","LAST_NAME":"Zigomalas","COMPANY_NAME":"Cap Gemini America","EMAIL":"evan.zigomalas@gmail.com","WEB":"https://www.capgeminiamerica.co.uk"}
+{"FIRST_NAME":"France","LAST_NAME":"Andrade","COMPANY_NAME":"Elliott, John W Esq","EMAIL":"france.andrade@hotmail.com","WEB":"https://www.elliottjohnwesq.co.uk"}
 ```
 
 The above users were not present in the JSON file before, and have been added after the publisher was triggered with
