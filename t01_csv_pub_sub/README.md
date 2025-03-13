@@ -171,7 +171,7 @@ some selected columns of this data to a table. For convenience, we have this fun
 )
 
 def publish_customers(tf: td.TableFrame):
-    tf = tf.select(["IDENTIFIER", "NATIONALITY", "BLOOD_TYPE", "WEIGHT","ACADEMIC_DEGREE"])
+    tf = tf.select(["FIRST_NAME","LAST_NAME","COMPANY_NAME","EMAIL","WEB"])
     return tf
 
 ```
@@ -332,6 +332,9 @@ You can now verify that the function was registered successfully bu running the 
 ```
 td fn list --collection CUSTOMERS
 ```
+Output:
+
+<img src="./assets/list_function_both.png" alt="List both functions" height="60">
 
 This should confirm that the `subscribe_customers` has been registered within the collection `CUSTOMERS`.
 
@@ -342,7 +345,7 @@ executed by a trigger. In this step we will manually trigger the subscriber func
 the generated output.
 
 We begin by making sure that there is no output directory present on our system. The following command should error
-out:
+out with `No such file or directory`:
 
 For Linux or macOS:
 ```
@@ -364,9 +367,13 @@ Let's now manually trigger our subscriber function using the following command:
 td fn trigger --collection CUSTOMERS --name subscribe_customers
 ```
 
-As in the case of publisher functions, the triggering of a subscriber fucntion also generates an execution plan and
-sets it in motion. You can more about this in
-[Tabsdata documentation](https://docs.tabsdata.com/latest/guide/04_working_with_functions/main_1.html).
+Remember that you can see the status whether the functions have finished executing by using the following command:
+
+```
+td exec list-trxs
+```
+
+If the function has finished executing, you will see Published in the status.
 
 
 ### 3.3 Checking the subscriber output:
@@ -377,9 +384,9 @@ directory.
 Here is some sample data from `customer_leads.jsonl`:
 
 ```
-{"IDENTIFIER":"74-93/03","GENDER":"Male","NATIONALITY":"Portuguese","LANGUAGE":"Italian","OCCUPATION":"Hod Carrier"}
-{"IDENTIFIER":"68-52/94","GENDER":"Female","NATIONALITY":"Costa Rican","LANGUAGE":"Swati","OCCUPATION":"Aeronautical Engineer"}
-{"IDENTIFIER":"37-41/89","GENDER":"Male","NATIONALITY":"Cuban","LANGUAGE":"Luxembourgish","OCCUPATION":"Telex Operator"}
+{"FIRST_NAME":"Peter","LAST_NAME":"Gutierres","COMPANY_NAME":"Niagara Custombuilt Mfg Co","EMAIL":"peter_gutierres@yahoo.com","WEB":"http://www.niagaracustombuiltmfgco.co.uk"}
+{"FIRST_NAME":"Octavio","LAST_NAME":"Salvadore","COMPANY_NAME":"Practical Periphrals","EMAIL":"octavio.salvadore@yahoo.com","WEB":"http://www.practicalperiphrals.co.uk"}
+{"FIRST_NAME":"Martha","LAST_NAME":"Teplica","COMPANY_NAME":"Curtin, Patricia M Esq","EMAIL":"mteplica@teplica.co.uk","WEB":"http://www.curtinpatriciamesq.co.uk"}
 ```
 
 As you see from the output file, only the columns selected from the `customers.csv` defined in `publisher.py` file have
@@ -395,11 +402,11 @@ present in the `customers_01.csv` file that we loaded via the publisher when we 
 
 Here are details of 3 new customers from the 20 who have been added:
 
-| IDENTIFIER | NAME       | GENDER | EMAIL                        | BIRTHDATE | NATIONALITY | LANGUAGE | BLOOD_TYPE | HEIGHT | WEIGHT | UNIVERSITY                            | ACADEMIC_DEGREE | TITLE | OCCUPATION         |
-|-------------|------------|--------|-----------------------------|------------|--------------|-----------|-------------|--------|--------|----------------------------------------|------------------|-------|---------------------|
-| 21-12/62     | Louetta M   | Female | drainage2086@duck.com       | 4-Nov      | Swiss        | Zulu      | A+          | 1.79   | 38     | Western Connecticut State University (WCSU) | PhD              | Mr.   | Medical Technician  |
-| 97-89/11     | Elden A     | Female | livestock1811@example.org   | 9-May      | Dominican    | Yiddish   | A+          | 1.8    | 74     | Florida Gulf Coast University (FGCU)  | PhD              | Ms.   | Professor            |
-| 92-54/93     | Amina M     | Female | dynamic2052@duck.com        | 24-Dec     | Salvadorian  | Greek     | B+          | 1.66   | 42     | University of South Florida (USF)     | Bachelor          | B.Sc  | Town Planner         |
+| First Name | Last Name  | Company                       | Address         | Ward                              | County         | Postal Code | Phone 1       | Phone 2       | Email                         | Website                                   |
+|-------------|-------------|--------------------------------|------------------|--------------------------------------|----------------|----------------|------------------|------------------|--------------------------------------|------------------------------------------------|
+| Aleshia     | Tomkiewicz | Alan D Rosenburg Cpa Pc       | 14 Taylor St      | St. Stephens Ward                | Kent            | CT2 7PP          | 01835-703597   | 01944-369967   | atomkiewicz@hotmail.com   | [alandrosenburgcpapc.co.uk](http://www.alandrosenburgcpapc.co.uk) |
+| Evan         | Zigomalas     | Cap Gemini America                | 5 Binney St        | Abbey Ward                            | Buckinghamshire | HP11 2AX          | 01937-864715   | 01714-737668   | evan.zigomalas@gmail.com      | [capgeminiamerica.co.uk](http://www.capgeminiamerica.co.uk) |
+| France       | Andrade         | "Elliott, John W Esq"              | 8 Moor Place      | East Southbourne and Tuckton W | Bournemouth     | BH6 3BE          | 01347-368222   | 01935-821636   | france.andrade@hotmail.com    | [elliottjohnwesq.co.uk](http://www.elliottjohnwesq.co.uk) |
 
 <br/>
 
@@ -452,6 +459,14 @@ Use the following command to trigger the publisher to read new input file:
 td fn trigger --collection CUSTOMERS --name publish_customers
 ```
 
+Remember that you can see the status whether the functions have finished executing by using the following command:
+
+```
+td exec list-trxs
+```
+
+If the function has finished executing, you will see Published in the status.
+
 Even though there is only one subscriber that was executed on refresh of the published table, it will work for any
 number of subscribers that are registered.
 
@@ -462,9 +477,9 @@ Once the publisher has been executed, you can check the `customer_leads.jsonl` f
 Here is some sample data from the new `customer_leads.jsonl`:
 
 ```
-{"IDENTIFIER":"21-12/62","GENDER":"Female","NATIONALITY":"Swiss","LANGUAGE":"Zulu","OCCUPATION":"Medical Technician"}
-{"IDENTIFIER":"97-89/11","GENDER":"Female","NATIONALITY":"Dominican","LANGUAGE":"Yiddish","OCCUPATION":"Professor"}
-{"IDENTIFIER":"92-54/93","GENDER":"Female","NATIONALITY":"Salvadorian","LANGUAGE":"Greek","OCCUPATION":"Town Planner"}
+{"FIRST_NAME":"Aleshia","LAST_NAME":"Tomkiewicz","COMPANY_NAME":"Alan D Rosenburg Cpa Pc","EMAIL":"atomkiewicz@hotmail.com","WEB":"http://www.alandrosenburgcpapc.co.uk"}
+{"FIRST_NAME":"Evan","LAST_NAME":"Zigomalas","COMPANY_NAME":"Cap Gemini America","EMAIL":"evan.zigomalas@gmail.com","WEB":"http://www.capgeminiamerica.co.uk"}
+{"FIRST_NAME":"France","LAST_NAME":"Andrade","COMPANY_NAME":"Elliott, John W Esq","EMAIL":"france.andrade@hotmail.com","WEB":"http://www.elliottjohnwesq.co.uk"}
 ```
 
 The above users were not present in the JSON file before, and have been added after the publisher was triggered with
