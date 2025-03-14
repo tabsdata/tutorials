@@ -76,7 +76,7 @@ cd t01_csv_pub_sub
 export TDX=`pwd`
 ```
 
-For Windows:
+For Windows Command Prompt:
 
 ```
 cd tutorials
@@ -235,7 +235,7 @@ For Linux or macOS:
 cp $TDX/input/customers_01.csv $TDX/input/customers.csv
 ```
 
-For Windows:
+For Windows Command Prompt:
 ```
 copy %TDX%\input\customers_01.csv %TDX%\input\customers.csv
 ```
@@ -432,7 +432,7 @@ For Linux or macOS:
 cp $TDX/input/customers_02.csv $TDX/input/customers.csv
 ```
 
-For Windows:
+For Windows Command Prompt:
 ```
 copy %TDX%\input\customers_02.csv %TDX%\input\customers.csv
 ```
@@ -450,7 +450,7 @@ For Linux or macOS:
 cp $TDX/output/customer_leads.jsonl $TDX/output/customer_leads_01.jsonl
 ```
 
-For Windows:
+For Windows Command Prompt:
 ```
 copy %TDX%\output\customer_leads.jsonl %TDX%\output\customer_leads_01.jsonl
 ```
