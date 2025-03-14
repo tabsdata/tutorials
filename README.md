@@ -2,14 +2,11 @@
 
 ## Tutorial 1: Pre-processing, Publishing and Subscribing a CSV (`t01_csv_pub_sub`)
 
-In this first tutorial, we’ll explore how Tabsdata enables Pub/Sub for Tables.
+In this first tutorial, we’ll explore how Tabsdata enables Pub/Sub for Tables using a CSV file input.
 
-We'll start by setting up the system and creating a publisher that reads data from a CSV file called `customers.csv`
-stored in an input directory in the local file system, and selects certain columns of interest from it. This data will
-be published as a table called `CUSTOMER_LEADS` within a collection called `CUSTOMERS` in the Tabsdata system.
+We will start by setting up Tabsdata and registering a publisher that reads data from a CSV file, selects
+some aspects of it, and publishes it as a table within the system. 
 
-Next, we'll configure a subscriber to read data from this table and write it to an output directory on the local file
-system.
+Following that, we will register a subscriber that subscribes to this published table, and exports it to the file system in a JSON format.
 
-Finally, we'll implement automated data engineering using Tabsdata to streamline the propagation of changes in the
-input files to downstream users.
+We will then demonstrate that when the publisher is rerun to load new data, the subscriber automatically writes it to the external system.

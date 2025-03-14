@@ -109,7 +109,13 @@ README file.
 Before you can use Tabsdata, you must login to the server which can be done as follows:
 
 ```
-td login localhost --user admin --password tabsdata
+td login localhost --user admin
+```
+
+When prompted from password put:
+
+```
+tabsdata
 ```
 
 Output:
@@ -197,6 +203,8 @@ publishing them to output tables.
 
 Register this publisher function to the `CUSTOMERS` collection using the following command.
 
+For Linux or macOS:
+
 ```
 td fn register --collection CUSTOMERS --fn-path $TDX/publisher.py::publish_customers
 ```
@@ -213,7 +221,7 @@ Output:
 This output confirms that the function `publish_customers` has been registered within the collection `CUSTOMERS`.
 
 
-### 2.3 Triggering the publisher for the first time
+### 2.3 Triggering the publisher
 
 As a reminder, registering a function in a collection does not execute it, and it must be invoked by a trigger. And if
 a publisher function has never been triggerd, its corresponding output tables will not be initialized in the system.
@@ -342,7 +350,7 @@ Output:
 
 This output confirms that the `subscribe_customers` has been registered within the collection `CUSTOMERS`.
 
-### 3.2 Triggering the subscriber for the first time
+### 3.2 Triggering the subscriber
 
 As is also the case with publisher functions, registering the subscriber function does not execute it. It must be
 executed by a trigger. In this step we will manually trigger the subscriber function for the first time and verify
