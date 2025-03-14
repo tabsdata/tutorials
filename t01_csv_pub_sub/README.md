@@ -181,8 +181,8 @@ some selected columns of this data to a table. For convenience, we have this fun
 )
 
 def publish_customers(tf: td.TableFrame):
-    tf = tf.select(["FIRST_NAME","LAST_NAME","COMPANY_NAME","EMAIL","WEB"])
-    return tf
+    output_tf = tf.select(["FIRST_NAME","LAST_NAME","COMPANY_NAME","EMAIL","WEB"])
+    return output_tf
 
 ```
 
@@ -203,8 +203,6 @@ publishing them to output tables.
 
 Register this publisher function to the `CUSTOMERS` collection using the following command.
 
-For Linux or macOS:
-
 ```
 td fn register --collection CUSTOMERS --fn-path $TDX/publisher.py::publish_customers
 ```
@@ -224,7 +222,7 @@ This output confirms that the function `publish_customers` has been registered w
 ### 2.3 Triggering the publisher
 
 As a reminder, registering a function in a collection does not execute it, and it must be invoked by a trigger. And if
-a publisher function has never been triggerd, its corresponding output tables will not be initialized in the system.
+a publisher function has never been triggered, its corresponding output tables will not be initialized in the system.
 
 Before we manually trigger the publisher function, we must make sure that the input CSV file exists in the correct
 path. For our first run we will copy the provided sample input file `customers_01.csv` to the input location using
@@ -352,7 +350,7 @@ This output confirms that the `subscribe_customers` has been registered within t
 
 ### 3.2 Triggering the subscriber
 
-As is also the case with publisher functions, registering the subscriber function does not execute it. It must be
+As is the case with publisher functions, registering the subscriber function does not execute it. It must be
 executed by a trigger. In this step we will manually trigger the subscriber function for the first time and verify
 the generated output.
 
@@ -479,8 +477,7 @@ td exec list-trxs
 
 If the function has finished executing, you will see Published in the status.
 
-Even though there is only one subscriber that was executed on refresh of the published table, it will work for any
-number of subscribers that are registered.
+In this example, there is only one subscriber that was executed on refresh of the published table. However, it will work for any number of subscribers that are registered and have their input tables associated with the publisher.
 
 ## Check the Subscriber Output:
 
