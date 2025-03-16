@@ -45,7 +45,26 @@ Output:
 
 The presence of supervisor and apiserv confirms that the server is running.
 
-### 1.3 Copy the GitHub repo
+### 1.3 Login to the Tabsdata server
+
+Before you can use Tabsdata, you must login to the server which can be done as follows:
+
+```
+td login localhost --user admin
+```
+
+When prompted from password put:
+
+```
+tabsdata
+```
+
+Output:
+```
+Login successful.
+```
+
+### 1.4 Copy the GitHub repo
 
 If you haven't already, copy the GitHub repo to your system.
 
@@ -59,7 +78,7 @@ Using GitHub CLI:
 gh repo clone tabsdata/tutorials
 ```
 
-### 1.4 Setting up directory path for referencing files
+### 1.5 Setting up directory path for referencing files
 
 In this tutorial, our data source for the publisher is a CSV file on our file system in a particular input directory. Similarly, our
 table subscriber will capture the table data in a JSON format file in a particular output directory.
@@ -89,7 +108,7 @@ If you run an `ls` (for Linux or macOS) or `dir` (Windows) on `t01_csv_pub_sub` 
 ```
 README.md
 input/
-|__ customers_01.csv
+|__ customers.csv
 |__ customers_02.csv
 publisher.py
 subscriber.py
@@ -103,25 +122,6 @@ Here the folder `input` contains two files `customers_01.csv` and `customers_02.
 There are two Python source files - `publisher.py` and `subscriber.py` - which contain the publisher and subscriber
 functions. Feel free to take a peak at them - they are pretty straightforward. The assets folder has images for this
 README file.
-
-### 1.5 Login to the Tabsdata server
-
-Before you can use Tabsdata, you must login to the server which can be done as follows:
-
-```
-td login localhost --user admin
-```
-
-When prompted from password put:
-
-```
-tabsdata
-```
-
-Output:
-```
-Login successful.
-```
 
 ## Step 2: Publishing the input CSV as a table
 
@@ -224,6 +224,7 @@ This output confirms that the function `publish_customers` has been registered w
 As a reminder, registering a function in a collection does not execute it, and it must be invoked by a trigger. And if
 a publisher function has never been triggered, its corresponding output tables will not be initialized in the system.
 
+<!-- 
 Before we manually trigger the publisher function, we must make sure that the input CSV file exists in the correct
 path. For our first run we will copy the provided sample input file `customers_01.csv` to the input location using
 the following command:
@@ -236,9 +237,11 @@ cp $TDX/input/customers_01.csv $TDX/input/customers.csv
 For Windows Command Prompt:
 ```
 copy %TDX%\input\customers_01.csv %TDX%\input\customers.csv
-```
+``` -->
 
-With this input CSV file now in place, let's trigger our publisher. This can be done using the following command:
+<!-- With this input CSV file now in place, let's trigger our publisher. This can be done using the following command: -->
+
+Let's trigger our publisher. This can be done using the following command:
 
 ```
 td fn trigger --collection CUSTOMERS --name publish_customers
@@ -408,7 +411,7 @@ What happens when there is an update in your input data? How do you update the d
 
 Let’s say there is an update in your CSV file, and 20 new customers get added to the CSV file. The `customers_02.csv`
 file in the `input` directory presents one such scenario. This file has 20 new customers in addition to the customers
-present in the `customers_01.csv` file that we loaded via the publisher when we triggered it for the first time.
+present in the `customers.csv` file that we loaded via the publisher when we triggered it for the first time.
 
 Here are details of 3 new customers from the 20 who have been added:
 
@@ -435,8 +438,10 @@ For Windows Command Prompt:
 copy %TDX%\input\customers_02.csv %TDX%\input\customers.csv
 ```
 
-This will overwrite the `customers.csv` file that was previously copied from `customers_01.csv` file for our first
-execution.
+<!-- This will overwrite the `customers.csv` file that was previously copied from `customers_01.csv` file for our first
+execution. -->
+
+This will overwrite the previous version of `customers.csv` file that we were working with.
 
 ## 4.2 Saving first output file for comparison
 
