@@ -41,7 +41,7 @@ tdserver status
 
 Output:
 
-<img src="./assets/tdserver_status.png" alt="Server Status" height="80">
+<img src="./assets/tdserver_status.png" alt="Server Status" height="auto">
 
 The presence of supervisor and apiserv confirms that the server is running.
 
@@ -163,7 +163,7 @@ td collection info CUSTOMERS
 
 Output:
 
-<img src="./assets/collection_info.png" alt="Collection Info" height="100">
+<img src="./assets/collection_info.png" alt="Collection Info" height="auto">
 
 This output confirms that the collection called `CUSTOMERS` has been created.
 
@@ -214,7 +214,7 @@ td fn list --collection CUSTOMERS
 ```
 Output:
 
-<img src="./assets/list_function_pulisher.png" alt="List functions" height="100">
+<img src="./assets/list_function_pulisher.png" alt="List functions" height="auto">
 
 This output confirms that the function `publish_customers` has been registered within the collection `CUSTOMERS`.
 
@@ -255,7 +255,7 @@ td exec list-trxs
 
 Output:
 
-<img src="./assets/function_published.png" alt="Function Published" height="100">
+<img src="./assets/function_published.png" alt="Function Published" height="auto">
 
 If the function has finished executing, you will see Published in the status.
 
@@ -273,7 +273,7 @@ td table schema --collection CUSTOMERS --name CUSTOMER_LEADS
 
 Output:
 
-<img src="./assets/table_schema.png" alt="Schema" width="300">
+<img src="./assets/table_schema.png" alt="Schema" width="auto">
 
 The columns `$td.id` and `$td.src` are internal columns created by Tabsdata to track row level provenance
 of data.
@@ -286,7 +286,7 @@ td table sample --collection CUSTOMERS --name CUSTOMER_LEADS
 
 Output:
 
-<img src="./assets/table_sample.png" alt="Sample" height="200">
+<img src="./assets/table_sample.png" alt="Sample" height="auto">
 
 ## Step 3: Subscribing to a published Table in Tabsdata
 
@@ -347,7 +347,7 @@ td fn list --collection CUSTOMERS
 ```
 Output:
 
-<img src="./assets/list_function_both.png" alt="List both functions" height="150">
+<img src="./assets/list_function_both.png" alt="List both functions" height="auto">
 
 This output confirms that the `subscribe_customers` has been registered within the collection `CUSTOMERS`.
 
