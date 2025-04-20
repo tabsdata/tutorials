@@ -7,8 +7,7 @@ some aspects of it, and publishes it as a table within the system. Following tha
 subscribes to this published table, and exports it to the file system in a JSON format. We will then demonstrate
 that when the publisher is rerun to load new data, the subscriber automatically writes it to the external system.
 
-In a real-world scenario, your data source could be a database, an S3 bucket, or another storage location, while the 
-subscriber could write data to various endpoints such as a database or file system.
+In a real-world scenario, your data source could be any other database, or storage location, while the subscriber could write data to various endpoints such as a database or file system. You can check the list of source and destination connectors in [Tabsdata documentation](https://docs.tabsdata.com/latest/guide/04_01_working_with_publishers/main.html).
 
 Let’s dive in!
 
