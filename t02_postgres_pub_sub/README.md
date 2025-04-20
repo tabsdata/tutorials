@@ -119,7 +119,7 @@ To set up HASHICORP, you will need to set the values of these environment variab
 ```
 export TDS_HASHICORP_URL=<hashicorp_vault_url>
 export TDS_HASHICORP_TOKEN=<hashicorp_vault_token>
-export TDS_HASHICORP_NAMESPACE=<hashicorp_namespace>
+[optional] export TDS_HASHICORP_NAMESPACE=<hashicorp_namespace>
 ```
 
 ### 1.3 Setup Tabsdata

@@ -16,6 +16,6 @@ pg_password = td.HashiCorpSecret("td-pg", "PG_USERNAME")
     ),
 )
 
-def subscribe_order_items_postgres(tf: td.TableFrame):
+def subscribe_customers(tf: td.TableFrame):
     output_tf = tf.filter(td.col("DEAL_VALUE") >= 4000)
     return output_tf
