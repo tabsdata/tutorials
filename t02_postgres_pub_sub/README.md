@@ -105,13 +105,22 @@ Tabsdata supports different ways to store credentials that have been detailed [h
 
 For ease of testing, you can store the PostgreSQL username and password as environment variables in your local system before starting the Tabsdata server as highlighted [here](https://docs.tabsdata.com/latest/guide/secrets_management/env_variables/main.html) in the documentation.
 
+```
+export PG_USERNAME=<your_postgresql_username>
+export PG_PASSWORD=<your_postgresql_password>
+```
+
 For the purpose of this tutorial, I am storing all the credentials in Hashicorp to present a more secure way that Tabsdata uses, to deal with credentials. You can see more details on how to set up Hashicorp [here](https://docs.tabsdata.com/latest/guide/secrets_management/hashicorp/main.html) in the Tabsdata documentation.
 
 I have stored the PostgreSQL username and password under the variable names ``PG_USERNAME`` and ``PG_PASSWORD`` respectively in the Hashicorp Vault in the key store "td-pg". The same names are used in the Python code for Tabsdata functions. If you use different names, make sure that you change at both the places: Hashicorp and the Python code.
 
 To set up HASHICORP, you will need to set the values of these environment variables as highlighted in the documentation. 
 
-``TDS_HASHICORP_URL``, ``TDS_HASHICORP_TOKEN``, and ``TDS_HASHICORP_NAMESPACE``.
+```
+export TDS_HASHICORP_URL=<hashicorp_vault_url>
+export TDS_HASHICORP_TOKEN=<hashicorp_vault_token>
+export TDS_HASHICORP_NAMESPACE=<hashicorp_namespace>
+```
 
 ### 1.3 Setup Tabsdata
 
