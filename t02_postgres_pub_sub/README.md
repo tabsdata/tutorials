@@ -486,7 +486,7 @@ FROM
 
 Output:
 
-<img src="./assets/list_function_both.png" alt="List both functions" height="auto">
+<img src="./assets/psql_final_output.png" alt="List both functions" height="auto">
 
 Out of 20, 12 items have been added. These are the ones with deal value higher than or equal to $4000.
 
