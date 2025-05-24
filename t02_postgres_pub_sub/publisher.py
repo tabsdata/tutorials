@@ -1,3 +1,4 @@
+
 import tabsdata as td
 
 pg_username = td.HashiCorpSecret("td-pg", "PG_USERNAME")
@@ -12,7 +13,7 @@ pg_password = td.HashiCorpSecret("td-pg", "PG_PASSWORD")
         credentials=td.UserPasswordCredentials(pg_username, pg_password),
     ),
 
-    # Name of the table created in the Tabsdata collection.
+    # Name of the table created in Tabsdata.
     tables = ["customer_leads"],
 )
 
@@ -22,3 +23,5 @@ def publish_customers(tf: td.TableFrame):
     output_tf = tf.select(["FIRST_NAME","LAST_NAME","COMPANY_NAME","EMAIL","CITY","WEB","DEAL_VALUE"])
 
     return output_tf
+
+
