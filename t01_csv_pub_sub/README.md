@@ -24,7 +24,27 @@ pip install tabsdata --upgrade
 Please note that you need **Python 3.12 or later**, to install the package. Additionally, you need **Tabsdata python
 package 0.9.2 or later** to successfully run the functions from this article.
 
-### 1.2 Start the Tabsdata Server
+#### 1.2 [Only if you have started a Tabsdata server before] Clearing the old Tabsdata instance
+
+It is suggested that to work with newer versions of Tabsdata (v0.9.2 and above in this case), you remove the older Tabsdata instance, in case you have started the Tabsdata server earlier. This enables you to start from scratch, reducing the possibilities of error or conflicts.
+
+Run the following commands in your CLI, to stop the Tabsdata server and clear the instance:
+
+For Linux or macOS:
+
+```
+tdserver stop
+rm -rf ~/.tabsdata
+```
+
+For Windows:
+
+```
+tdserver stop
+rmdir /s /q "%USERPROFILE%\.tabsdata"
+```
+
+### 1.3 Start the Tabsdata Server
 
 To start the Tabsdata server, use the following command:
 
@@ -44,7 +64,7 @@ Output:
 
 The presence of supervisor and apiserv confirms that the server is running.
 
-### 1.3 Login to the Tabsdata server
+### 1.4 Login to the Tabsdata server
 
 Before you can use Tabsdata, you must login to the server which can be done as follows:
 
@@ -63,7 +83,7 @@ Output:
 Login successful.
 ```
 
-### 1.4 Copy the GitHub repo
+### 1.5 Copy the GitHub repo
 
 If you haven't already, copy the GitHub repo to your system.
 
@@ -77,7 +97,7 @@ Using GitHub CLI:
 gh repo clone tabsdata/tutorials
 ```
 
-### 1.5 Setting up directory path for referencing files
+### 1.6 Setting up directory path for referencing files
 
 In this tutorial, our data source for the publisher is a CSV file on our file system in a particular input directory. Similarly, our
 table subscriber will capture the table data in a JSON format file in a particular output directory.
@@ -520,7 +540,4 @@ For the next steps, here are a couple of experiements you can try:
 
 
 I hope this gave you a good introduction to the Tabsdata system! I'd love to hear your thoughts—let us know how we can
-improve, what use cases you'd like us to cover in future blogs, or any other questions or feedback you have. Join the
-conversation on [Discord](https://discord.gg/XRC5XZWppc),
-[GitHub Discussions](https://github.com/tabsdata/tabsdata/discussions) or reach out to us
-[here](https://www.tabsdata.com/contact).
+improve, what use cases you'd like us to cover in future blogs, or any other questions or feedback you have. Join the conversation on [Slack](https://join.slack.com/t/tabsdata-community/shared_invite/zt-322toyigx-ZGFioMV2Gbza4bJDAR7wSQ) or reach out to us [here](https://www.tabsdata.com/contact).

@@ -115,7 +115,7 @@ export TDS_HASHICORP_TOKEN=<hashicorp_vault_token>
 [optional] export TDS_HASHICORP_NAMESPACE=<hashicorp_namespace>
 ```
 
-You can store the PostgreSQL username and password as environment variables in your local system before starting the Tabsdata server as highlighted [here](https://docs.tabsdata.com/latest/guide/secrets_management/env_variables/main.html) in the documentation.
+You can also store the PostgreSQL username and password as environment variables in your system before starting the Tabsdata server as highlighted [here](https://docs.tabsdata.com/latest/guide/secrets_management/env_variables/main.html) in the documentation.
 
 ```
 export PG_USERNAME=<your_postgresql_username>
