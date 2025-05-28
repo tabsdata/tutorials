@@ -93,7 +93,7 @@ In my python code, I have named the database `td-iceberg`. You can use the same 
 
 You can follow this [AWS documentation](https://docs.aws.amazon.com/solutions/latest/data-transfer-hub/set-up-credentials-for-amazon-s3.html#step-2-create-a-user) to obtain the credentials, Access ID and Secret Key. These enable us to upload data to the S3 bucket programmatically.
 
-As menitoned before, we have different ways to store credentials that have been detailed here in [our documentation](https://docs.tabsdata.com/latest/guide/secrets_management/hashicorp/main.html). For the purpose of this tutorial, I am storing all the credentials in Hashicorp.
+We have different ways to store credentials that have been detailed here in [our documentation](https://docs.tabsdata.com/latest/guide/secrets_management/hashicorp/main.html). For the purpose of this tutorial, I am storing all the credentials in Hashicorp.
 
 I have stored the S3 Access ID and Secret Key under the variable names ``AWS_ACCESS_KEY_ID`` and ``AWS_SECRET_ACCESS_KEY`` respectively in the Hashicorp Vault in the default key store "sample-secret". The same names are used in the Python code for Tabsdata functions. If you use different names, make sure that you change at both the places: Hashicorp and the Python code.
 
