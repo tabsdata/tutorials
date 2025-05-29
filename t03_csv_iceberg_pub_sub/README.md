@@ -34,6 +34,12 @@ Using GitHub CLI:
 gh repo clone tabsdata/tutorials
 ```
 
+Using https:
+
+```
+git clone https://github.com/tabsdata/tutorials
+```
+
 #### 1.1.2 Setup directory path for referencing files
 
 In this tutorial, our data source is a CSV file on our file system in an input directory in the above Github repo. Our output is an Iceberg table in AWS. The Tabsdata functions to publish and subscribe are also in the tutorial folder.

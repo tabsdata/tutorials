@@ -97,6 +97,12 @@ Using GitHub CLI:
 gh repo clone tabsdata/tutorials
 ```
 
+Using https:
+
+```
+git clone https://github.com/tabsdata/tutorials
+```
+
 ### 1.6 Setting up directory path for referencing files
 
 In this tutorial, our data source for the publisher is a CSV file on our file system in a particular input directory. Similarly, our

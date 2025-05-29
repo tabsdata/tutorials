@@ -28,6 +28,12 @@ Using GitHub CLI:
 gh repo clone tabsdata/tutorials
 ```
 
+Using https:
+
+```
+git clone https://github.com/tabsdata/tutorials
+```
+
 #### 1.1.2 Setup directory path for referencing files
 
 In this tutorial, our data source and destination is PostgreSQL. The data for PostgreSQL is present in the SQL files in the tutorial folder. The Tabsdata functions to publish and subscribe to data are also in the tutorial folder.
