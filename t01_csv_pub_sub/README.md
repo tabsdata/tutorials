@@ -172,25 +172,25 @@ Tabsdata server until you create one. You can see this by running the following 
 td collection list
 ```
 
-For this tutorial, we will create a collection called CUSTOMERS where we will register our publisher function. To
+For this tutorial, we will create a collection called `customers` where we will register our publisher function. To
 create this collection use the following command:
 
 ```
-td collection create CUSTOMERS
+td collection create customers
 ```
 
 This should have created the collection that you can verify by running the previous list command. You can also see
 more details about this collection using the `info` command as follows:
 
 ```
-td collection info CUSTOMERS
+td collection info customers
 ```
 
 Output:
 
 <img src="./assets/collection_info.png" alt="Collection Info" height="auto">
 
-This output confirms that the collection called `CUSTOMERS` has been created.
+This output confirms that the collection called `customers` has been created.
 
 ### 2.2 Registering the publisher function
 
@@ -202,7 +202,7 @@ some selected columns of this data to a table. For convenience, we have this fun
 ```
 @td.publisher(
     source = td.LocalFileSource(os.path.join(os.getenv("TDX"), "input", "customers.csv")),
-    tables = ["CUSTOMER_LEADS"],
+    tables = ["customer_leads"],
 )
 
 def publish_customers(tf: td.TableFrame):
@@ -213,35 +213,35 @@ def publish_customers(tf: td.TableFrame):
 
 Here the `@td.publisher` decorator defines the following metadata:
 * Data will be read from a local file located at `$TDX/input/customers.csv`
-* And the output of this function will be publised as a table called `CUSTOMER_LEADS`
+* And the output of this function will be publised as a table called `customer_leads`
 
 The function definition is very simple in this case with the following details:
 * The function name is `publish_customers` that takes a `TableFrame` called `tf`. Note that a `TableFrame` is the API
 similar to a traditional `DataFrame` for use with Tabsdata. Note also that when this function executes, this input
 `TableFrame` will be populated by the data read from the `$TDX/input/customers.csv` file as specified in the decorator.
 * This function selects five specific columns from the input `TableFrame` and returns it as an output. Note that this
-output `TableFrame` will be mapped to a table called `CUSTOMER_LEADS` as specified in the decorator.
+output `TableFrame` will be mapped to a table called `customer_leads` as specified in the decorator.
 
 That is all there is to a publisher. In a real world scenario, your publisher function can have many more inputs and
 may produce many more out outputs. Moreover, the body of the function may do more complex operations on the data before
 publishing them to output tables.
 
-Register this publisher function to the `CUSTOMERS` collection using the following command.
+Register this publisher function to the `customers` collection using the following command.
 
 ```
-td fn register --collection CUSTOMERS --fn-path $TDX/publisher.py::publish_customers
+td fn register --collection customers --fn-path $TDX/publisher.py::publish_customers
 ```
 
 You can now verify that the function was registered successfully by running the following command:
 
 ```
-td fn list --collection CUSTOMERS
+td fn list --collection customers
 ```
 Output:
 
 <img src="./assets/list_function_pulisher.png" alt="List functions" height="auto">
 
-This output confirms that the function `publish_customers` has been registered within the collection `CUSTOMERS`.
+This output confirms that the function `publish_customers` has been registered within the collection `customers`.
 
 
 ### 2.3 Triggering the publisher
@@ -269,7 +269,7 @@ copy %TDX%\input\customers_01.csv %TDX%\input\customers.csv
 Let's trigger our publisher. This can be done using the following command:
 
 ```
-td fn trigger --collection CUSTOMERS --name publish_customers
+td fn trigger --collection customers --name publish_customers
 ```
 
 You can see the status whether the functions have finished executing by using the following command:
@@ -287,13 +287,13 @@ If the function has finished executing, you will see Published in the status.
 
 ### 2.4 Checking the publisher output
 
-The Tabsdata table `CUSTOMER_LEADS` has been created in the `CUSTOMERS` collection. This table can now be subscribed
+The Tabsdata table `customer_leads` has been created in the `customers` collection. This table can now be subscribed
 to, by various stakeholders within the organization.
 
 To check the schema of the table in Tabsdata, run this command in your CLI:
 
 ```
-td table schema --collection CUSTOMERS --name CUSTOMER_LEADS
+td table schema --collection customers --name customer_leads
 ```
 
 Output:
@@ -306,7 +306,7 @@ of data.
 To check the sample of the table in Tabsdata, run this command in your CLI:
 
 ```
-td table sample --collection CUSTOMERS --name CUSTOMER_LEADS
+td table sample --collection customers --name customer_leads
 ```
 
 Output:
@@ -322,7 +322,7 @@ of note before we proceed:
 
 * The subscriber function uses decorators to define the input table names an output data destinations.
 * A subscriber function is registered to a Collection just like a publisher function. For the purposes of this tutorial
-we will register our subscriber function within the same collection that we previously created -- `CUSTOMERS`.
+we will register our subscriber function within the same collection that we previously created -- `customers`.
 * The actual act of reading data from the input tables and writing it to external systems only happens when the
 subscriber function is invoked by a trigger. In this tutorial we will demonstrate two types of triggers for a
 subscriber function -- a manual trigger that we will do to create our first output; and a dependency trigger that
@@ -338,7 +338,7 @@ convenience we have this function ready to use in the `subscriber.py` and the na
 
 ```
 @td.subscriber(
-    tables = ["CUSTOMER_LEADS"],
+    tables = ["customer_leads"],
     destination = td.LocalFileDestination(os.path.join(os.getenv("TDX"), "output", "customer_leads.jsonl")),
 )
 
@@ -347,34 +347,34 @@ def subscribe_customers(tf: td.TableFrame):
 ```
 
 Here the `@td.subscriber` decorator defines the following metadata:
-* Input data will be read from the table called `CUSTOMER_LEADS`
+* Input data will be read from the table called `customer_leads`
 * And output of this function will be pushed to a file located at `$TDX/output/customer_leads.jsonl`
 
 The function definition is very simple with following details:
 * The function name is `subscribe_customers` that takes a `TableFrame` as input. When executed, this input will be
-populated by the data coming from the `CUSTOMER_LEADS` table.
+populated by the data coming from the `customer_leads` table.
 * The function simply returns the input data as its output, which is mapped to a specific output file as defined
 by the decorator.
 
 That is all there is to a subscriber. In a real world scenario, your subscriber function may take input data from
 multiple tables, process it and create a derived output that is then sent to an external system.
 
-Register this subscriber function to the `CUSTOMERS` collection using the following command:
+Register this subscriber function to the `customers` collection using the following command:
 
 ```
-td fn register --collection CUSTOMERS --fn-path $TDX/subscriber.py::subscribe_customers
+td fn register --collection customers --fn-path $TDX/subscriber.py::subscribe_customers
 ```
 
 You can now verify that the function was registered successfully bu running the following command:
 
 ```
-td fn list --collection CUSTOMERS
+td fn list --collection customers
 ```
 Output:
 
 <img src="./assets/list_function_both.png" alt="List both functions" height="auto">
 
-This output confirms that the `subscribe_customers` has been registered within the collection `CUSTOMERS`.
+This output confirms that the `subscribe_customers` has been registered within the collection `customers`.
 
 ### 3.2 Triggering the subscriber
 
@@ -402,7 +402,7 @@ output directory store the output file.
 Let's now manually trigger our subscriber function using the following command:
 
 ```
-td fn trigger --collection CUSTOMERS --name subscribe_customers
+td fn trigger --collection customers --name subscribe_customers
 ```
 
 Remember that you can see the status whether the functions have finished executing by using the following command:
@@ -485,7 +485,7 @@ copy %TDX%\output\customer_leads.jsonl %TDX%\output\customer_leads_01.jsonl
 
 ## 4.3 Trigger the pub/sub workflow
 
-The publisher function that we registered earlier creates a table called `CUSTOMER_LEADS`. This table in turn has a
+The publisher function that we registered earlier creates a table called `customer_leads`. This table in turn has a
 registered subscriber. Together, this publisher/subscriber pair makes a simple data engineering workflow. When the
 publisher activates and updates the table, it will automatically trigger any subscribers for the updated tables.
 
@@ -496,7 +496,7 @@ records, we expect that the output file will also have 20 more customer records 
 Use the following command to trigger the publisher to read new input file:
 
 ```
-td fn trigger --collection CUSTOMERS --name publish_customers
+td fn trigger --collection customers --name publish_customers
 ```
 
 Remember that you can see the status whether the functions have finished executing by using the following command:
@@ -539,7 +539,7 @@ For the next steps, here are a couple of experiements you can try:
 
 * Add a Tabsdata
   [transformer](https://docs.tabsdata.com/latest/guide/04_working_with_functions/working_with_transformers/main.html)
-  in the mix. Perform complex transformations on ``CUSTOMER_LEADS`` table using a Tabsdata tranformer, and connect the
+  in the mix. Perform complex transformations on ``customer_leads`` table using a Tabsdata tranformer, and connect the
   output table from the transformer to a subscriber.
 * Read files from and write files to different external systems beyond local file system. You can read more about them
   [here](https://docs.tabsdata.com/latest/guide/supported_sources_and_destinations/main.html).

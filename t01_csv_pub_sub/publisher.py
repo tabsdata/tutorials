@@ -6,7 +6,7 @@ import tabsdata as td
     source = td.LocalFileSource(os.path.join(os.getenv("TDX"), "input", "customers.csv")),
 
     # Name of the table created in the Tabsdata collection.
-    tables = ["CUSTOMER_LEADS"],
+    tables = ["customer_leads"],
 )
 
 def publish_customers(tf: td.TableFrame):

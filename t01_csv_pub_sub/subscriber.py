@@ -3,7 +3,7 @@ import tabsdata as td
 
 @td.subscriber(
     # Name of the table to be exported from Tabsdata.
-    tables = ["CUSTOMER_LEADS"],
+    tables = ["customer_leads"],
 
     # Absolute system path to the file to be written by the Subscriber.
     destination = td.LocalFileDestination(os.path.join(os.getenv("TDX"), "output", "customer_leads.jsonl")),
