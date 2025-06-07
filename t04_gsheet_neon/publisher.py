@@ -30,7 +30,7 @@ class GoogleSheetsPublisher(td.SourcePlugin):
 
 @td.publisher(
     source=GoogleSheetsPublisher(),  # Initialize the source plugin
-    tables="output",                 # Define the output table name
+    tables="td_booth_visitors",                 # Define the output table name
 )
 def plugin_pub(tf1: td.TableFrame) -> td.TableFrame:
     # Drop 'favorite_color' column from the table
