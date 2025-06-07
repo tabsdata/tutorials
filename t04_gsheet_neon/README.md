@@ -8,7 +8,7 @@ In this tutorial, we’ll explore how Tabsdata enables exporting data from Googl
 
 If you get stuck somewhere, please remember to check our [Troubleshooting](https://docs.tabsdata.com/latest/guide/10_troubleshooting/main.html) guide, and reach out to us on [Slack](https://join.slack.com/t/tabsdata-community/shared_invite/zt-322toyigx-ZGFioMV2Gbza4bJDAR7wSQ). Your feedback helps us improve.
 
-You can check the detailed meaning on each step in any of our intial tutorials ([1](https://github.com/tabsdata/tutorials/tree/main/t01_csv_pub_sub), [2](https://github.com/tabsdata/tutorials/tree/main/t02_postgres_pub_sub), [3](https://github.com/tabsdata/tutorials/tree/main/t03_csv_iceberg_pub_sub)), or refer our [documentation](https://docs.tabsdata.com/latest/guide/02_getting_started/main.html).
+You can check the detailed meaning of each step in any of our intial tutorials ([1](https://github.com/tabsdata/tutorials/tree/main/t01_csv_pub_sub), [2](https://github.com/tabsdata/tutorials/tree/main/t02_postgres_pub_sub), [3](https://github.com/tabsdata/tutorials/tree/main/t03_csv_iceberg_pub_sub)), or refer our [documentation](https://docs.tabsdata.com/latest/guide/02_getting_started/main.html).
 
 Let’s dive in!
 
@@ -116,7 +116,7 @@ td table schema --collection marketing --name td_booth_visitors
 
 ## 6. Update the Subscriber
 
-To check the output in Neon you will need to update the Subcriber Python code with your Neon PostgreSQL DB URI, and login credentials. You can check how to work with credentials in the [Tabsdata documentation](https://docs.tabsdata.com/latest/guide/secrets_management/main.html).
+To check the output in Neon you will need to update the Subscriber Python code with your Neon PostgreSQL DB URI, and login credentials. You can check how to work with credentials in the [Tabsdata documentation](https://docs.tabsdata.com/latest/guide/secrets_management/main.html).
 
 Look for this code snippet in `subscriber.py` to update the relevant details.
 
