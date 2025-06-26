@@ -105,7 +105,7 @@ pip install tabsdata --upgrade
 ### 3.2. Set Environmental Variables for Tabsdata
 Tabsdata caches any set environmental variables when you run ```tdserver start```, so it's important to set all required environment variables prior to starting your Tabsdata server. 
 
-In order for the Oracle connector to function properly, run the following command and ensure following environment variables are set:
+In order for the Oracle connector to function properly, run the following commands and ensure following environment variables are set:
 
   ```sh
   export PATH="${PATH}:/Users/$USER/Downloads/instantclient_23_3"
