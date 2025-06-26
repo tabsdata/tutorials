@@ -114,7 +114,7 @@ In order for the Oracle connector to function properly, run the following comman
   export TNS_ADMIN=/Users/$USER/Downloads/instantclient_23_3
   export ORACLE_HOME=/Users/$USER/Downloads/instantclient_23_3
   ```
-These variables tell Tabsdata where to find your Oracle Instant Client libraries. By default, the install script from step 2.5 places the client in your Downloads folder. If your Instant Client is located elsewhere, be sure to update the paths in the commands above accordingly.
+These variables tell Tabsdata where to find your Oracle Instant Client that was installed in step 2.5. By default, the install script from step 2.5 places the client in your Downloads folder. If your Instant Client is located elsewhere, be sure to update the paths in the commands above accordingly.
 
 If you're managing credentials via environment variables, this is also the time to export any values needed for Oracle, AWS, or PostgreSQL authentication.
 
