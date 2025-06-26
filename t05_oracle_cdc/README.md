@@ -53,7 +53,22 @@ Create the 'customers' table and insert sample data by running the `psql_command
 
 ### 2.4. Test Manual Connection (OPTIONAL)
 
-Test your database connection manually by running the `manual_oracle_connection.py` script:
+Test your database connection manually by running the `manual_oracle_connection.py` script.
+
+The following data should be returned 
+```python
+[
+(1, 'May', 'James', 22, 'NY', '80402'), 
+(2, 'Irene', 'McKenzie', 35, 'MO', '24473'), 
+(3, 'Polly', 'Phillips', 56, 'WY', '68070'), 
+(4, 'Vera', 'Clarke', 48, 'VT', '86838'), 
+(5, 'Garrett', 'Cross', 19, 'OK', '26862'), 
+(6, 'Roy', 'Chavez', 40, 'CO', '79642'), 
+(7, 'Gene', 'Barber', 22, 'ND', '89517'), 
+(8, 'Annie', 'Spencer', 42, 'AK', '44788'), 
+(9, 'Ina', 'Dean', 26, 'OH', '45074')
+]
+```
 
 ### 2.5. Install and Configure Oracle Connector Dependencies
 
