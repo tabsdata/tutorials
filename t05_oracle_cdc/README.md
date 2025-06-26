@@ -55,7 +55,7 @@ Create the 'customers' table and insert sample data by running the `psql_command
 
 Test your database connection manually by running the `manual_oracle_connection.py` script.
 
-The following data should be returned 
+The following data should be returned: 
 ```python
 [
 (1, 'May', 'James', 22, 'NY', '80402'), 
