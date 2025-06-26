@@ -61,7 +61,7 @@ Tabsdata requires an additional Oracle dependency in order to run properly:
 
 1. Download [instantclient-basic-macos-arm64.dmg](https://download.oracle.com/otn_software/mac/instantclient/instantclient-basic-macos-arm64.dmg) from the Oracle website
 2. Mount the file (by clicking into the downloaded .dmg file)
-3. Open a terminal window and change directory to the newly mounted disk image. The base path will always start with ```/Volumes```, but the exact directory name may vary depending on the version. your command should look similar to this:
+3. Open a terminal window and change directory to the newly mounted disk image. The base path will always start with ```/Volumes```, but the exact directory name may vary depending on the client version. Your command should look similar to this:
    ```
    cd /Volumes/instantclient-basic-macos.arm64-23.3.0.x.x
    ```
