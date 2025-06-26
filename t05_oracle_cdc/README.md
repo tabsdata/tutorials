@@ -43,91 +43,15 @@ To interact with your Oracle database directly within VS Code, you will need the
 
 ### 2.2. Create a Default User
 
-After setting up your database, create a fresh Oracle user (or run the script in `psql_commands/setup_commands.sql`):
-
-```sql
-ALTER SESSION SET CONTAINER=ORCLPDB1;
-
-CREATE USER TABSDATA_USER IDENTIFIED BY mypassword1;
-GRANT CONNECT, RESOURCE TO TABSDATA_USER;
-GRANT CREATE SESSION TO TABSDATA_USER;
-GRANT UNLIMITED TABLESPACE TO TABSDATA_USER;
-```
+After setting up your database, create a fresh Oracle user by running the script in `psql_commands/setup_commands.sql`:
 
 ### 2.3. Create the 'customers' Table
 
-Create the 'customers' table and insert sample data by running the SQL commands below (or by running the `psql_commands/customer_table_create.sql` script):
-
-```sql
-ALTER SESSION SET CURRENT_SCHEMA = TABSDATA_USER;
-ALTER SESSION SET CONTAINER=ORCLPDB1;
-
-BEGIN
-  EXECUTE IMMEDIATE 'DROP TABLE TABSDATA_USER.customers PURGE';
-EXCEPTION
-  WHEN OTHERS THEN
-    IF SQLCODE != -942 THEN
-      RAISE;
-    END IF;
-END;
-
-CREATE TABLE customers (
-  seq   NUMBER,
-  first VARCHAR2(100),
-  last  VARCHAR2(100),
-  age   NUMBER,
-  state VARCHAR2(2),
-  zip   VARCHAR2(10)
-);
-
-INSERT ALL
-  INTO customers(seq, first, last, age, state, zip) VALUES (1, 'May',     'James',    22, 'NY', '80402')
-  INTO customers(seq, first, last, age, state, zip) VALUES (2, 'Irene',   'McKenzie', 35, 'MO', '24473')
-  INTO customers(seq, first, last, age, state, zip) VALUES (3, 'Polly',   'Phillips', 56, 'WY', '68070')
-  INTO customers(seq, first, last, age, state, zip) VALUES (4, 'Vera',    'Clarke',   48, 'VT', '86838')
-  INTO customers(seq, first, last, age, state, zip) VALUES (5, 'Garrett', 'Cross',    19, 'OK', '26862')
-  INTO customers(seq, first, last, age, state, zip) VALUES (6, 'Roy',     'Chavez',   40, 'CO', '79642')
-  INTO customers(seq, first, last, age, state, zip) VALUES (7, 'Gene',    'Barber',   22, 'ND', '89517')
-  INTO customers(seq, first, last, age, state, zip) VALUES (8, 'Annie',   'Spencer',  42, 'AK', '44788')
-  INTO customers(seq, first, last, age, state, zip) VALUES (9, 'Ina',     'Dean',     26, 'OH', '45074')
-SELECT * FROM dual;
-
-COMMIT;
-```
+Create the 'customers' table and insert sample data by running the `psql_commands/customer_table_create.sql` script:
 
 ### 2.4. Test Manual Connection (OPTIONAL)
 
 Test your database connection manually by running the `manual_oracle_connection.py` script:
-
-```python
-import oracledb
-connection = oracledb.connect(
-    user="TABSDATA_USER",
-    password="mypassword1",
-    dsn="127.0.0.1:1521/orclpdb1"
-)
-cursor = connection.cursor()
-cursor.execute("SELECT * FROM TABSDATA_USER.customers")
-row = cursor.fetchall()
-print(row)
-cursor.close()
-connection.close()
-```
-
-The following data should be returned 
-```python
-[
-(1, 'May', 'James', 22, 'NY', '80402'), 
-(2, 'Irene', 'McKenzie', 35, 'MO', '24473'), 
-(3, 'Polly', 'Phillips', 56, 'WY', '68070'), 
-(4, 'Vera', 'Clarke', 48, 'VT', '86838'), 
-(5, 'Garrett', 'Cross', 19, 'OK', '26862'), 
-(6, 'Roy', 'Chavez', 40, 'CO', '79642'), 
-(7, 'Gene', 'Barber', 22, 'ND', '89517'), 
-(8, 'Annie', 'Spencer', 42, 'AK', '44788'), 
-(9, 'Ina', 'Dean', 26, 'OH', '45074')
-]
-```
 
 ### 2.5. Install and Configure Oracle Connector Dependencies
 
@@ -163,6 +87,7 @@ pip install tabsdata --upgrade
 
 ### 3.2. Set Environmental Variables for Tabsdata
 Tabsdata caches any set environmental variables when you run ```tdserver start```, so ensure the following environmental variables are set prior to starting your Tabsdata server. These are necessary dependencies for the oracle connector:
+
   ```sh
   export PATH="${PATH}:/Users/$USER/Downloads/instantclient_23_3"
   export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:/Users/$USER/Downloads/instantclient_23_3"
@@ -365,28 +290,6 @@ Now that we have our first commit for the `customers` table in Tabsdata, we need
 
 ### 8.1 Modify the Oracle `customers` table
   Run the SQL script in `psql_commands/customer_table_update.sql` in order to execute an Insert, Update, and Delete Operation into the Oracle 'customers' table 
-  ```sql
-  ALTER SESSION SET CURRENT_SCHEMA = TABSDATA_USER;
-  ALTER SESSION SET CONTAINER=ORCLPDB1;
-
-  INSERT INTO TABSDATA_USER.customers (seq, first, last, age, state, zip)
-  VALUES (10, 'Alice', 'Smith', 30, 'CA', '90210');
-
-  COMMIT;
-
-  DELETE FROM TABSDATA_USER.customers
-  WHERE SEQ = 4;
-
-  COMMIT;
-
-  UPDATE TABSDATA_USER.customers
-  SET AGE = AGE + 1
-  WHERE SEQ = 7;
-
-  COMMIT;
-
-  SELECT * FROM TABSDATA_USER.customers;
-  ```
 
 ## 9. Re-trigger the Publisher
 
