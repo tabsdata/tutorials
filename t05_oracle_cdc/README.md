@@ -250,8 +250,6 @@ td exec list-trxs
 
 <img src="./assets/td_exec_03.png" alt="Function Published">
 
-![alt text](image.png)
-
 **Check Output in PostgreSQL**
 
 ![Tabsdata_Output](assets/PostgreSQL_cdc_01.png)
