@@ -39,7 +39,9 @@ export TDX=$(pwd)
 
 Follow [this video tutorial](https://www.youtube.com/watch?v=uxvoMhkKUPE) to set up an Oracle Database using Docker and connect to it through VS Code.
 
-To interact with your Oracle database directly within VS Code, you will need the following [Oracle SQL Developer Extension for VSCode](https://marketplace.visualstudio.com/items?itemName=Oracle.sql-developer). This extension is published by Oracle and is what is used in the Oracle setup tutorial video above and in the Tabsdata tutorial steps below. Alternatively, you may use the sqlplus package that comes with the Oracle Instantclient dependency we will install in step 2.5
+To interact with your Oracle database directly within VS Code, you will need the following [Oracle SQL Developer Extension for VSCode](https://marketplace.visualstudio.com/items?itemName=Oracle.sql-developer). This extension is published by Oracle and is the same extension used in the tutorial video and in the Tabsdata setup instructions below.
+
+Alternatively, you can use the sqlplus command-line tool, which comes with the Oracle Instant Client we'll install in step 2.5.
 
 ### 2.2. Create a Default User
 
