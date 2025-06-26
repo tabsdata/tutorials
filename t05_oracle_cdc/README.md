@@ -103,7 +103,9 @@ pip install tabsdata --upgrade
 ```
 
 ### 3.2. Set Environmental Variables for Tabsdata
-Tabsdata caches any set environmental variables when you run ```tdserver start```, so ensure the following environmental variables are set prior to starting your Tabsdata server. These are necessary dependencies for the oracle connector:
+Tabsdata caches any set environmental variables when you run ```tdserver start```, so it's important to set all required environmental variables prior to starting your Tabsdata server. 
+
+In order for the Oracle connector to function properly, run the following command and ensure following environment variables are set:
 
   ```sh
   export PATH="${PATH}:/Users/$USER/Downloads/instantclient_23_3"
@@ -113,7 +115,7 @@ Tabsdata caches any set environmental variables when you run ```tdserver start``
   export ORACLE_HOME=/Users/$USER/Downloads/instantclient_23_3
   ```
 
-At this point, you may also set any environmental variables for credentials you are planning to use for authenticating with Oracle, AWS, and PostgreSQL if you are using environmental variables for credential management
+If you're managing credentials via environment variables, this is also the time to export any values needed for Oracle, AWS, or PostgreSQL authentication.
 
 
 ### 3.3. Install Tabsdata
