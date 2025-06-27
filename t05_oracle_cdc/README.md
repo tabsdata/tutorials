@@ -19,6 +19,7 @@ For more details on each step, see our initial tutorials ([1](https://github.com
 - Python 3.12 or higher
 - PostgreSQL URL
 - Amazon S3 bucket and Glue database
+- Oracle Database
 - Tabsdata 0.9.6 or higher
 
 
@@ -116,7 +117,7 @@ In order for the Oracle connector to function properly, run the following comman
   ```
 These variables tell Tabsdata where to find your Oracle Instant Client that was installed in step 2.5. By default, the install script from step 2.5 places the client in your Downloads folder. If your Instant Client is located elsewhere, be sure to update the paths in the commands above accordingly.
 
-If you're managing credentials via environment variables, this is also the time to export any values needed for Oracle, AWS, or PostgreSQL authentication.
+If you're managing credentials via environment variables, this is also the time to export any values needed for Oracle, AWS, or PostgreSQL authentication. For more details, you can check Tabsdata Documentation [here](https://docs.tabsdata.com/latest/guide/secrets_management/main.html)
 
 
 ### 3.3. Install Tabsdata
