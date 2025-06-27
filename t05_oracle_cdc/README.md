@@ -258,7 +258,7 @@ td exec list-trxs
 ## 7. Update, Register, and Trigger the AWS Iceberg Subscriber
 
 **Update:**  
-Edit `sub_s3_iceberg.py` to set your S3/Glue parameters (uri, region, credentials, tables, auto_create_at). For more information on secrets management, you can check the Tabsdata Documentation [here]
+Edit `sub_s3_iceberg.py` to set your S3/Glue parameters (uri, region, credentials, tables, auto_create_at). For more information on secrets management, you can check the Tabsdata Documentation [here](https://docs.tabsdata.com/latest/guide/secrets_management/main.html)
 
 ```python
 destination=td.S3Destination(
