@@ -117,7 +117,7 @@ In order for the Oracle connector to function properly, run the following comman
   ```
 These variables tell Tabsdata where to find your Oracle Instant Client that was installed in step 2.5. By default, the install script from step 2.5 places the client in your Downloads folder. If your Instant Client is located elsewhere, be sure to update the paths in the commands above accordingly.
 
-If you're managing credentials via environment variables, this is also the time to export any values needed for Oracle, AWS, or PostgreSQL authentication. For more details, you can check Tabsdata Documentation [here](https://docs.tabsdata.com/latest/guide/secrets_management/main.html)
+If you're managing credentials via environment variables, this is also the time to export any values needed for Oracle, AWS, or PostgreSQL authentication. For more information on secrets management, you can check the Tabsdata Documentation [here](https://docs.tabsdata.com/latest/guide/secrets_management/main.html)
 
 
 ### 3.3. Install Tabsdata
@@ -160,7 +160,7 @@ td collection create oracle
 ## 4. Update, Register, and Trigger the Publisher
 
 **Update:**  
-Edit `oracle_pub.py` to set your Oracle username and password credentials. 
+Edit `oracle_pub.py` to set your Oracle username and password credentials. For more information on secrets management, you can check the Tabsdata Documentation [here]
 
 ```python
 credentials=td.UserPasswordCredentials(td.EnvironmentSecret("ORACLEDB_USERNAME"),td.EnvironmentSecret("ORACLEDB_PASSWORD")),
@@ -220,7 +220,7 @@ td table sample --collection oracle --name customers_cdc
 ## 6. Update, Register, and Trigger the PostgreSQL Subscriber
 
 **Update:**  
-Edit `sub_postgres.py` to set your PostgreSQL URI and credentials:
+Edit `sub_postgres.py` to set your PostgreSQL URI and credentials. For more information on secrets management, you can check the Tabsdata Documentation [here]
 
 ```python
 destination=td.PostgresDestination(
@@ -258,7 +258,7 @@ td exec list-trxs
 ## 7. Update, Register, and Trigger the AWS Iceberg Subscriber
 
 **Update:**  
-Edit `sub_s3_iceberg.py` to set your S3/Glue parameters (uri, region, credentials, tables, auto_create_at):
+Edit `sub_s3_iceberg.py` to set your S3/Glue parameters (uri, region, credentials, tables, auto_create_at). For more information on secrets management, you can check the Tabsdata Documentation [here]
 
 ```python
 destination=td.S3Destination(
