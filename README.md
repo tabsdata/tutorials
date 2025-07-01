@@ -2,6 +2,17 @@
 
 In the tutorials below, we show how to make the most of Tabsdata, when working with various sources and destinations. We have shown only specific connectors in the tutorials below. However, in a real-world scenario, your data source could be any other database, or file storage location (cloud or on-prem), and the subscriber could write data to various endpoints such as a database or file system. You can check the list of source and destination connectors in [Tabsdata documentation](https://docs.tabsdata.com/latest/guide/04_01_working_with_publishers/main.html). 
 
+## Tutorial 5: Publishing, Transforming, and Subscribing a CDC Stream from Oracle into PostgreSQL and S3 (`t05_oracle_cdc`)
+
+In this tutorial, we'll explore how Tabsdata enables generating a CDC stream from a table in Oracle and subscribe that CDC stream to AWS Iceberg and PostgreSQL. We will do the following steps:
+
+* Set up an Oracle Database in a Docker container
+* Set up Tabsdata
+* Register a publisher function to read customer data from an Oracle table
+* Register a transformer function to capture data changes and store the CDC stream in a new table
+* Register subscriber functions to deliver the CDC stream and customer table to PostgreSQL and AWS Iceberg
+
+
 ## Tutorial 4: Pre-processing, Publishing and Subscribing a Google Sheet to Neon PostgreSQL (`t04_gsheet_neon`)
 
 In this tutorial, we’ll explore how Tabsdata enables exporting data from Google Sheet to Neon PostgreSQL. We will do the following steps:
