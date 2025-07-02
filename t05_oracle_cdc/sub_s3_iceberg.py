@@ -23,5 +23,5 @@ s3_credentials=td.S3AccessKeyCredentials(
     )
     )
 )
-def sub_s3(customers: td.TableFrame, customers_cdc: td.TableFrame):
+def sub_s3_iceberg(customers: td.TableFrame, customers_cdc: td.TableFrame):
     return customers, customers_cdc
