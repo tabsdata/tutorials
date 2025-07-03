@@ -120,13 +120,7 @@ These variables tell Tabsdata where to find your Oracle Instant Client that was 
 If you're managing credentials via environment variables, this is also the time to export any values needed for Oracle, AWS, or PostgreSQL authentication. For more information on secrets management, you can check the Tabsdata Documentation [here](https://docs.tabsdata.com/latest/guide/secrets_management/main.html)
 
 
-### 3.3. Install Tabsdata
-
-```sh
-pip install tabsdata --upgrade
-```
-
-### 3.4. Start the Server
+### 3.3. Start the Server
 
 ```sh
 tdserver start
@@ -143,13 +137,13 @@ You may need to wait for a couple of seconds for the output to appear. Run the s
 <img src="./assets/tdserver_status.png" alt="Server Status" height="80%">
 
 
-### 3.5. Login
+### 3.4. Login
 
 ```sh
 td login localhost --user admin --password tabsdata
 ```
 
-### 3.6. Create a Collection
+### 3.5. Create a Collection
 
 ```sh
 td collection create oracle
