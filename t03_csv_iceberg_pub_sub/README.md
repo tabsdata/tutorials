@@ -135,26 +135,18 @@ To install/update the Tabsdata Python package, run this command in your CLI:
 pip install tabsdata --upgrade
 ```
 
-Please note that you need Python 3.12 or later, to install the package. Additionally, you need Tabsdata python package 0.9.5 or later to successfully run the functions from this article.
+Please note that you need Python 3.12 or later, to install the package. Additionally, you need Tabsdata python package 1.0.0 or later to successfully run the functions from this article.
 
 #### 1.3.2 [Only if you have started a Tabsdata server before] Clearing the old Tabsdata instance
 
-It is suggested that to work with newer versions of Tabsdata (v0.9.5 and above in this case), you remove the older Tabsdata instance, in case you have started the Tabsdata server earlier. This enables you to start from scratch, reducing the possibilities of error or conflicts.
+It is suggested that to work with newer versions of Tabsdata (v1.0.0 and above in this case), you remove the older Tabsdata instance, in case you have started the Tabsdata server earlier. This enables you to start from scratch, reducing the possibilities of error or conflicts.
 
 Run the following commands in your CLI, to stop the Tabsdata server and clear the instance:
 
-For Linux or macOS:
-
 ```
 tdserver stop
-rm -rf ~/.tabsdata
-```
-
-For Windows:
-
-```
-tdserver stop
-rmdir /s /q "%USERPROFILE%\.tabsdata"
+tdserver clean
+tdserver delete
 ```
 
 #### 1.3.3 Start the Tabsdata server
@@ -175,7 +167,7 @@ Output:
 
 You may need to wait for a couple of seconds for the output to appear. Run the status check command until you see both `supervisor` and `apiserver` in the output.
 
-<img src="./assets/tdserver_status.png" alt="Server Status" height="80%">
+<img src="./assets/tdserver_status.png" alt="Server Status" height="150%">
 
 The presence of supervisor and apiserv confirms that the server is running.
 
@@ -184,13 +176,7 @@ The presence of supervisor and apiserv confirms that the server is running.
 Before you can use Tabsdata, you must login to the server which can be done as follows:
 
 ```
-td login localhost --user admin
-```
-
-When prompted from password put:
-
-```
-tabsdata
+td login --server localhost --user admin --role sys_admin --password tabsdata
 ```
 
 Output:
@@ -226,14 +212,14 @@ For this tutorial, we will create a collection called `customers` where we will 
 create this collection use the following command:
 
 ```
-td collection create customers
+td collection create --name customers
 ```
 
 This should have created the collection that you can verify by running the previous list command. You can also see
 more details about this collection using the `info` command as follows:
 
 ```
-td collection info customers
+td collection info --name customers
 ```
 
 Output:
@@ -251,7 +237,7 @@ some selected columns of this data to a table. For convenience, we have this fun
 
 ```
 @td.publisher(
-    source = td.LocalFileSource(os.path.join(os.getenv("TDX"), "input", "customers.csv")),
+    source = td.LocalFileSource(os.path.join(os.getcwd(), "input", "customers.csv")),
     tables = ["customer_leads"],
 )
 
@@ -280,13 +266,13 @@ publishing them to output tables.
 Register this publisher function to the `customers` collection using the following command.
 
 ```
-td fn register --collection customers --fn-path $TDX/publisher.py::publish_customers
+td fn register --coll customers --path $TDX/publisher.py::publish_customers
 ```
 
 You can now verify that the function was registered successfully by running the following command:
 
 ```
-td fn list --collection customers
+td fn list --coll customers
 ```
 Output:
 
@@ -320,20 +306,13 @@ copy %TDX%\input\customers_01.csv %TDX%\input\customers.csv
 Let's trigger our publisher. This can be done using the following command:
 
 ```
-td fn trigger --collection customers --name publish_customers
+td fn trigger --coll customers --name publish_customers
 ```
 
-You can see the status whether the functions have finished executing by using the following command:
+If the function has finished executing, you will see a 'Committed' status for the execution's output. If you see `Failed`, please remember to check [our Troubleshooting guide](https://docs.tabsdata.com/latest/guide/10_troubleshooting/main.html), and reach out to us on [Slack](https://join.slack.com/t/tabsdata-community/shared_invite/zt-322toyigx-ZGFioMV2Gbza4bJDAR7wSQ). Your feedback helps us improve.
 
-```
-td exec list-trxs
-```
+<img src="./assets/td_fn_output_01.png" alt="List functions" height="auto">
 
-Output:
-
-<img src="./assets/function_published.png" alt="Function Published" height="auto">
-
-If the function has finished executing, you will see Published in the status. If you see `Failed`, please remember to check [our Troubleshooting guide](https://docs.tabsdata.com/latest/guide/10_troubleshooting/main.html), and reach out to us on [Slack](https://join.slack.com/t/tabsdata-community/shared_invite/zt-322toyigx-ZGFioMV2Gbza4bJDAR7wSQ). Your feedback helps us improve.
 
 ### 2.4 Checking the publisher output
 
@@ -343,7 +322,7 @@ to, by various stakeholders within the organization.
 To check the schema of the table in Tabsdata, run this command in your CLI:
 
 ```
-td table schema --collection customers --name customer_leads
+td table schema --coll customers --name customer_leads
 ```
 
 Output:
@@ -356,12 +335,13 @@ of data.
 To check the sample of the table in Tabsdata, run this command in your CLI:
 
 ```
-td table sample --collection customers --name customer_leads
+td table sample --coll customers --name customer_leads
 ```
 
 Output:
 
 <img src="./assets/table_sample.png" alt="Sample" height="auto">
+
 
 ## Step 3: Subscribing to the Table in Tabsdata and send output to S3
 
@@ -468,18 +448,19 @@ In a real world scenario, your subscriber function may take input data from mult
 Register this subscriber function to the `customers` collection using the following command:
 
 ```
-td fn register --collection customers --fn-path $TDX/subscriber.py::sub_s3_iceberg
+td fn register --coll customers --path $TDX/subscriber.py::sub_s3_iceberg
 ```
 
 You can now verify that the function was registered successfully by running the following command:
 
 ```
-td fn list --collection customers
+td fn list --coll customers
 ```
 
 Output:
 
-<img src="./assets/list_function_both.png" alt="List both functions" height="auto">
+<img src="./assets/td_fn_list_both.png" alt="List both functions" height="auto">
+
 
 This output confirms that the “sub_s3_iceberg” has been registered within the collection `customers`.
 
@@ -490,20 +471,15 @@ As is the case with publisher functions, registering the subscriber function doe
 Let's now trigger our subscriber function using the following command:
 
 ```
-td fn trigger --collection customers --name sub_s3_iceberg
-```
-
-Remember that you can see the status whether the functions have finished executing by using the following command:
-
-```
-td exec list-trxs
+td fn trigger --coll customers --name sub_s3_iceberg
 ```
 
 Output:
 
 <img src="./assets/function_published_both.png" alt="Function Published" height="auto">
 
-If the function has finished executing, you will see Published in the status. If you see `Failed`, please remember to check [our Troubleshooting guide](https://docs.tabsdata.com/latest/guide/10_troubleshooting/main.html), and reach out to us on [Slack](https://join.slack.com/t/tabsdata-community/shared_invite/zt-322toyigx-ZGFioMV2Gbza4bJDAR7wSQ). Your feedback helps us improve.
+
+If the function has finished executing, you will see 'Committed' in the status. If you see `Failed`, please remember to check [our Troubleshooting guide](https://docs.tabsdata.com/latest/guide/10_troubleshooting/main.html), and reach out to us on [Slack](https://join.slack.com/t/tabsdata-community/shared_invite/zt-322toyigx-ZGFioMV2Gbza4bJDAR7wSQ). Your feedback helps us improve.
 
 ### 3.4 Checking the subscriber output:
 
@@ -562,20 +538,17 @@ To demonstrate this, we will trigger our publisher function. This should automat
 Use the following command to trigger the publisher to read new input file:
 
 ```
-td fn trigger --collection customers --name publish_customers
+td fn trigger --coll customers --name publish_customers
 ```
 
 Remember that you can see the status whether the functions have finished executing by using the following command:
 
-```
-td exec list-trxs
-```
 
 Output:
 
 <img src="./assets/function_published_three.png" alt="Function Published" height="auto">
 
-If the function has finished executing, you will see Published in the status. If you see `Failed`, please remember to check [our Troubleshooting guide](https://docs.tabsdata.com/latest/guide/10_troubleshooting/main.html), and reach out to us on [Slack](https://join.slack.com/t/tabsdata-community/shared_invite/zt-322toyigx-ZGFioMV2Gbza4bJDAR7wSQ). Your feedback helps us improve.
+If the function has finished executing, you will see 'Committed' in the status. If you see `Failed`, please remember to check [our Troubleshooting guide](https://docs.tabsdata.com/latest/guide/10_troubleshooting/main.html), and reach out to us on [Slack](https://join.slack.com/t/tabsdata-community/shared_invite/zt-322toyigx-ZGFioMV2Gbza4bJDAR7wSQ). Your feedback helps us improve.
 
 In this example, there is only one subscriber that was executed on refresh of the published table. However, it will work for any number of subscribers that are registered and have their input tables associated with the publisher.
 

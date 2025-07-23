@@ -16,7 +16,7 @@ Let’s dive in!
 
 * Python 3.12 or higher
 * Neon PostgreSQL URL
-* Tabsdata 0.9.6 or higher
+* Tabsdata 1.0.0 or higher
 
 ## 1. Clone the Github repository
 
@@ -40,7 +40,15 @@ export TDX=`pwd` ## For Windows: set TDX=%CD%
 pip install tabsdata --upgrade
 ```
 
-### 2.2. Start the server
+### 2.2. [Only if you have started a Tabsdata server before] Clear the old Tabsdata instance
+
+```
+tdserver stop
+tdserver clean
+tdserver delete
+```
+
+### 2.3. Start the server
 
 ```
 tdserver start
@@ -60,13 +68,13 @@ The presence of supervisor and apiserver confirms that the server is running.
 ### 2.3. Login to the server
 
 ```
-td login localhost --user admin --password tabsdata
+td login --server localhost --user admin --role sys_admin --password tabsdata
 ```
 
 ### 2.4. Create a Collection
 
 ```
-td collection create marketing
+td collection create --name marketing
 ```
 
 ## 3. [Optional] Update the Publisher
@@ -90,28 +98,23 @@ class GoogleSheetsPublisher(td.SourcePlugin):
 
 **Register**
 ```
-td fn register --collection marketing --fn-path $TDX/publish_gsheet.py::publish_gsheet
+td fn register --coll marketing --path $TDX/publish_gsheet.py::publish_gsheet
 ```
 
 **Trigger**
 ```
-td fn trigger --collection marketing --name publish_gsheet
+td fn trigger --coll marketing --name publish_gsheet
 ```
 
-### Check the status of transaction
+If the function has finished executing, you will see a 'Committed' status for the execution's output. If you see `Failed`, please remember to check [our Troubleshooting guide](https://docs.tabsdata.com/latest/guide/10_troubleshooting/main.html), and reach out to us on [Slack](https://join.slack.com/t/tabsdata-community/shared_invite/zt-322toyigx-ZGFioMV2Gbza4bJDAR7wSQ). Your feedback helps us improve.
 
-```
-td exec list-trxs
-```
+<img src="./assets/td_fn_output_01.png" alt="List functions" height="auto">
 
-Output:
-
-<img src="./assets/function_published.png" alt="Function Published" height="auto">
 
 ## 5. Check the data in Tabsdata
 
 ```
-td table schema --collection marketing --name td_booth_visitors
+td table schema --coll marketing --name td_booth_visitors
 ```
 
 ## 6. Update the Subscriber
@@ -136,19 +139,14 @@ Look for this code snippet in `subscriber.py` to update the relevant details.
 
 **Register**
 ```
-td fn register --collection marketing --fn-path $TDX/subscribe_neon.py::subscribe_neon
+td fn register --coll marketing --path $TDX/subscribe_neon.py::subscribe_neon
 ```
 
 **Trigger**
 ```
-td fn trigger --collection marketing --name subscribe_neon
+td fn trigger --coll marketing --name subscribe_neon
 ```
 
-### Check the status of transaction
-
-```
-td exec list-trxs
-```
 
 Output:
 
