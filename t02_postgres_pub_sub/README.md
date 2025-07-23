@@ -175,13 +175,11 @@ To verify that the Tabsdata server instance is running:
 tdserver status
 ```
 
-Both, supervisor and apiserver need to become active for the server to be completely up and running.
-
 Output:
 
 <img src="./assets/tdserver_status.png" alt="Server Status" height="150%">
 
-The presence of supervisor and apiserv confirms that the server is running.
+The presence of supervisor, apiserv and janitor confirms that the server is running.
 
 #### 1.3.4 Login to Tabsdata server
 
