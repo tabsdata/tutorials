@@ -165,11 +165,11 @@ tdserver status
 
 Output:
 
-You may need to wait for a couple of seconds for the output to appear. Run the status check command until you see both `supervisor` and `apiserver` in the output.
+You may need to wait for a couple of seconds for the output to appear.
 
 <img src="./assets/tdserver_status.png" alt="Server Status" height="150%">
 
-The presence of supervisor and apiserv confirms that the server is running.
+The presence of supervisor, apiserv, and janitor confirms that the server is running.
 
 #### 1.3.4 Login to Tabsdata server
 
