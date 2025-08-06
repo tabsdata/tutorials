@@ -20,7 +20,7 @@ For more details on each step, see our initial tutorials ([1](https://github.com
 - PostgreSQL URL
 - Amazon S3 bucket and Glue database
 - Oracle Database
-- Tabsdata 0.9.6 or higher
+- Tabsdata 1.0.0 or higher
 
 
 
@@ -120,7 +120,21 @@ These variables tell Tabsdata where to find your Oracle Instant Client that was 
 If you're managing credentials via environment variables, this is also the time to export any values needed for Oracle, AWS, or PostgreSQL authentication. For more information on secrets management, you can check the Tabsdata Documentation [here](https://docs.tabsdata.com/latest/guide/secrets_management/main.html)
 
 
-### 3.3. Start the Server
+### 3.3. Install Tabsdata
+
+```sh
+pip install tabsdata --upgrade
+```
+
+### 3.4. [Only if you have started a Tabsdata server before] Clear the old Tabsdata instance
+
+```
+tdserver stop
+tdserver clean
+tdserver delete
+```
+
+### 3.5. Start the Server
 
 ```sh
 tdserver start
@@ -137,16 +151,16 @@ You may need to wait for a couple of seconds for the output to appear. Run the s
 <img src="./assets/tdserver_status.png" alt="Server Status" height="80%">
 
 
-### 3.4. Login
+### 3.5. Login
 
 ```sh
-td login localhost --user admin --password tabsdata
+td login --server localhost --user admin --role sys_admin --password tabsdata
 ```
 
-### 3.5. Create a Collection
+### 3.6. Create a Collection
 
 ```sh
-td collection create oracle
+td collection create --name oracle
 ```
 
 
@@ -154,7 +168,7 @@ td collection create oracle
 ## 4. Update, Register, and Trigger the Publisher
 
 **Update:**  
-Edit `oracle_pub.py` to set your Oracle username and password credentials. For more information on secrets management, you can check the Tabsdata Documentation [here]
+Edit `oracle_pub.py` to set your Oracle username and password credentials. For more information on secrets management, you can check the Tabsdata Documentation [[here](https://docs.tabsdata.com/latest/guide/secrets_management/main.html)]
 
 ```python
 credentials=td.UserPasswordCredentials(td.EnvironmentSecret("ORACLEDB_USERNAME"),td.EnvironmentSecret("ORACLEDB_PASSWORD")),
@@ -162,53 +176,47 @@ credentials=td.UserPasswordCredentials(td.EnvironmentSecret("ORACLEDB_USERNAME")
 
 **Register:**
 ```sh
-td fn register --collection oracle --fn-path $TDX/oracle_pub.py::oracle_pub
+td fn register --coll oracle --path $TDX/oracle_pub.py::oracle_pub
 ```
 
 **Trigger:**
 ```sh
-td fn trigger --collection oracle --name oracle_pub
+td fn trigger --coll oracle --name oracle_pub
 ```
 
-Check transaction status:
-```sh
-td exec list-trxs
-```
+If the function has finished executing, you will see a 'Committed' status for the execution's output. If you see `Failed`, please remember to check [our Troubleshooting guide](https://docs.tabsdata.com/latest/guide/10_troubleshooting/main.html), and reach out to us on [Slack](https://join.slack.com/t/tabsdata-community/shared_invite/zt-322toyigx-ZGFioMV2Gbza4bJDAR7wSQ). Your feedback helps us improve.
 
-<img src="./assets/td_exec_01.png" alt="Function Published">
+<img src="./assets/td_fn_output_01.png" alt="List functions" height="auto">
+
 
 Check data in Tabsdata:
 ```sh
-td table sample --collection oracle --name customers
+td table sample --coll oracle --name customers
 ```
-![Tabsdata_Output](assets/td_customers_1.png)
+<img src="./assets/td_customers_1.png" alt="List functions" height="auto">
 
 
 ## 5. Register and Trigger the Transformer
 
 **Register:**
 ```sh
-td fn register --collection oracle --fn-path $TDX/tfr_cdc.py::tfr_cdc
+td fn register --coll oracle --path $TDX/tfr_cdc.py::tfr_cdc
 ```
 
 **Trigger:**
 ```sh
-td fn trigger --collection oracle --name tfr_cdc
-```
-
-Check transaction status:
-```sh
-td exec list-trxs
+td fn trigger --coll oracle --name tfr_cdc
 ```
 
 <img src="./assets/td_exec_02.png" alt="Function Published">
 
+
 Check output:
 ```sh
-td table sample --collection oracle --name customers_cdc
+td table sample --coll oracle --name customers_cdc
 ```
-![Tabsdata_Output](assets/td_customers_cdc_1.png)
 
+<img src="./assets/td_customers_cdc_1.png" alt="Function Published">
 
 
 ## 6. Update, Register, and Trigger the PostgreSQL Subscriber
@@ -230,18 +238,14 @@ destination=td.PostgresDestination(
 
 **Register:**
 ```sh
-td fn register --collection oracle --fn-path $TDX/sub_postgres.py::sub_postgres
+td fn register --coll oracle --path $TDX/sub_postgres.py::sub_postgres
 ```
 
 **Trigger:**
 ```sh
-td fn trigger --collection oracle --name sub_postgres
+td fn trigger --coll oracle --name sub_postgres
 ```
 
-Check transaction status:
-```sh
-td exec list-trxs
-```
 
 <img src="./assets/td_exec_03.png" alt="Function Published">
 
@@ -278,25 +282,20 @@ destination=td.S3Destination(
 
 **Register:**
 ```sh
-td fn register --collection oracle --fn-path $TDX/sub_s3_iceberg.py::sub_s3_iceberg
+td fn register --coll oracle --path $TDX/sub_s3_iceberg.py::sub_s3_iceberg
 ```
 
 **Trigger:**
 ```sh
-td fn trigger --collection oracle --name sub_s3_iceberg
-```
-
-Check transaction status:
-```sh
-td exec list-trxs
+td fn trigger --coll oracle --name sub_s3_iceberg
 ```
 
 <img src="./assets/td_exec_04.png" alt="Function Published">
 
 
 **Check Output in AWS**
+<img src="./assets/AWS_CDC_01.png" alt="AWS Output">
 
-![Tabsdata_Output](assets/AWS_CDC_01.png)
 
 ## 8. Update Oracle `customers` Table with new Insert, Update, Delete Operations
 Now that we have our first commit for the `customers` table in Tabsdata, we need to introduce some updates to the table in oracle and push a second commit into Tabsdata for our CDC stream
@@ -307,16 +306,8 @@ Now that we have our first commit for the `customers` table in Tabsdata, we need
 ## 9. Re-trigger the Publisher
 
 ```sh
-td fn trigger --collection oracle --name oracle_pub
+td fn trigger --coll oracle --name oracle_pub
 ```
-
-### Check the status of transaction
-
-```
-td exec list-trxs
-```
-
-Output:
 
 <img src="./assets/td_exec_05.png" alt="Function Published" height="auto">
 
