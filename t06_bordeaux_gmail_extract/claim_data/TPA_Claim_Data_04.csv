@@ -1,0 +1,202 @@
+policy_number,months_insured,has_claims,items_insured,claim_reference,insured_name,insured_country,policy_start_date,date_of_loss,date_reported,claim_status,loss_type,paid_amount,reserve_amount,total_incurred,claim_propensity,broker_id
+POL1200,107,TRUE,3,CLM1200,Wilson-Irwin,United States,2023-07-15,2023-10-03,2023-10-27,Open,Theft,30633.3,11192.19,41825.49,0.61,1d758682-cf2b-4b67-bfa6-f4a42b1e2620
+POL1201,68,TRUE,3,CLM1201,Gardner-Moore,United States,2023-08-23,2023-11-20,2023-12-14,Closed,Liability,9433.55,4489.45,13923,0.46,1d758682-cf2b-4b67-bfa6-f4a42b1e2620
+POL1202,79,FALSE,10,,"Potter, Davis and Jimenez",United States,2023-02-21,,,,,0,0,0,0,e2f0c7c9-c59d-4a67-9b6b-503442bc7c52
+POL1203,3,FALSE,7,,Stephens Group,United States,2020-08-05,,,,,0,0,0,0,957fbded-8264-40c0-9c86-4b3b55b2c2a7
+POL1204,66,FALSE,5,,Chen-Smith,United States,2021-03-06,,,,,0,0,0,0,957fbded-8264-40c0-9c86-4b3b55b2c2a7
+POL1205,57,FALSE,7,,Stephenson-Williams,United States,2020-10-11,,,,,0,0,0,0,e2f0c7c9-c59d-4a67-9b6b-503442bc7c52
+POL1206,50,FALSE,1,,Ross-Zamora,United States,2023-10-11,,,,,0,0,0,0,f16d5b5a-7f08-4725-b5c0-2d30d7fdd962
+POL1207,81,TRUE,2,CLM1207,"Foster, Garcia and King",United States,2020-03-01,2020-04-21,2020-04-29,Closed,Liability,20505.77,4273.29,24779.06,0.75,2a7b4e70-0d33-4f8e-9f77-41c7b6dced98
+POL1208,24,TRUE,3,CLM1208,Savage-Chambers,United States,2021-11-26,2022-10-01,2022-10-26,Open,Water Damage,8441.96,2019.69,10461.65,0.32,957fbded-8264-40c0-9c86-4b3b55b2c2a7
+POL1209,48,FALSE,1,,Larson Inc,United States,2022-04-23,,,,,0,0,0,0,b2a5ef1c-1e59-48e8-893e-2cd32a1985dc
+POL1210,118,FALSE,3,,Sparks LLC,United States,2020-09-05,,,,,0,0,0,0,1d758682-cf2b-4b67-bfa6-f4a42b1e2620
+POL1211,21,TRUE,9,CLM1211,"Morgan, Moreno and Wright",United States,2021-08-05,2021-12-10,2021-12-14,Open,Fire,27002.35,9871.79,36874.14,0.27,e2f0c7c9-c59d-4a67-9b6b-503442bc7c52
+POL1212,77,FALSE,10,,Jones LLC,United States,2020-07-01,,,,,0,0,0,0,3e857a0f-1dbe-4025-a287-29f3e7fd926d
+POL1213,104,TRUE,5,CLM1213,Meyer-Berry,United States,2023-04-02,2023-10-03,2023-10-13,Pending,Property Damage,28287.54,7985.35,36272.89,0.55,1d758682-cf2b-4b67-bfa6-f4a42b1e2620
+POL1214,65,FALSE,5,,"Clark, Garcia and Sosa",United States,2020-01-06,,,,,0,0,0,0,957fbded-8264-40c0-9c86-4b3b55b2c2a7
+POL1215,104,TRUE,4,CLM1215,"Powell, Osborne and French",United States,2021-07-29,2021-10-28,2021-11-20,Pending,Theft,8341.63,14647.57,22989.2,0.61,957fbded-8264-40c0-9c86-4b3b55b2c2a7
+POL1216,14,FALSE,1,,Ramos-Carroll,United States,2021-01-23,,,,,0,0,0,0,f16d5b5a-7f08-4725-b5c0-2d30d7fdd962
+POL1217,47,TRUE,8,CLM1217,Moore Ltd,United States,2020-09-18,2021-03-15,2021-03-26,Closed,Property Damage,6802.77,16085.22,22887.99,0.03,69fc20d0-9aa6-4ad0-a0a0-1a9f7a9a20de
+POL1218,91,TRUE,3,CLM1218,James PLC,United States,2023-07-24,2023-10-12,2023-10-30,Open,Property Damage,32576.37,19732.88,52309.25,0.07,e2f0c7c9-c59d-4a67-9b6b-503442bc7c52
+POL1219,79,TRUE,3,CLM1219,Taylor-Barnett,United States,2022-08-09,2022-12-23,2023-01-02,Open,Theft,34807.49,3601.84,38409.33,0.87,f16d5b5a-7f08-4725-b5c0-2d30d7fdd962
+POL1220,96,FALSE,6,,Chen-Newton,United States,2022-01-22,,,,,0,0,0,0,2a7b4e70-0d33-4f8e-9f77-41c7b6dced98
+POL1221,102,FALSE,8,,Woods Ltd,United States,2022-01-13,,,,,0,0,0,0,1d758682-cf2b-4b67-bfa6-f4a42b1e2620
+POL1222,94,TRUE,1,CLM1222,"Flores, Pearson and Brown",United States,2021-09-04,2021-12-03,2022-01-02,Pending,Water Damage,31423.39,17584.89,49008.28,0.11,4c9016d3-b681-4ad4-998f-6d09bbfbb21f
+POL1223,92,FALSE,6,,Thomas-Simpson,United States,2023-01-15,,,,,0,0,0,0,4c9016d3-b681-4ad4-998f-6d09bbfbb21f
+POL1224,6,FALSE,8,,"Lewis, Kelly and Myers",United States,2021-03-19,,,,,0,0,0,0,84591ab3-0b42-489e-b1b1-57dd877d9e2c
+POL1225,15,FALSE,5,,Mathis Inc,United States,2020-12-17,,,,,0,0,0,0,f16d5b5a-7f08-4725-b5c0-2d30d7fdd962
+POL1226,83,FALSE,9,,"Camacho, Parks and Harmon",United States,2023-07-10,,,,,0,0,0,0,957fbded-8264-40c0-9c86-4b3b55b2c2a7
+POL1227,17,TRUE,9,CLM1227,"Foster, Ward and Wilson",United States,2022-11-05,2023-01-19,2023-01-20,Closed,Fire,36646.5,4753.58,41400.08,0.21,3e857a0f-1dbe-4025-a287-29f3e7fd926d
+POL1228,1,FALSE,9,,Key Ltd,United States,2023-01-16,,,,,0,0,0,0,b2a5ef1c-1e59-48e8-893e-2cd32a1985dc
+POL1229,113,TRUE,1,CLM1229,"Carter, Lester and Taylor",United States,2022-06-08,2022-09-24,2022-10-06,Pending,Property Damage,16602.03,10802.7,27404.73,0.17,2a7b4e70-0d33-4f8e-9f77-41c7b6dced98
+POL1230,63,FALSE,9,,"Roberts, Garcia and Murray",United States,2020-08-06,,,,,0,0,0,0,e2f0c7c9-c59d-4a67-9b6b-503442bc7c52
+POL1231,77,FALSE,9,,Cruz-Rivera,United States,2021-02-28,,,,,0,0,0,0,b2a5ef1c-1e59-48e8-893e-2cd32a1985dc
+POL1232,70,FALSE,10,,"Prince, Graham and West",United States,2023-07-07,,,,,0,0,0,0,1d758682-cf2b-4b67-bfa6-f4a42b1e2620
+POL1233,88,TRUE,6,CLM1233,"Hernandez, Stewart and Clark",United States,2020-02-14,2020-03-18,2020-04-06,Closed,Water Damage,9250.57,20362.16,29612.73,0.31,e2f0c7c9-c59d-4a67-9b6b-503442bc7c52
+POL1234,94,FALSE,3,,Wallace Group,United States,2020-09-28,,,,,0,0,0,0,f16d5b5a-7f08-4725-b5c0-2d30d7fdd962
+POL1235,101,TRUE,3,CLM1235,Roman-Price,United States,2020-09-08,2020-12-15,2020-12-20,Pending,Theft,16934.42,6604.06,23538.48,0.58,84591ab3-0b42-489e-b1b1-57dd877d9e2c
+POL1236,27,FALSE,6,,Pope Group,United States,2020-07-22,,,,,0,0,0,0,f16d5b5a-7f08-4725-b5c0-2d30d7fdd962
+POL1237,55,TRUE,5,CLM1237,Willis Inc,United States,2020-11-22,2021-05-16,2021-05-19,Pending,Theft,24054.91,18949.83,43004.74,0.72,957fbded-8264-40c0-9c86-4b3b55b2c2a7
+POL1238,37,TRUE,1,CLM1238,Johnson-Schultz,United States,2020-06-07,2021-06-07,2021-06-28,Closed,Water Damage,19819.91,1331.23,21151.14,0.35,957fbded-8264-40c0-9c86-4b3b55b2c2a7
+POL1239,13,TRUE,8,CLM1239,Cox Ltd,United States,2023-09-01,2024-03-10,2024-04-08,Closed,Theft,32778.32,24214.03,56992.35,0.56,3e857a0f-1dbe-4025-a287-29f3e7fd926d
+POL1240,72,FALSE,4,,"Byrd, Hall and Evans",United States,2022-07-08,,,,,0,0,0,0,1d758682-cf2b-4b67-bfa6-f4a42b1e2620
+POL1241,55,TRUE,5,CLM1241,Bush PLC,United States,2021-04-28,2021-12-28,2022-01-24,Open,Fire,31250.95,22904.11,54155.06,0.51,69fc20d0-9aa6-4ad0-a0a0-1a9f7a9a20de
+POL1242,17,FALSE,6,,Wise-Andrade,United States,2021-11-21,,,,,0,0,0,0,b2a5ef1c-1e59-48e8-893e-2cd32a1985dc
+POL1243,14,FALSE,2,,Ellis-Welch,United States,2023-07-30,,,,,0,0,0,0,b2a5ef1c-1e59-48e8-893e-2cd32a1985dc
+POL1244,71,TRUE,6,CLM1244,"Wade, Wong and Payne",United States,2022-03-29,2022-09-19,2022-09-28,Pending,Fire,7128.81,1751.41,8880.22,0.08,b2a5ef1c-1e59-48e8-893e-2cd32a1985dc
+POL1245,78,FALSE,9,,"Villa, Carpenter and Henry",United States,2023-08-29,,,,,0,0,0,0,4c9016d3-b681-4ad4-998f-6d09bbfbb21f
+POL1246,99,FALSE,7,,"Alvarez, Rogers and Williams",United States,2023-08-15,,,,,0,0,0,0,4c9016d3-b681-4ad4-998f-6d09bbfbb21f
+POL1247,73,FALSE,7,,Martin Inc,United States,2021-07-24,,,,,0,0,0,0,b2a5ef1c-1e59-48e8-893e-2cd32a1985dc
+POL1248,45,FALSE,10,,Pena-Taylor,United States,2020-07-14,,,,,0,0,0,0,b2a5ef1c-1e59-48e8-893e-2cd32a1985dc
+POL1249,51,FALSE,6,,Becker-Arellano,United States,2021-02-18,,,,,0,0,0,0,b2a5ef1c-1e59-48e8-893e-2cd32a1985dc
+POL1250,36,FALSE,6,,Grant-Walker,United States,2022-06-20,,,,,0,0,0,0,1d758682-cf2b-4b67-bfa6-f4a42b1e2620
+POL1251,109,FALSE,4,,Morgan Inc,United States,2022-10-24,,,,,0,0,0,0,1d758682-cf2b-4b67-bfa6-f4a42b1e2620
+POL1252,66,TRUE,2,CLM1252,"Andrade, Norton and Morris",United States,2021-02-11,2021-10-02,2021-10-07,Pending,Property Damage,20400.66,1206.42,21607.08,0.45,2a7b4e70-0d33-4f8e-9f77-41c7b6dced98
+POL1253,108,FALSE,8,,Barry-Scott,United States,2021-12-25,,,,,0,0,0,0,f16d5b5a-7f08-4725-b5c0-2d30d7fdd962
+POL1254,69,FALSE,7,,"Williams, Wood and Clark",United States,2023-11-11,,,,,0,0,0,0,f16d5b5a-7f08-4725-b5c0-2d30d7fdd962
+POL1255,102,TRUE,1,CLM1255,"Reed, Hood and King",United States,2023-02-08,2023-04-25,2023-05-09,Closed,Water Damage,14073.91,19864.69,33938.6,0.57,3e857a0f-1dbe-4025-a287-29f3e7fd926d
+POL1256,68,FALSE,7,,"Fitzgerald, Collins and Heath",United States,2020-01-19,,,,,0,0,0,0,3e857a0f-1dbe-4025-a287-29f3e7fd926d
+POL1257,54,FALSE,8,,Olson-Wiggins,United States,2022-03-04,,,,,0,0,0,0,e2f0c7c9-c59d-4a67-9b6b-503442bc7c52
+POL1258,81,FALSE,1,,Williams PLC,United States,2023-12-09,,,,,0,0,0,0,2a7b4e70-0d33-4f8e-9f77-41c7b6dced98
+POL1259,31,FALSE,4,,Smith Group,United States,2021-03-20,,,,,0,0,0,0,84591ab3-0b42-489e-b1b1-57dd877d9e2c
+POL1260,94,FALSE,3,,"Kim, Stark and Jenkins",United States,2021-08-22,,,,,0,0,0,0,69fc20d0-9aa6-4ad0-a0a0-1a9f7a9a20de
+POL1261,61,FALSE,10,,Stevens-Wilson,United States,2023-03-06,,,,,0,0,0,0,84591ab3-0b42-489e-b1b1-57dd877d9e2c
+POL1262,117,TRUE,9,CLM1262,Allen and Sons,United States,2022-08-12,2023-01-11,2023-01-22,Closed,Liability,8865.16,524.85,9390.01,0.43,69fc20d0-9aa6-4ad0-a0a0-1a9f7a9a20de
+POL1263,103,FALSE,6,,Henson-Lewis,United States,2021-01-05,,,,,0,0,0,0,957fbded-8264-40c0-9c86-4b3b55b2c2a7
+POL1264,46,FALSE,4,,"Jones, Simmons and Fischer",United States,2023-04-14,,,,,0,0,0,0,f16d5b5a-7f08-4725-b5c0-2d30d7fdd962
+POL1265,59,TRUE,4,CLM1265,Williams-White,United States,2020-10-25,2020-12-19,2021-01-05,Open,Property Damage,6071.54,16309.36,22380.9,0.36,b2a5ef1c-1e59-48e8-893e-2cd32a1985dc
+POL1266,19,TRUE,5,CLM1266,Robinson-Pittman,United States,2022-03-03,2023-02-19,2023-03-03,Pending,Fire,28086.29,9502.35,37588.64,0.19,2a7b4e70-0d33-4f8e-9f77-41c7b6dced98
+POL1267,15,FALSE,3,,Michael-Flores,United States,2023-08-21,,,,,0,0,0,0,2a7b4e70-0d33-4f8e-9f77-41c7b6dced98
+POL1268,81,FALSE,8,,Rodriguez-Lam,United States,2021-11-28,,,,,0,0,0,0,84591ab3-0b42-489e-b1b1-57dd877d9e2c
+POL1269,24,TRUE,10,CLM1269,"Weaver, Harris and Phillips",United States,2021-05-20,2022-02-10,2022-03-04,Open,Property Damage,8652.43,22120.59,30773.02,0.16,f16d5b5a-7f08-4725-b5c0-2d30d7fdd962
+POL1270,96,TRUE,7,CLM1270,Palmer-Murray,United States,2021-07-18,2021-12-09,2021-12-15,Closed,Liability,27409.06,879.58,28288.64,0.94,3e857a0f-1dbe-4025-a287-29f3e7fd926d
+POL1271,118,FALSE,4,,"Green, Hall and Wilson",United States,2020-08-15,,,,,0,0,0,0,b2a5ef1c-1e59-48e8-893e-2cd32a1985dc
+POL1272,11,TRUE,4,CLM1272,"Garcia, Quinn and Wright",United States,2020-01-14,2020-05-27,2020-06-15,Open,Liability,46545.7,22414.07,68959.77,0.37,3e857a0f-1dbe-4025-a287-29f3e7fd926d
+POL1273,11,TRUE,3,CLM1273,Hobbs-Osborn,United States,2021-07-06,2022-01-30,2022-02-10,Closed,Fire,1042.14,5677.32,6719.46,0.66,4c9016d3-b681-4ad4-998f-6d09bbfbb21f
+POL1274,83,FALSE,2,,Harmon PLC,United States,2023-08-12,,,,,0,0,0,0,84591ab3-0b42-489e-b1b1-57dd877d9e2c
+POL1275,44,TRUE,5,CLM1275,Trevino-Martinez,United States,2020-03-10,2020-12-15,2021-01-07,Pending,Fire,8293.08,19856.51,28149.59,0.31,e2f0c7c9-c59d-4a67-9b6b-503442bc7c52
+POL1276,73,FALSE,4,,"Nelson, Maddox and Cunningham",United States,2022-02-26,,,,,0,0,0,0,3e857a0f-1dbe-4025-a287-29f3e7fd926d
+POL1277,98,FALSE,5,,Leonard Ltd,United States,2022-11-24,,,,,0,0,0,0,2a7b4e70-0d33-4f8e-9f77-41c7b6dced98
+POL1278,27,FALSE,5,,"Guerrero, Walker and Decker",United States,2022-12-04,,,,,0,0,0,0,1d758682-cf2b-4b67-bfa6-f4a42b1e2620
+POL1279,55,TRUE,7,CLM1279,Brown LLC,United States,2023-10-26,2024-08-05,2024-08-16,Pending,Water Damage,23044.43,9501.08,32545.51,0.59,b2a5ef1c-1e59-48e8-893e-2cd32a1985dc
+POL1280,105,FALSE,6,,"Murphy, Brooks and Castillo",United States,2022-05-11,,,,,0,0,0,0,b2a5ef1c-1e59-48e8-893e-2cd32a1985dc
+POL1281,110,FALSE,9,,"Jackson, Pacheco and Tran",United States,2022-10-07,,,,,0,0,0,0,b2a5ef1c-1e59-48e8-893e-2cd32a1985dc
+POL1282,116,FALSE,3,,Richardson-Walters,United States,2021-05-11,,,,,0,0,0,0,f16d5b5a-7f08-4725-b5c0-2d30d7fdd962
+POL1283,90,FALSE,2,,Mcdowell and Sons,United States,2022-01-14,,,,,0,0,0,0,4c9016d3-b681-4ad4-998f-6d09bbfbb21f
+POL1284,100,TRUE,2,CLM1284,Dixon Inc,United States,2020-07-01,2020-10-20,2020-11-01,Pending,Water Damage,22182.16,17822.16,40004.32,0.58,1d758682-cf2b-4b67-bfa6-f4a42b1e2620
+POL1285,52,TRUE,6,CLM1285,Hubbard Group,United States,2023-09-15,2024-07-13,2024-07-25,Closed,Property Damage,18577.73,4752.1,23329.83,0.85,3e857a0f-1dbe-4025-a287-29f3e7fd926d
+POL1286,103,FALSE,5,,"Saunders, Costa and Young",United States,2023-03-23,,,,,0,0,0,0,2a7b4e70-0d33-4f8e-9f77-41c7b6dced98
+POL1287,24,FALSE,3,,Cabrera Group,United States,2021-11-11,,,,,0,0,0,0,84591ab3-0b42-489e-b1b1-57dd877d9e2c
+POL1288,68,FALSE,3,,Franklin-Anderson,United States,2023-09-10,,,,,0,0,0,0,2a7b4e70-0d33-4f8e-9f77-41c7b6dced98
+POL1289,34,FALSE,2,,Lester-Rodriguez,United States,2023-09-11,,,,,0,0,0,0,3e857a0f-1dbe-4025-a287-29f3e7fd926d
+POL1290,111,TRUE,4,CLM1290,Fox LLC,United States,2021-04-20,2022-02-24,2022-03-06,Closed,Theft,17334.49,4282.34,21616.83,0.38,84591ab3-0b42-489e-b1b1-57dd877d9e2c
+POL1291,116,TRUE,6,CLM1291,Bryant-Smith,United States,2022-11-29,2023-03-12,2023-04-07,Closed,Property Damage,15609.02,19427,35036.02,0.32,1d758682-cf2b-4b67-bfa6-f4a42b1e2620
+POL1292,33,FALSE,8,,Peters and Sons,United States,2023-06-07,,,,,0,0,0,0,4c9016d3-b681-4ad4-998f-6d09bbfbb21f
+POL1293,89,FALSE,3,,"Koch, Lamb and Mclaughlin",United States,2023-02-26,,,,,0,0,0,0,e2f0c7c9-c59d-4a67-9b6b-503442bc7c52
+POL1294,68,TRUE,7,CLM1294,"Edwards, Abbott and Green",United States,2023-12-16,2024-03-08,2024-03-17,Open,Liability,11328.24,3822.06,15150.3,0.63,4c9016d3-b681-4ad4-998f-6d09bbfbb21f
+POL1295,45,TRUE,8,CLM1295,"Morales, Lee and Stewart",United States,2022-07-08,2023-06-05,2023-06-21,Closed,Fire,39919.16,23949.29,63868.45,0.24,957fbded-8264-40c0-9c86-4b3b55b2c2a7
+POL1296,12,FALSE,4,,Cruz-Brown,United States,2023-01-05,,,,,0,0,0,0,84591ab3-0b42-489e-b1b1-57dd877d9e2c
+POL1297,58,FALSE,8,,Edwards Ltd,United States,2023-02-20,,,,,0,0,0,0,4c9016d3-b681-4ad4-998f-6d09bbfbb21f
+POL1298,66,TRUE,6,CLM1298,Cooper Group,United States,2023-07-21,2023-10-01,2023-10-23,Open,Water Damage,30130.54,2266.16,32396.7,0.79,69fc20d0-9aa6-4ad0-a0a0-1a9f7a9a20de
+POL1299,34,TRUE,2,CLM1299,"Swanson, Barrett and Green",United States,2022-08-09,2023-05-05,2023-05-13,Closed,Fire,28435.38,16447.42,44882.8,0.9,b2a5ef1c-1e59-48e8-893e-2cd32a1985dc
+POL1300,109,FALSE,4,,"Martin, Smith and Berry",United States,2022-07-08,,,,,0,0,0,0,1d758682-cf2b-4b67-bfa6-f4a42b1e2620
+POL1301,91,TRUE,3,CLM1301,Oconnor and Sons,United States,2022-01-23,2022-03-21,2022-04-08,Closed,Fire,10024.12,20118.65,30142.77,0.74,4c9016d3-b681-4ad4-998f-6d09bbfbb21f
+POL1302,69,FALSE,10,,Johnson-Burton,United States,2022-12-24,,,,,0,0,0,0,1d758682-cf2b-4b67-bfa6-f4a42b1e2620
+POL1303,31,FALSE,1,,Allen Inc,United States,2023-11-19,,,,,0,0,0,0,1d758682-cf2b-4b67-bfa6-f4a42b1e2620
+POL1304,59,FALSE,6,,Dougherty LLC,United States,2023-12-30,,,,,0,0,0,0,f16d5b5a-7f08-4725-b5c0-2d30d7fdd962
+POL1305,120,TRUE,3,CLM1305,Nicholson LLC,United States,2021-08-28,2022-08-04,2022-08-12,Closed,Liability,41805.18,4444.33,46249.51,0.56,3e857a0f-1dbe-4025-a287-29f3e7fd926d
+POL1306,87,FALSE,7,,"Henderson, Stafford and Robinson",United States,2023-05-10,,,,,0,0,0,0,1d758682-cf2b-4b67-bfa6-f4a42b1e2620
+POL1307,99,FALSE,7,,Thomas-Collins,United States,2021-11-14,,,,,0,0,0,0,84591ab3-0b42-489e-b1b1-57dd877d9e2c
+POL1308,66,TRUE,7,CLM1308,"Murphy, Hatfield and Burgess",United States,2023-12-18,2024-11-04,2024-11-23,Closed,Liability,25001.39,16511.77,41513.16,0.38,1d758682-cf2b-4b67-bfa6-f4a42b1e2620
+POL1309,26,FALSE,2,,Smith-Macdonald,United States,2023-06-06,,,,,0,0,0,0,957fbded-8264-40c0-9c86-4b3b55b2c2a7
+POL1310,97,TRUE,8,CLM1310,"Schmidt, Fitzgerald and Parks",United States,2022-10-14,2023-09-16,2023-09-19,Open,Water Damage,23520.32,14413.65,37933.97,0.07,e2f0c7c9-c59d-4a67-9b6b-503442bc7c52
+POL1311,20,TRUE,10,CLM1311,Malone-Cunningham,United States,2020-02-06,2020-11-21,2020-11-24,Pending,Property Damage,42796.1,1713.9,44510,0.64,e2f0c7c9-c59d-4a67-9b6b-503442bc7c52
+POL1312,28,FALSE,1,,Ortiz Group,United States,2021-05-31,,,,,0,0,0,0,84591ab3-0b42-489e-b1b1-57dd877d9e2c
+POL1313,28,TRUE,7,CLM1313,Smith and Sons,United States,2022-01-01,2022-04-01,2022-04-29,Closed,Water Damage,23262.5,5397.49,28659.99,0.55,4c9016d3-b681-4ad4-998f-6d09bbfbb21f
+POL1314,115,FALSE,5,,"Melton, Palmer and Oconnor",United States,2022-12-14,,,,,0,0,0,0,2a7b4e70-0d33-4f8e-9f77-41c7b6dced98
+POL1315,100,FALSE,1,,Miller and Sons,United States,2022-08-20,,,,,0,0,0,0,957fbded-8264-40c0-9c86-4b3b55b2c2a7
+POL1316,96,FALSE,9,,Wright Inc,United States,2022-07-31,,,,,0,0,0,0,957fbded-8264-40c0-9c86-4b3b55b2c2a7
+POL1317,52,FALSE,4,,Newton Ltd,United States,2022-06-30,,,,,0,0,0,0,69fc20d0-9aa6-4ad0-a0a0-1a9f7a9a20de
+POL1318,81,FALSE,2,,"Jackson, Miller and Pennington",United States,2020-09-09,,,,,0,0,0,0,69fc20d0-9aa6-4ad0-a0a0-1a9f7a9a20de
+POL1319,74,FALSE,5,,"Garcia, Fuller and Mckinney",United States,2020-04-10,,,,,0,0,0,0,69fc20d0-9aa6-4ad0-a0a0-1a9f7a9a20de
+POL1320,8,FALSE,3,,"Guzman, King and Shaffer",United States,2021-12-23,,,,,0,0,0,0,69fc20d0-9aa6-4ad0-a0a0-1a9f7a9a20de
+POL1321,87,FALSE,6,,"Bennett, Garrett and Preston",United States,2020-06-13,,,,,0,0,0,0,e2f0c7c9-c59d-4a67-9b6b-503442bc7c52
+POL1322,98,FALSE,1,,Davis-Carter,United States,2023-03-05,,,,,0,0,0,0,4c9016d3-b681-4ad4-998f-6d09bbfbb21f
+POL1323,112,FALSE,4,,Ellis PLC,United States,2023-12-22,,,,,0,0,0,0,84591ab3-0b42-489e-b1b1-57dd877d9e2c
+POL1324,25,FALSE,5,,Martin-Mullins,United States,2022-09-26,,,,,0,0,0,0,1d758682-cf2b-4b67-bfa6-f4a42b1e2620
+POL1325,71,FALSE,7,,Nelson-Vasquez,United States,2020-06-24,,,,,0,0,0,0,69fc20d0-9aa6-4ad0-a0a0-1a9f7a9a20de
+POL1326,14,FALSE,9,,Smith-Moreno,United States,2021-08-31,,,,,0,0,0,0,3e857a0f-1dbe-4025-a287-29f3e7fd926d
+POL1327,58,FALSE,3,,Pierce-Madden,United States,2020-05-14,,,,,0,0,0,0,e2f0c7c9-c59d-4a67-9b6b-503442bc7c52
+POL1328,118,TRUE,2,CLM1328,"Duncan, Baker and Mcdaniel",United States,2023-01-15,2023-04-25,2023-05-02,Open,Fire,35975.94,15307.95,51283.89,0.76,4c9016d3-b681-4ad4-998f-6d09bbfbb21f
+POL1329,68,TRUE,2,CLM1329,Foster-Wilson,United States,2022-10-28,2022-12-04,2022-12-11,Pending,Property Damage,33747.59,3625.38,37372.97,0.73,3e857a0f-1dbe-4025-a287-29f3e7fd926d
+POL1330,35,TRUE,3,CLM1330,Crawford-Smith,United States,2020-10-01,2021-04-21,2021-04-22,Closed,Property Damage,28357.17,6747.04,35104.21,0.08,2a7b4e70-0d33-4f8e-9f77-41c7b6dced98
+POL1331,17,FALSE,2,,"Forbes, King and Becker",United States,2023-06-02,,,,,0,0,0,0,e2f0c7c9-c59d-4a67-9b6b-503442bc7c52
+POL1332,74,TRUE,1,CLM1332,"Parsons, Roberts and Parks",United States,2020-10-11,2021-05-10,2021-06-04,Pending,Property Damage,45144.21,13574.07,58718.28,0.72,e2f0c7c9-c59d-4a67-9b6b-503442bc7c52
+POL1333,65,TRUE,4,CLM1333,Farmer PLC,United States,2020-02-14,2020-06-06,2020-06-23,Pending,Theft,30339.6,11139.4,41479,0.3,e2f0c7c9-c59d-4a67-9b6b-503442bc7c52
+POL1334,35,TRUE,2,CLM1334,Hughes-Flowers,United States,2020-09-24,2021-07-29,2021-08-18,Open,Property Damage,38793.72,14560.61,53354.33,0.8,957fbded-8264-40c0-9c86-4b3b55b2c2a7
+POL1335,83,TRUE,1,CLM1335,Clark-Knight,United States,2021-04-27,2022-03-16,2022-03-24,Closed,Liability,42842.66,9359.24,52201.9,0.73,f16d5b5a-7f08-4725-b5c0-2d30d7fdd962
+POL1336,117,FALSE,5,,Ballard-Hahn,United States,2022-06-27,,,,,0,0,0,0,957fbded-8264-40c0-9c86-4b3b55b2c2a7
+POL1337,66,FALSE,8,,Willis Ltd,United States,2023-11-27,,,,,0,0,0,0,2a7b4e70-0d33-4f8e-9f77-41c7b6dced98
+POL1338,51,FALSE,10,,"Maldonado, Gomez and Hendricks",United States,2020-03-09,,,,,0,0,0,0,e2f0c7c9-c59d-4a67-9b6b-503442bc7c52
+POL1339,45,TRUE,6,CLM1339,Rivera Ltd,United States,2022-10-06,2023-10-05,2023-10-14,Closed,Water Damage,19759.28,20130.13,39889.41,0.77,b2a5ef1c-1e59-48e8-893e-2cd32a1985dc
+POL1340,29,FALSE,4,,Richards Inc,United States,2020-04-04,,,,,0,0,0,0,84591ab3-0b42-489e-b1b1-57dd877d9e2c
+POL1341,49,TRUE,9,CLM1341,"Moore, Cooper and Carter",United States,2020-12-25,2021-06-05,2021-06-12,Pending,Liability,29724.16,21960.73,51684.89,0.35,84591ab3-0b42-489e-b1b1-57dd877d9e2c
+POL1342,48,TRUE,8,CLM1342,Morris-Patton,United States,2020-04-09,2020-07-31,2020-08-24,Closed,Property Damage,37302.41,24227.63,61530.04,0.06,1d758682-cf2b-4b67-bfa6-f4a42b1e2620
+POL1343,104,FALSE,8,,"Jordan, Jackson and Kramer",United States,2021-08-18,,,,,0,0,0,0,b2a5ef1c-1e59-48e8-893e-2cd32a1985dc
+POL1344,69,TRUE,8,CLM1344,"Williams, Martinez and Noble",United States,2020-03-05,2020-09-27,2020-10-03,Open,Liability,12620.73,2183.65,14804.38,0.24,957fbded-8264-40c0-9c86-4b3b55b2c2a7
+POL1345,89,TRUE,9,CLM1345,"Castillo, Arroyo and Cardenas",United States,2021-10-20,2022-01-24,2022-02-21,Closed,Property Damage,22562.5,19224.32,41786.82,0.13,b2a5ef1c-1e59-48e8-893e-2cd32a1985dc
+POL1346,5,FALSE,5,,Burgess-Lopez,United States,2021-11-09,,,,,0,0,0,0,3e857a0f-1dbe-4025-a287-29f3e7fd926d
+POL1347,33,TRUE,10,CLM1347,"Boyle, Ramirez and Greer",United States,2021-09-06,2022-06-10,2022-06-25,Pending,Property Damage,21012.25,5942.64,26954.89,0.16,3e857a0f-1dbe-4025-a287-29f3e7fd926d
+POL1348,16,FALSE,7,,"Jackson, Hopkins and Moore",United States,2021-12-07,,,,,0,0,0,0,1d758682-cf2b-4b67-bfa6-f4a42b1e2620
+POL1349,86,FALSE,10,,David Ltd,United States,2023-02-24,,,,,0,0,0,0,e2f0c7c9-c59d-4a67-9b6b-503442bc7c52
+POL1350,114,FALSE,10,,"Jacobs, Fischer and Baker",United States,2021-01-26,,,,,0,0,0,0,957fbded-8264-40c0-9c86-4b3b55b2c2a7
+POL1351,116,TRUE,3,CLM1351,Smith-Osborne,United States,2020-07-30,2021-02-24,2021-03-25,Pending,Theft,38598.88,18393.39,56992.27,0.01,e2f0c7c9-c59d-4a67-9b6b-503442bc7c52
+POL1352,43,FALSE,2,,"Ramirez, Scott and Rose",United States,2021-01-24,,,,,0,0,0,0,b2a5ef1c-1e59-48e8-893e-2cd32a1985dc
+POL1353,60,FALSE,3,,Branch-Lee,United States,2020-07-20,,,,,0,0,0,0,b2a5ef1c-1e59-48e8-893e-2cd32a1985dc
+POL1354,75,FALSE,6,,Moody-Kirk,United States,2022-06-14,,,,,0,0,0,0,2a7b4e70-0d33-4f8e-9f77-41c7b6dced98
+POL1355,34,TRUE,10,CLM1355,"Moore, Guerrero and Bradshaw",United States,2022-08-26,2022-12-21,2023-01-11,Pending,Property Damage,34280.09,21141.96,55422.05,0.06,84591ab3-0b42-489e-b1b1-57dd877d9e2c
+POL1356,1,FALSE,5,,"Cruz, Marshall and Johnson",United States,2023-11-01,,,,,0,0,0,0,b2a5ef1c-1e59-48e8-893e-2cd32a1985dc
+POL1357,69,FALSE,1,,Fields-Lindsey,United States,2020-02-07,,,,,0,0,0,0,3e857a0f-1dbe-4025-a287-29f3e7fd926d
+POL1358,62,FALSE,10,,Yoder LLC,United States,2023-03-31,,,,,0,0,0,0,b2a5ef1c-1e59-48e8-893e-2cd32a1985dc
+POL1359,44,TRUE,1,CLM1359,"Jarvis, Moore and Lee",United States,2022-05-31,2023-03-14,2023-03-25,Closed,Fire,35713.74,4068.56,39782.3,0.19,3e857a0f-1dbe-4025-a287-29f3e7fd926d
+POL1360,105,FALSE,9,,Burton-Crawford,United States,2023-08-25,,,,,0,0,0,0,4c9016d3-b681-4ad4-998f-6d09bbfbb21f
+POL1361,104,FALSE,9,,"Moss, Duncan and Allen",United States,2022-02-18,,,,,0,0,0,0,1d758682-cf2b-4b67-bfa6-f4a42b1e2620
+POL1362,111,FALSE,10,,Duffy Group,United States,2021-11-26,,,,,0,0,0,0,4c9016d3-b681-4ad4-998f-6d09bbfbb21f
+POL1363,78,FALSE,5,,Berry and Sons,United States,2022-09-10,,,,,0,0,0,0,3e857a0f-1dbe-4025-a287-29f3e7fd926d
+POL1364,35,FALSE,2,,"Reeves, Shields and Jacobson",United States,2021-07-23,,,,,0,0,0,0,957fbded-8264-40c0-9c86-4b3b55b2c2a7
+POL1365,39,FALSE,4,,"Garcia, Lopez and Alexander",United States,2021-01-01,,,,,0,0,0,0,1d758682-cf2b-4b67-bfa6-f4a42b1e2620
+POL1366,18,FALSE,4,,Reilly Ltd,United States,2020-11-25,,,,,0,0,0,0,84591ab3-0b42-489e-b1b1-57dd877d9e2c
+POL1367,111,TRUE,4,CLM1367,Shepard-King,United States,2021-02-23,2021-04-27,2021-04-30,Open,Liability,49111.77,15637.98,64749.75,0.06,3e857a0f-1dbe-4025-a287-29f3e7fd926d
+POL1368,69,FALSE,4,,Lynch-Davis,United States,2021-03-02,,,,,0,0,0,0,957fbded-8264-40c0-9c86-4b3b55b2c2a7
+POL1369,1,FALSE,3,,Vasquez LLC,United States,2021-09-29,,,,,0,0,0,0,69fc20d0-9aa6-4ad0-a0a0-1a9f7a9a20de
+POL1370,65,TRUE,1,CLM1370,Farmer Group,United States,2023-03-16,2023-07-10,2023-07-15,Closed,Liability,39154.61,2970.31,42124.92,0.12,69fc20d0-9aa6-4ad0-a0a0-1a9f7a9a20de
+POL1371,98,FALSE,7,,Rowe-Garrett,United States,2023-08-01,,,,,0,0,0,0,69fc20d0-9aa6-4ad0-a0a0-1a9f7a9a20de
+POL1372,33,FALSE,2,,Terry-Carson,United States,2022-01-14,,,,,0,0,0,0,69fc20d0-9aa6-4ad0-a0a0-1a9f7a9a20de
+POL1373,30,TRUE,2,CLM1373,"Marshall, Gallegos and Martinez",United States,2020-12-23,2021-11-10,2021-11-24,Open,Fire,22185.38,11896.72,34082.1,0.03,84591ab3-0b42-489e-b1b1-57dd877d9e2c
+POL1374,66,TRUE,2,CLM1374,"Ramirez, Short and Sanders",United States,2020-12-30,2021-08-20,2021-08-21,Pending,Theft,14264.9,9808.36,24073.26,0.42,f16d5b5a-7f08-4725-b5c0-2d30d7fdd962
+POL1375,62,TRUE,4,CLM1375,"Taylor, Miller and Hancock",United States,2021-07-09,2022-02-20,2022-03-18,Open,Theft,43145.37,5896.58,49041.95,0.76,e2f0c7c9-c59d-4a67-9b6b-503442bc7c52
+POL1376,28,TRUE,3,CLM1376,Smith-Lee,United States,2022-03-02,2022-10-17,2022-10-23,Closed,Fire,27843.26,588.81,28432.07,0.49,1d758682-cf2b-4b67-bfa6-f4a42b1e2620
+POL1377,108,TRUE,7,CLM1377,Powers Group,United States,2021-05-06,2022-04-29,2022-05-12,Closed,Liability,29286.87,12221.63,41508.5,0.01,4c9016d3-b681-4ad4-998f-6d09bbfbb21f
+POL1378,96,TRUE,6,CLM1378,Edwards Inc,United States,2022-06-10,2022-10-22,2022-11-08,Open,Water Damage,17598.69,24670.08,42268.77,0.55,2a7b4e70-0d33-4f8e-9f77-41c7b6dced98
+POL1379,103,FALSE,6,,Long-Martinez,United States,2023-10-06,,,,,0,0,0,0,957fbded-8264-40c0-9c86-4b3b55b2c2a7
+POL1380,110,FALSE,3,,"Hill, Lambert and Larson",United States,2021-05-17,,,,,0,0,0,0,1d758682-cf2b-4b67-bfa6-f4a42b1e2620
+POL1381,101,TRUE,1,CLM1381,Delacruz-Dixon,United States,2022-02-20,2022-09-11,2022-10-08,Open,Water Damage,49397.39,12771.54,62168.93,0.62,3e857a0f-1dbe-4025-a287-29f3e7fd926d
+POL1382,4,FALSE,9,,Martinez and Sons,United States,2020-06-27,,,,,0,0,0,0,2a7b4e70-0d33-4f8e-9f77-41c7b6dced98
+POL1383,70,FALSE,8,,Thornton-Moran,United States,2021-07-20,,,,,0,0,0,0,e2f0c7c9-c59d-4a67-9b6b-503442bc7c52
+POL1384,78,FALSE,6,,"Williams, Colon and Williams",United States,2021-08-30,,,,,0,0,0,0,84591ab3-0b42-489e-b1b1-57dd877d9e2c
+POL1385,47,FALSE,3,,"Vazquez, Terry and Hughes",United States,2020-07-20,,,,,0,0,0,0,f16d5b5a-7f08-4725-b5c0-2d30d7fdd962
+POL1386,111,TRUE,10,CLM1386,Cooper PLC,United States,2022-10-03,2023-06-04,2023-06-20,Closed,Property Damage,12601.25,24828.35,37429.6,0.03,3e857a0f-1dbe-4025-a287-29f3e7fd926d
+POL1387,68,FALSE,8,,Miller and Sons,United States,2022-03-31,,,,,0,0,0,0,3e857a0f-1dbe-4025-a287-29f3e7fd926d
+POL1388,101,FALSE,5,,Harris-Green,United States,2023-10-13,,,,,0,0,0,0,2a7b4e70-0d33-4f8e-9f77-41c7b6dced98
+POL1389,45,TRUE,5,CLM1389,"Erickson, Casey and Holmes",United States,2023-01-14,2023-12-17,2024-01-02,Pending,Property Damage,49962.03,23716.05,73678.08,0.64,84591ab3-0b42-489e-b1b1-57dd877d9e2c
+POL1390,78,TRUE,3,CLM1390,Lutz-Moore,United States,2020-10-13,2021-06-02,2021-06-24,Open,Liability,16683.81,16838.53,33522.34,0.9,957fbded-8264-40c0-9c86-4b3b55b2c2a7
+POL1391,9,TRUE,3,CLM1391,Tran-Johnson,United States,2020-02-05,2020-12-18,2020-12-20,Open,Fire,32993.16,13293.33,46286.49,0.94,957fbded-8264-40c0-9c86-4b3b55b2c2a7
+POL1392,104,TRUE,8,CLM1392,"Thompson, Hunt and Huang",United States,2022-05-11,2022-10-14,2022-11-10,Pending,Liability,25932.81,3261.95,29194.76,0.77,69fc20d0-9aa6-4ad0-a0a0-1a9f7a9a20de
+POL1393,105,FALSE,1,,Meyers-Jones,United States,2020-10-09,,,,,0,0,0,0,e2f0c7c9-c59d-4a67-9b6b-503442bc7c52
+POL1394,15,TRUE,8,CLM1394,"Gibbs, Carr and Burnett",United States,2023-03-13,2023-05-14,2023-05-24,Pending,Liability,24438.55,7958.03,32396.58,0.64,1d758682-cf2b-4b67-bfa6-f4a42b1e2620
+POL1395,108,FALSE,9,,"Moore, Cook and Rios",United States,2020-05-24,,,,,0,0,0,0,69fc20d0-9aa6-4ad0-a0a0-1a9f7a9a20de
+POL1396,37,FALSE,6,,Ingram-Brown,United States,2020-08-24,,,,,0,0,0,0,2a7b4e70-0d33-4f8e-9f77-41c7b6dced98
+POL1397,117,FALSE,5,,Hoover LLC,United States,2020-06-28,,,,,0,0,0,0,4c9016d3-b681-4ad4-998f-6d09bbfbb21f
+POL1398,94,FALSE,4,,Hess Inc,United States,2022-06-03,,,,,0,0,0,0,2a7b4e70-0d33-4f8e-9f77-41c7b6dced98
+POL1399,5,TRUE,10,CLM1399,Patterson LLC,United States,2023-04-08,2023-08-13,2023-08-17,Open,Property Damage,20436.5,19589.27,40025.77,0.74,1d758682-cf2b-4b67-bfa6-f4a42b1e2620
+POL1385,47,FALSE,3,,"Vazquez, Terry and Hughes",United States,2020-07-20,,,,,0,0,0,0,f16d5b5a-7f08-4725-b5c0-2d30d7fdd962
