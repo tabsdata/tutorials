@@ -1,4 +1,4 @@
-# Tutorial 6: Ingesting Claims Data from Gmail into Databricks (`t06_bordeaux_gmail_extract`)
+# Tutorial 6: Ingesting Insurance Claim Data from Gmail into Databricks (`t06_bordeaux_gmail_extract`)
 
 This tutorial shows how Tabsdata can collect claim bordereaux files sent to a Gmail inbox, merge them into a running master fact table, enrich the data with policy details, categorize high‑value subsets, and publish the results to Databricks.
 
