@@ -1,7 +1,6 @@
 #!/bin/bash
 #
 # Copyright 2025. Tabs Data Inc.
-#
 
 export TD_SERVER=${TD_SERVER:=localhost:2457}
 export TD_USER=${TD_USER:=admin}

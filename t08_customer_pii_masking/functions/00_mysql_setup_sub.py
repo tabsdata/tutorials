@@ -1,9 +1,10 @@
 import tabsdata as td
 
-#input your MYSQL credentials below
-MYSQL_USERNAME= td.EnvironmentSecret('MYSQL_USERNAME')
-MYSQL_PASSWORD = td.EnvironmentSecret('MYSQL_PASSWORD')
-MYSQL_URI = td.EnvironmentSecret('MYSQL_URI').secret_value
+# input your MYSQL credentials below
+MYSQL_USERNAME = td.EnvironmentSecret("MYSQL_USERNAME")
+MYSQL_PASSWORD = td.EnvironmentSecret("MYSQL_PASSWORD")
+MYSQL_URI = td.EnvironmentSecret("MYSQL_URI").secret_value
+
 
 @td.subscriber(
     tables=["input_data"],
