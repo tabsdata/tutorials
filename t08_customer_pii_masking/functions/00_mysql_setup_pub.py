@@ -4,7 +4,7 @@ import tabsdata as td
 
 @td.publisher(
     source=td.LocalFileSource(
-        os.path.join(os.path.dirname(os.getcwd()), "output", "customer_data.csv")
+        os.path.join(os.path.dirname(os.getcwd()), "input", "customer_data.csv")
     ),
     tables=["input_data"],
 )
