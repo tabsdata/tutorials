@@ -42,14 +42,14 @@ pip install 'tabsdata[snowflake]'
 
 Tutorial steps 3.3 - 4 run through each command necessary to set up your instance below. However, we also have a quickstart that bundles all the commands into a shell script. If doing quickstart, you may skip to [step 4](#4-trigger-your-publisher-function)
 
-The quickstart script:
-2. Creates your tabsdata instance
-3. Registers all relevant functions for the workflow
+The quickstart script:  
+1. Creates your tabsdata instance. 
+2. Registers all relevant functions for the workflow. 
 
 <details>
 <summary><h1>Quickstart Setup 💨</h1></summary>
 
-> If you would like your workflow to subscribe your data into Snowflake Glue, run the following command:
+> If you would like your workflow to subscribe your data into Snowflake, run the following command:
 >
 > ```sh
 > source ../setup-tabsdata.sh snowflake
@@ -123,12 +123,12 @@ Once all functions are registered, you just need to trigger your `salesforce_pub
 td fn trigger --coll salesforce --name salesforce_pub
 ```
 
-## 7. Monitor Output
+## 5. Monitor Output
 
-### 7.1. Monitor Snowflake Output
+### 5.1. Monitor Snowflake Output
 After your function finishes running, you can access the status of your execution through our UI: http://localhost:2457/
 
-### 7.2. Sample Tabsdata Table Output in Tabsdata UI
+### 5.2. Sample Tabsdata Table Output in Tabsdata UI
 You can sample your Tabsdata Tables through the [Tabsdata UI](http://localhost:2457/). To access the UI, click the link and fill in the following credentials within the login page:
 
 Username: admin  
@@ -137,7 +137,7 @@ Role: sys_admin
 
 Once logged in, you may sample any of the tables generated through the workflow, as well as any of their version history, [here](http://localhost:2457/collections/pii)
 
-### 7.3. Sample Tabsdata Table Output in Tabsdata CLI
+### 5.3. Sample Tabsdata Table Output in Tabsdata CLI
 You may also sample your tables through the Tabsdata CLI
 
 ```sh
