@@ -1,18 +1,21 @@
 import tabsdata as td
 import os
+from typing import List
+import polars as pl
+import functools
 
 MYSQL_USERNAME = td.EnvironmentSecret("MYSQL_USERNAME")
 MYSQL_PASSWORD = td.EnvironmentSecret("MYSQL_PASSWORD")
-MYSQL_URI = os.getenv("MYSQL_URI")
 
 
 @td.publisher(
     source=td.MySQLSource(
-        uri=MYSQL_URI,
-        query=["SELECT * FROM raw_customer_data"],
+        uri=os.getenv("MYSQL_URI"),
+        query=["SELECT * FROM `policy_dim`"],
         credentials=td.UserPasswordCredentials(MYSQL_USERNAME, MYSQL_PASSWORD),
     ),
-    tables=["raw_customer_data"],
+    tables=["policy_dim"],
+    trigger_by=["claims_fact_today"],
 )
-def mysql_pub(tf1: td.TableFrame):
-    return tf1
+def policy_dim_pub(tf: td.TableFrame):
+    return tf

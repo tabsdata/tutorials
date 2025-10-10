@@ -2,3 +2,8 @@ __pycache__
 archive_
 .DS_Store
 trial.*
+source.sh
+*/source.sh
+*/output/*
+!*/output/.gitkeep
+

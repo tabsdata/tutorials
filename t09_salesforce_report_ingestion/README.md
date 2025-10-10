@@ -24,9 +24,9 @@ cd tutorials/t09_salesforce_report_ingestion/functions
 
 Input your Snowflake and Salesforce credentials into the [source.sh](./source.sh) file
 
-Then export all the variables into your current shell
+Then export all the variables into your current shell. The command below is specifically for bash, but modify the command and source script to suit your shell setup.
 ```sh
-source ../source.sh
+. ../source.sh
 ```
 
 ## 3. Setup Tabsdata Instance
@@ -86,7 +86,7 @@ td collection create --name salesforce
 
 All function files must be registered into the tabsdata server with the `td fn register` CLI command.
 
-Attached below is a detailed explanation of each function and what it's doing:
+Attached below is a detailed explanation of each function, what it's doing, and the CLI command to register it:
 
 **Publishers:**
 1. `01_salesforce_pub.py` publishes Salesforce Report into a Tabsdata Table called `sf_snapshot`

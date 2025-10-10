@@ -8,7 +8,7 @@ import tabsdata as td
         os.path.join(
             os.path.dirname(os.getcwd()),
             "output",
-            "../output/sf_snapshot_$EXPORT_TIMESTAMP.jsonl",
+            "sf_snapshot_$EXPORT_TIMESTAMP.jsonl",
         )
     ),
 )

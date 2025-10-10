@@ -1,9 +1,10 @@
 import tabsdata as td
+import os
 
 SALESFORCE_USER = td.EnvironmentSecret("SALESFORCE_USER")
 SALESFORCE_PASSWORD = td.EnvironmentSecret("SALESFORCE_PASSWORD")
 SALESFORCE_TOKEN = td.EnvironmentSecret("SALESFORCE_TOKEN")
-SALESFORCE_REPORT = td.EnvironmentSecret("SALESFORCE_REPORT").secret_value
+SALESFORCE_REPORT = os.getenv("SALESFORCE_REPORT")
 
 
 @td.publisher(

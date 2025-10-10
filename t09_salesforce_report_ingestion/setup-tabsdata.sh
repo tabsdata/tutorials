@@ -11,9 +11,11 @@ else
     destination="local"
 fi
 
-tdserver stop --instance salesforce
-echo yes | tdserver delete --instance salesforce
-tdserver start --instance salesforce
+instance="salesforce"
+
+tdserver stop --instance $instance
+echo yes | tdserver delete --instance $instance
+tdserver start --instance $instance
 
 td login --server ${TD_SERVER} --user ${TD_USER} --password ${TD_PASSWORD} --role ${TD_ROLE}
 

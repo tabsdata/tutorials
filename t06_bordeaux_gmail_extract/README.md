@@ -18,7 +18,7 @@ For more details on each step, see our initial tutorials ([1](https://github.com
 
 ```sh
 git clone https://github.com/tabsdata/tutorials
-cd tutorials/t06_bordeaux_gmail_extract
+cd tutorials/t06_bordeaux_gmail_extract/functions
 ```
 
 ## 2. Set up your email server
@@ -29,7 +29,7 @@ In order to connect through IMAP, you will need to generate a 16-digit app passw
 
 ### 2.2 [OPTIONAL] Define your mailbox search criteria
 
-The Tabsdata Publisher `claim_fact_pub.py` file is set to pull all unseen email within the last 7 days by default. You may modify the search criteria to suit your needs. Emails accessed through IMAP are automatically marked as read, so it is important to reset the email's status to UNREAD if necessary
+The Tabsdata Publisher `01_claim_fact_pub.py` file is set to pull all unseen email within the last 7 days by default. You may modify the search criteria to suit your needs. Emails accessed through IMAP are automatically marked as read, so it is important to reset the email's status to UNREAD if necessary
 
 ```python
 date_since = (datetime.now() - timedelta(days=7)).strftime("%d-%b-%Y")
@@ -76,36 +76,55 @@ pip install tabsdata --upgrade
 pip install 'tabsdata['databricks']'
 ```
 
-### 4.2. Set Environmental Variables for Tabsdata
-You will need to store your credentials for authentication as environmental variables prior to starting the Tabsdata server. Populate your Gmail and Databricks credentials into the terminal command template and run the command in your terminal. This tutorial uses Gmail as the email server, however you may configure any email server as long as you have the correct imap host server address and port number.
+### 4.2. Set up Gmail, Databricks and MySQL credentials
 
+Input your credentials into the [source.sh](./source.sh) file
+
+Then export all the variables into your current shell
 ```sh
-export TDX=$(pwd)
-export imap_host=imap.gmail.com
-export imap_port=993
-export imap_email_user=your_email@gmail.com
-export imap_email_password='your_app_password_here'
-export mysql_username=username
-export mysql_password=password
-export databricks_host_url=https://dbc-your-instance.cloud.databricks.com
-export databricks_token=dapiXXXXXXXXXXXXXXXXXXXXXXXX
+source ../source.sh
 ```
 
 NOTE: When the Tabsdata server is started, it caches all available environmental variables, which can then be accessed with the `td.EnvironmentSecret` method in your function code. 
 
-### 4.3. Start the Server
+### 4.3. [OPTIONAL] Quickstart Tabsdata Instance 
+
+Tutorial steps 4.4 - 6 run through each command necessary to set up your instance below. However, we also have a quickstart that bundles all the commands into a shell script. If doing quickstart, you may skip to [step 4](#6-trigger-your-publisher-function)
+
+The quickstart script:
+2. Creates your tabsdata instance
+3. Registers all relevant functions for the workflow
+
+<details>
+<summary><h1>Quickstart Setup 💨</h1></summary>
+
+> If you would like your workflow to subscribe your data into databricks, run the following command:
+>
+> ```sh
+> source ../setup-tabsdata.sh databricks
+> ```
+>
+> If you do not want to connect with databricks and just have your data subscribed back into the [output folder](output) within localfile storage, run the following command:
+>
+> ```sh
+> source ../setup-tabsdata.sh
+> ```
+</details>
+
+
+### 4.4. Start the Server
 
 ```sh
-tdserver start
+tdserver start --instance insurance
 ```
 
-### 4.4. Login
+### 4.5. Login
 
 ```sh
-td login --server localhost --user admin --role sys_admin --password tabsdata
+td login --server ${TD_SERVER} --user ${TD_USER} --password ${TD_PASSWORD} --role ${TD_ROLE}
 ```
 
-### 4.5. Create a Collection
+### 4.6. Create a Collection
 
 ```sh
 td collection create --name claim_processing
@@ -118,17 +137,17 @@ All function files must be registered into the tabsdata server with the `td fn r
 Attached below is a detailed explanation of each function and what it's doing:
 
 **Publishers:**
-1. `claim_fact_pub.py` retrieves all unread email attachments, standardizes their schemas, dedupes and concatenates all data into a single table, and outputs the data into the Tabsdata Table `claims_fact_today`.
+1. `01_claim_fact_pub.py` retrieves all unread email attachments, standardizes their schemas, dedupes and concatenates all data into a single table, and outputs the data into the Tabsdata Table `claims_fact_today`.
 
-3. `policy_dim_pub.py` loads policy data from the `policy_dim` table within the `tabsdata_db` MySQL database into the `policy_dim` Tabsdata table. This function is triggered to run whenever new data is loaded into the `claims_fact_today` table.
+3. `03_policy_dim_pub.py` loads policy data from the `policy_dim` table within the `tabsdata_db` MySQL database into the `policy_dim` Tabsdata table. This function is triggered to run whenever new data is loaded into the `claims_fact_today` table.
 
 **Transformers:**
 
-2. `append_claims_today_to_master_trf.py` appends the data in `claims_fact_today` to `claims_fact_master` in order to create a master table of all claim data ingested.
+2. `02_append_claims_today_to_master_trf.py` appends the data in `claims_fact_today` to `claims_fact_master` in order to create a master table of all claim data ingested.
 
-4. `master_fact_trf.py` joins and coalesces the policy table with the master claims table to create an enriched claims table called `claims_fact_master_enriched`.
+4. `04_master_fact_trf.py` joins and coalesces the policy table with the master claims table to create an enriched claims table called `claims_fact_master_enriched`.
 
-5. `master_categorize_trf.py` categorizes the enriched master table into three child tables:
+5. `05_master_categorize_trf.py` categorizes the enriched master table into three child tables:
 
     - `open_pending_claims`: claims that are currently open
     - `claims_last_90_days`: claims made in the last 90 days
@@ -136,29 +155,37 @@ Attached below is a detailed explanation of each function and what it's doing:
 
 **Subscribers:**
 
-6. `databricks_sub.py` writes the enriched and categorized tables to your Databricks workspace.
+6. `06_databricks_sub.py` writes the enriched and categorized tables to your Databricks workspace.
 
 You may register and trigger each function sequentially, or register all functions at once. The following commands register each class of functions in batch:
 
 ### 5.1. Register your Publishers
 
 ```sh
-td fn register --coll claim_processing --path $TDX/claim_fact_pub.py::claim_fact_pub
-td fn register --coll claim_processing --path $TDX/policy_dim_pub.py::policy_dim_pub
+td fn register --coll claim_processing --path 01_claim_fact_pub.py::claim_fact_pub
+td fn register --coll claim_processing --path 03_policy_dim_pub.py::policy_dim_pub
 ```
 
 ### 5.2. Register your Transformers
 
 ```sh
-td fn register --coll claim_processing --path $TDX/append_claims_today_to_master_trf.py::append_claims_today_to_master_trf
-td fn register --coll claim_processing --path $TDX/master_fact_trf.py::master_fact_trf
-td fn register --coll claim_processing --path $TDX/master_categorize_trf.py::master_categorize_trf
+td fn register --coll claim_processing --path 02_append_claims_today_to_master_trf.py::append_claims_today_to_master_trf
+td fn register --coll claim_processing --path 04_master_fact_trf.py::master_fact_trf
+td fn register --coll claim_processing --path 05_master_categorize_trf.py::master_categorize_trf
 ```
 
 ### 5.3. Register your Subscribers
 
+To subscribe your data into localfile storage, run the following command
+
 ```sh
-td fn register --coll claim_processing --path $TDX/databricks_sub.py::databricks_sub
+td fn register --coll claim_processing --path 07_local_sub.py::local_sub
+```
+
+If you would also like to subscribe your data into databricks, run the following command:
+
+```sh
+td fn register --coll claim_processing --path 06_databricks_sub.py::databricks_sub
 ```
 
 ## 6. Trigger your Publisher Function

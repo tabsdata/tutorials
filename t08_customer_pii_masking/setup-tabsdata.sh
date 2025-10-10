@@ -11,9 +11,11 @@ else
     destination="local"
 fi
 
-tdserver stop --instance pii
-echo yes | tdserver delete --instance pii
-tdserver start --instance pii
+instance="~/.tabsdata/pii"
+
+tdserver stop --instance $instance
+echo yes | tdserver delete --instance $instance
+tdserver start --instance $instance
 
 td login --server ${TD_SERVER} --user ${TD_USER} --password ${TD_PASSWORD} --role ${TD_ROLE}
 
@@ -59,7 +61,7 @@ fi
 #register mysql subscriber
 td fn register --coll pii --path 04_mysql_sub.py::mysql_sub
 
-
+td fn trigger --coll pii --name mysql_pub
 
 
 
