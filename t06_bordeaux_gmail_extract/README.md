@@ -92,7 +92,7 @@ NOTE: When the Tabsdata server is started, it caches all available environmental
 Tutorial steps 4.4 - 6 run through each command necessary to set up your instance below. However, we also have a quickstart that bundles all the commands into a shell script. If doing quickstart, you may skip to [step 4](#6-trigger-your-publisher-function)
 
 The quickstart script:  
-1. Creates your tabsdata instance. 
+1. Creates your tabsdata instance.xfvb xcfbdxc 
 2. Registers all relevant functions for the workflow. 
 
 <details>
