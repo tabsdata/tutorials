@@ -24,7 +24,7 @@ cd tutorials/t09_salesforce_report_ingestion/functions
 
 Input your Snowflake and Salesforce credentials into the [source.sh](./source.sh) file
 
-Then export all the variables into your current shell. The command below is specifically for bash, but modify the command and source script to suit your shell setup.
+Then export all the variables into your current shell. The command below is specifically for bash, but modify the command and source script to suit your shell setup.. The command below is specifically for bash, but modify the command and source script to suit your shell setup.
 ```sh
 . ../source.sh
 ```

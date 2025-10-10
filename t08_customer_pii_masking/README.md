@@ -24,7 +24,7 @@ cd tutorials/t08_customer_pii_masking/functions
 
 Input your AWS credentials into the [source.sh](./source.sh) file
 
-Then export all the variables into your current shell
+Then export all the variables into your current shell. The command below is specifically for bash, but modify the command and source script to suit your shell setup.
 ```sh
 source ../source.sh
 ```
