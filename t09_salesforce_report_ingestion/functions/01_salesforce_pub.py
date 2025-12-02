@@ -1,6 +1,6 @@
 import tabsdata as td
 import os
-from td_sync import sync_with_server
+
 
 SALESFORCE_USER = td.EnvironmentSecret("SALESFORCE_USER")
 SALESFORCE_PASSWORD = td.EnvironmentSecret("SALESFORCE_PASSWORD")
@@ -23,6 +23,3 @@ SALESFORCE_REPORT = os.getenv("SALESFORCE_REPORT")
 )
 def salesforce_pub(tf: td.TableFrame):
     return tf
-
-
-sync_with_server("salesforce", True)

@@ -1,5 +1,4 @@
 import tabsdata as td
-from td_sync import sync_with_server
 
 
 @td.transformer(
@@ -33,6 +32,3 @@ def agg_statuses(leads: td.TableFrame, old_leads: td.TableFrame):
         .sort(td.col("STATUS"), descending=True)
     )
     return status_agg
-
-
-sync_with_server("salesforce", True)
