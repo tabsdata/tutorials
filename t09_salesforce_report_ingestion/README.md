@@ -26,12 +26,17 @@ Input your Snowflake and Salesforce credentials into the [source.sh](./source.sh
 
 The publisher uses a Salesforce report as the data source. When setting up the report, ensure the following field is included:
 
+```
 Name: "lead status"
 API Name: "status"
+```
+
 
 In [source.sh](./source.sh), set the variable:
 
+```
 export SALESFORCE_REPORT=
+```
 
 to the API name (report unique name) of your report
 
