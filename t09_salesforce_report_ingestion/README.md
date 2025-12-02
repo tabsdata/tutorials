@@ -20,11 +20,22 @@ git clone https://github.com/tabsdata/tutorials
 cd tutorials/t09_salesforce_report_ingestion/functions
 ```
 
-## 2. Set up Snowflake and MySQL credentials
+## 2. Set up Snowflake and Salesforce credentials
 
-Input your Snowflake and Salesforce credentials into the [source.sh](./source.sh) file
+Input your Snowflake and Salesforce credentials into the [source.sh](./source.sh) file. 
 
-Then export all the variables into your current shell. The command below is specifically for bash, but modify the command and source script to suit your shell setup.. The command below is specifically for bash, but modify the command and source script to suit your shell setup.
+The publisher uses a Salesforce report as the data source. When setting up the report, ensure the following field is included:
+
+Name: "lead status"
+API Name: "status"
+
+In [source.sh](./source.sh), set the variable:
+
+export SALESFORCE_REPORT=
+
+to the API name (report unique name) of your report
+
+Then export all the variables into your current shell. The command below is specifically for bash, but modify the command and source script to suit your shell setup.
 ```sh
 . ../source.sh
 ```
@@ -95,11 +106,20 @@ Attached below is a detailed explanation of each function, what it's doing, and 
 td fn register --coll salesforce --path 01_salesforce_pub.py::salesforce_pub
 ```
 
+**Transformers:**
+1. `02_agg_statuses.py` Aggregates the salesforce report by status and generates a lead count for each status. It also generates a delta for the change in lead counts per status since your last workflow execution
+
+This is stored in a table called  `status_agg`
+
+```sh
+td fn register --coll salesforce --path 02_agg_statuses.py::agg_statuses
+```
+
 **Subscribers:**
 
 3. `03_local_sub.py` subscribes the `sf_snapshot` table into the [output folder](output) within localfile storage
 
-4. `02_snowflake_sub.py` subscribes the `sf_snapshot` table into Snowflake
+4. `04_snowflake_sub.py` subscribes the `sf_snapshot` table into Snowflake
 
 
 
@@ -112,7 +132,7 @@ td fn register --coll salesforce --path 03_local_sub.py::local_sub
 If you would also like to subscribe your data into Snowflake, run the following command:
 
 ```sh
-td fn register --coll salesforce --path 02_snowflake_sub.py::snowflake_sub
+td fn register --coll salesforce --path 04_snowflake_sub.py::snowflake_sub
 ```
 
 ## 4. Trigger your Publisher Function
