@@ -2,11 +2,10 @@
 #
 # Copyright 2025. Tabs Data Inc.
 
-export TD_SERVER=?
-export TD_USER=?
-export TD_PASSWORD=?
-export TD_ROLE=?
-export TDX=?
+export TD_SERVER="${TD_SERVER:=localhost:2457}"
+export TD_USER="${TD_USER:=admin}"
+export TD_PASSWORD="${TD_PASSWORD:=tabsdata}"
+export TD_ROLE="${TD_ROLE:=sys_admin}"
 
 export SALESFORCE_USER=?
 export SALESFORCE_PASSWORD=?

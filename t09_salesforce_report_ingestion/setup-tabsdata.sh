@@ -11,7 +11,7 @@ else
     destination="local"
 fi
 
-instance="salesforce"
+instance=salesforce
 
 tdserver stop --instance $instance
 echo yes | tdserver delete --instance $instance
@@ -25,6 +25,7 @@ td collection create --name salesforce
 
 #register publisher and local subscriber
 td fn register --coll salesforce --path 01_salesforce_pub.py::salesforce_pub
+td fn register --coll salesforce --path 02_agg_statuses.py::agg_statuses
 td fn register --coll salesforce --path 03_local_sub.py::local_sub
 
 
@@ -32,7 +33,7 @@ td fn register --coll salesforce --path 03_local_sub.py::local_sub
 #register aws subscriber
 (
 if [ "$destination" = "snowflake" ]; then
-    td fn register --coll salesforce --path 02_snowflake_sub.py::snowflake_sub
+    td fn register --coll salesforce --path 04_snowflake_sub.py::snowflake_sub
 else
     echo "Skipping Snowflake Subscriber"
 fi
