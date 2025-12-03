@@ -1,7 +1,6 @@
 import tabsdata as td
 import os
 
-
 SALESFORCE_USER = td.EnvironmentSecret("SALESFORCE_USER")
 SALESFORCE_PASSWORD = td.EnvironmentSecret("SALESFORCE_PASSWORD")
 SALESFORCE_TOKEN = td.EnvironmentSecret("SALESFORCE_TOKEN")
