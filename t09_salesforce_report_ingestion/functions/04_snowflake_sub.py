@@ -25,12 +25,12 @@ CONNECTION_PARAMETERS = {
 
 
 @td.subscriber(
-    tables="sf_snapshot",
+    tables=["sf_snapshot", "status_agg"],
     destination=td.SnowflakeDestination(
         CONNECTION_PARAMETERS,
-        destination_table="sf_snapshot",
+        destination_table=["sf_snapshot", "status_agg"],
         if_table_exists="replace",
     ),
 )
-def snowflake_sub(tf):
-    return tf
+def snowflake_sub(tf, tf1):
+    return tf, tf1
