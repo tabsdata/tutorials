@@ -6,4 +6,5 @@ source.sh
 */source.sh
 */output/*
 !*/output/.gitkeep
+*/generate_logs.py
 
