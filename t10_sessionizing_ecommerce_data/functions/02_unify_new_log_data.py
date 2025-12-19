@@ -3,7 +3,7 @@ import tabsdata as td
 
 @td.transformer(
     input_tables=["new_cart_logs", "new_purchase_logs", "new_web_logs"],
-    output_tables=["new_logs_joined"],
+    output_tables=["new_joined_logs"],
 )
 def unify_new_log_data(
     cart: td.TableFrame, purchase: td.TableFrame, web: td.TableFrame
