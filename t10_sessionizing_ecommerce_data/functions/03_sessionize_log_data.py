@@ -72,7 +72,7 @@ def sessionize_log_data(logs: td.TableFrame):
     logs = logs.with_columns(
         td.col("rank")
         .sub(td.col("New_Session_Hit").fill_null(False).not_().cast(td.Int64))
-        .alias("rank")
+        .alias("session")
     )
 
     return logs
