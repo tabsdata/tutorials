@@ -62,10 +62,3 @@ def sessionize_log_data(logs: td.TableFrame):
     return logs
 
 
-if __name__ == "__main__":
-    import td_sync
-
-    x = td_sync.download_table("session_analysis", "joined_logs")
-
-    result = sessionize_log_data(x)
-    print(result)

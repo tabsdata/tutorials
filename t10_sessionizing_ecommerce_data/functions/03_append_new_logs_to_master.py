@@ -13,7 +13,3 @@ def append_new_logs_to_master(
     return td.concat([all_joined_logs, joined_logs])
 
 
-if __name__ == "__main__":
-    import td_sync
-
-    td_sync.sync_with_server("session_analysis", True)

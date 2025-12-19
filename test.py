@@ -59,5 +59,3 @@ def main():
     time.sleep(0.5)
     typingPrint("mysql_pub registered\n", 0.02)
 
-if __name__ == "__main__":
-    main()
