@@ -1,6 +1,7 @@
 import os
 from pathlib import Path
 
+import polars as pl
 import tabsdata as td
 import tabsdata.tableframe as tdf
 from tabsdata import LogFormat
@@ -73,6 +74,11 @@ cart_schema = {
     "price": tdf.Column("price", td.Float64),
 }
 
+base_schema = {
+    "file": tdf.Column("file", td.String),
+    "message": tdf.Column("message", td.String),
+}
+
 
 path = Path(__file__).resolve().parent.parent / "logs"
 
@@ -80,20 +86,46 @@ path = Path(__file__).resolve().parent.parent / "logs"
 @td.publisher(
     source=td.LocalFileSource(
         [
-            os.path.join(path, "cart_*.log"),
-            os.path.join(path, "purchase_*.log"),
-            os.path.join(path, "web_*.log"),
+            os.path.join(path, "cart_*.log.*"),
+            os.path.join(path, "purchase_*.log.*"),
+            os.path.join(path, "web_*.log.*"),
         ],
         format=LogFormat(),
+        initial_last_modified="2025-01-01T00:00:00Z",
     ),
-    tables=["cart_log", "purchase_log", "web_log"],
+    tables=["new_cart_logs", "new_purchase_logs", "new_web_logs"],
 )
-def publish_logs(
+def publish_log_files(
     cart: list[tdf.TableFrame],
     purchase: list[tdf.TableFrame],
     web: list[tdf.TableFrame],
 ):
-    cart = td.concat(cart).grok("message", cart_pattern, cart_schema)
-    purchase = td.concat(purchase).grok("message", purchase_pattern, purchase_schema)
-    web = td.concat(web).grok("message", web_pattern, web_schema)
-    return cart, purchase, web
+    patterns = {
+        "cart": (cart_pattern, cart_schema),
+        "purchase": (purchase_pattern, purchase_schema),
+        "web": (web_pattern, web_schema),
+    }
+
+    inputs = {
+        "cart": cart,
+        "purchase": purchase,
+        "web": web,
+    }
+
+    out = {}
+
+    for name, tfs in inputs.items():
+        pattern, schema = patterns[name]
+        if len(tfs) > 0:
+            out[name] = td.concat(tfs).grok("message", pattern, schema)
+        else:
+            schema = {**base_schema, **schema}
+            schema = tdf.Schema(schema.values())
+            out[name] = td.TableFrame.from_polars(pl.DataFrame(schema=schema))
+    return out["cart"], out["purchase"], out["web"]
+
+
+if __name__ == "__main__":
+    import td_sync
+
+    td_sync.sync_with_server("session_analysis", True)

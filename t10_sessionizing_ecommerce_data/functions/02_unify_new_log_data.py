@@ -2,10 +2,10 @@ import tabsdata as td
 
 
 @td.transformer(
-    input_tables=["cart_log", "purchase_log", "web_log"],
-    output_tables=["joined_logs"],
+    input_tables=["new_cart_logs", "new_purchase_logs", "new_web_logs"],
+    output_tables=["new_logs_joined"],
 )
-def create_unified_log(
+def unify_new_log_data(
     cart: td.TableFrame, purchase: td.TableFrame, web: td.TableFrame
 ):
     cart = cart.select(
@@ -40,3 +40,9 @@ def create_unified_log(
     )
 
     return result
+
+
+if __name__ == "__main__":
+    import td_sync
+
+    td_sync.sync_with_server("session_analysis", True)

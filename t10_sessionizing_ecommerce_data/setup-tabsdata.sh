@@ -21,8 +21,9 @@ td login --server "${TD_SERVER}" --user "${TD_USER}" --password "${TD_PASSWORD}"
 td collection create --name "${collection}"
 
 # Register publisher and transformers
-td fn register --coll "${collection}" --path 01_publish_logs.py::publish_logs
-td fn register --coll "${collection}" --path 02_create_unified_log.py::create_unified_log
+td fn register --coll "${collection}" --path 01_publish_log_files.py::publish_log_files
+td fn register --coll "${collection}" --path 02_unify_new_log_data.py::unify_new_log_data
+td fn register --coll "${collection}" --path 03_append_new_logs_to_master.py::append_new_logs_to_master
 td fn register --coll "${collection}" --path 03_sessionize_log_data.py::sessionize_log_data
 td fn register --coll "${collection}" --path 04_aggregate_sessions.py::aggregate_sessions
 
@@ -34,4 +35,4 @@ else
 fi
 
 # Kick off the workflow
-td fn trigger --coll "${collection}" --name publish_logs
+td fn trigger --coll "${collection}" --name publish_log_files

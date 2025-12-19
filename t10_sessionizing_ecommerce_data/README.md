@@ -79,20 +79,22 @@ Register the publisher, transformers, and optional subscriber so the workflow mi
 
 **Publisher**
 
-1. `01_publish_logs.py::publish_logs` – Reads local log files, applies Grok patterns to extract structured columns, and publishes `cart_log`, `purchase_log`, and `web_log`.
+1. `01_publish_log_files.py::publish_log_files` – Reads the rotated log files, applies Grok patterns, and publishes normalized batches (`new_cart_logs`, `new_purchase_logs`, `new_web_logs`). When no new files arrive it still emits empty tables so downstream steps keep their schema.
 
 ```sh
-td fn register --coll session_analysis --path 01_publish_logs.py::publish_logs
+td fn register --coll session_analysis --path 01_publish_log_files.py::publish_log_files
 ```
 
 **Transformers**
 
-1. `02_create_unified_log.py::create_unified_log` – Normalizes the three streams, concatenates them, sorts by `user_id`/`timestamp`, and adds a human-readable `time_pretty` column → `joined_logs`.
-2. `03_sessionize_log_data.py::sessionize_log_data` – Implements the 30-minute inactivity threshold and hash-based user change detection to assign session IDs → `sessionized_logs`.
-3. `04_aggregate_sessions.py::aggregate_sessions` – Aggregates event counts and duration metrics per session, formatting durations as `Xm Ys` strings → `aggregated_sessions`.
+1. `02_unify_new_log_data.py::unify_new_log_data` – Brings each incremental batch into the same shape, derives `user_action`, sorts by `user_id`/`timestamp`, and adds `time_pretty` → `new_logs_joined`.
+2. `03_append_new_logs_to_master.py::append_new_logs_to_master` – Merges the latest `new_logs_joined` batch with the persisted `all_joined_logs` history.
+3. `03_sessionize_log_data.py::sessionize_log_data` – Applies the 30-minute inactivity rule plus hash-based user-change detection to assign session IDs → `sessionized_logs`.
+4. `04_aggregate_sessions.py::aggregate_sessions` – Aggregates event counts and duration metrics per session, formatting durations as `Xm Ys` strings → `aggregated_sessions`.
 
 ```sh
-td fn register --coll session_analysis --path 02_create_unified_log.py::create_unified_log
+td fn register --coll session_analysis --path 02_unify_new_log_data.py::unify_new_log_data
+td fn register --coll session_analysis --path 03_append_new_logs_to_master.py::append_new_logs_to_master
 td fn register --coll session_analysis --path 03_sessionize_log_data.py::sessionize_log_data
 td fn register --coll session_analysis --path 04_aggregate_sessions.py::aggregate_sessions
 ```
@@ -110,14 +112,14 @@ td fn register --coll session_analysis --path 05_subscribe_sessions_snowflake.py
 Once registrations are complete, a single publisher trigger kicks off the entire DAG—Tabsdata automatically orchestrates downstream transformers.
 
 ```sh
-td fn trigger --coll session_analysis --name publish_logs
+td fn trigger --coll session_analysis --name publish_log_files
 ```
 
 ## 5. Inspect the results
 
 ### 5.1 Tabsdata UI
 
-Visit [http://localhost:2457](http://localhost:2457) and log in using the credentials from `source.sh`. Sample `joined_logs`, `sessionized_logs`, or `aggregated_sessions` under the `session_analysis` collection and explore their version history.
+Visit [http://localhost:2457](http://localhost:2457) and log in using the credentials from `source.sh`. Sample `new_logs_joined`, `all_joined_logs`, `sessionized_logs`, or `aggregated_sessions` under the `session_analysis` collection and explore their version history.
 
 ### 5.2 Tabsdata CLI
 
