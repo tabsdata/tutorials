@@ -14,7 +14,7 @@ def sessionize_log_data(logs: td.TableFrame):
     logs = logs.sort("user_id", "timestamp", "event_id")
 
     logs = logs.with_columns(
-        td.col("timestamp").diff().cast(td.Int64).truediv(60000000).alias("timediff"),
+        td.col("timestamp").diff().dt.total_minutes().alias("timediff"),
         td.col("user_id").hash().alias("user_id_hash"),
     )
 
@@ -23,8 +23,8 @@ def sessionize_log_data(logs: td.TableFrame):
         .reinterpret(signed=True)
         .diff()
         .alias("user_id_hash_diff"),
-        (td.col("timediff") > threshold)
-        .and_(td.col("timediff").is_not_null())
+        (td.col("timediff").is_not_null())
+        .and_(td.col("timediff").gt(threshold))
         .fill_null(False)
         .alias("max_time_inactive_hit"),
         td.col("timestamp").cast(td.Datetime),

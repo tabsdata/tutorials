@@ -27,25 +27,25 @@ def aggregate_sessions(logs: td.TableFrame):
         td.col("user_action")
         .filter(action == "web")
         .count()
-        .alias("count of web activities"),
-        action.count().alias("count of total activities"),
+        .alias("count_of_web_activities"),
+        action.count().alias("count_of_total_activities"),
         action.filter(action.str.starts_with("cart"))
         .count()
-        .alias("count of cart activities"),
+        .alias("count_of_cart_activities"),
         action.filter(action.str.starts_with("purchase"))
         .count()
-        .alias("count of purchase activities"),
+        .alias("count_of_purchase_activities"),
     )
     time_breakdown = logs.group_by("session").agg(
         td.col("timestamp")
         .filter(td.col("user_action") == "purchase")
         .first()
         .sub(td.col("timestamp").first())
-        .alias("time to purchase"),
+        .alias("time_to_purchase"),
         td.col("timestamp")
         .last()
         .sub(td.col("timestamp").first())
-        .alias("total session time"),
+        .alias("total_session_time"),
     )
     result = base.join(event_breakdown, on="session", how="left")
     result = result.join(time_breakdown, on="session", how="left")
