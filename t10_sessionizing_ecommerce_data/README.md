@@ -11,7 +11,6 @@ For more background on Tabsdata basics, review our earlier tutorials ([1](https:
 - Python 3.12 or higher
 - Tabsdata 1.3.0+ (use `tabsdata[all]` if unsure)
 - Optional Snowflake account if you plan to run the subscriber that publishes `sessionized_logs` and `aggregated_sessions`
-- The `logs/` folder from this repo (run `python ../generate_logs.py` if you want to regenerate synthetic data)
 
 ## 1. Clone the GitHub repository
 
@@ -87,24 +86,24 @@ td fn register --coll session_analysis --path 01_publish_log_files.py::publish_l
 
 **Transformers**
 
-1. `02_unify_new_log_data.py::unify_new_log_data` – Brings each incremental batch into the same shape, derives `user_action`, sorts by `user_id`/`timestamp`, and adds `time_pretty` → `new_logs_joined`.
+1. `02_unify_new_log_data.py::unify_new_log_data` – Standardizes the schema for each incremental batch, derives `user_action`, sorts by `user_id`/`timestamp`, and adds `time_pretty` → `new_logs_joined`.
 2. `03_append_new_logs_to_master.py::append_new_logs_to_master` – Merges the latest `new_logs_joined` batch with the persisted `all_joined_logs` history.
-3. `03_sessionize_log_data.py::sessionize_log_data` – Applies the 30-minute inactivity rule plus hash-based user-change detection to assign session IDs → `sessionized_logs`.
-4. `04_aggregate_sessions.py::aggregate_sessions` – Aggregates event counts and duration metrics per session, formatting durations as `Xm Ys` strings → `aggregated_sessions`.
+3. `04_sessionize_log_data.py::sessionize_log_data` – Uses event timestamps and user id columns to identify boundaries between  sessions. Defines a session id for each event. 
+4. `05_aggregate_sessions.py::aggregate_sessions` – Aggregates event counts and duration metrics per session.
 
 ```sh
 td fn register --coll session_analysis --path 02_unify_new_log_data.py::unify_new_log_data
 td fn register --coll session_analysis --path 03_append_new_logs_to_master.py::append_new_logs_to_master
-td fn register --coll session_analysis --path 03_sessionize_log_data.py::sessionize_log_data
-td fn register --coll session_analysis --path 04_aggregate_sessions.py::aggregate_sessions
+td fn register --coll session_analysis --path 04_sessionize_log_data.py::sessionize_log_data
+td fn register --coll session_analysis --path 05_aggregate_sessions.py::aggregate_sessions
 ```
 
 **Subscriber (optional)**
 
-1. `05_subscribe_sessions_snowflake.py::subscribe_sessions` – Writes both analysis tables to Snowflake using the connection defined in `source.sh`.
+1. `06_subscribe_sessions_snowflake.py::subscribe_sessions` – Writes both analysis tables to Snowflake using the connection defined in `source.sh`.
 
 ```sh
-td fn register --coll session_analysis --path 05_subscribe_sessions_snowflake.py::subscribe_sessions
+td fn register --coll session_analysis --path 06_subscribe_sessions_snowflake.py::subscribe_sessions
 ```
 
 ## 4. Trigger the publisher
@@ -129,7 +128,7 @@ td table sample --coll session_analysis --name aggregated_sessions
 
 ### 5.3 Snowflake destination
 
-If you registered the Snowflake subscriber, query `aggregated_sessions` and `sessionized_logs` in your warehouse once the workflow finishes. Tables are replaced on each run per the configuration in `05_subscribe_sessions_snowflake.py`.
+If you registered the Snowflake subscriber, query `aggregated_sessions` and `sessionized_logs` in your warehouse once the workflow finishes. Tables are replaced on each run per the configuration in `06_subscribe_sessions_snowflake.py`.
 
 ## Need help?
 
