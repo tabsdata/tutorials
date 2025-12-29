@@ -1,6 +1,7 @@
 from itertools import accumulate
 
 import tabsdata as td
+from polar_sub import drill
 
 
 @td.transformer(
@@ -13,12 +14,7 @@ def sessionize_log_data(logs: td.TableFrame):
     logs = logs.sort("user_id", "timestamp", "event_id")
 
     logs = logs.with_columns(
-        td.col("timestamp")
-        .cast(td.Datetime)
-        .diff()
-        .cast(td.Int64)
-        .truediv(60000000)
-        .alias("timediff"),
+        td.col("timestamp").diff().cast(td.Int64).truediv(60000000).alias("timediff"),
         td.col("user_id").hash().alias("user_id_hash"),
     )
 
@@ -53,7 +49,6 @@ def sessionize_log_data(logs: td.TableFrame):
     session_column = td.TableFrame.from_dict(session_dict).rename(
         {"New_Session_Hit": "session"}
     )
-    print(session_column)
 
     logs = logs.join(session_column, on="event_id", how="left").sort(
         "user_id", "timestamp"

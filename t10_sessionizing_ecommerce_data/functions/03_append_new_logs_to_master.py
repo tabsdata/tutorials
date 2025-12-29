@@ -6,10 +6,13 @@ import tabsdata as td
     output_tables=["all_joined_logs"],
 )
 def append_new_logs_to_master(
-    joined_logs: td.TableFrame, all_joined_logs: td.TableFrame
+    new_joined_logs: td.TableFrame, all_joined_logs: td.TableFrame
 ):
+    new_joined_logs = new_joined_logs.with_columns(
+        td.col("timestamp").cast(td.Datetime)
+    )
     if all_joined_logs is None:
-        return joined_logs
-    return td.concat([all_joined_logs, joined_logs])
+        return new_joined_logs
+    return td.concat([all_joined_logs, new_joined_logs])
 
 
