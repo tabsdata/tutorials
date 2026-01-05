@@ -1,7 +1,6 @@
 from itertools import accumulate
 
 import tabsdata as td
-from polar_sub import drill
 
 
 @td.transformer(
@@ -58,5 +57,3 @@ def sessionize_log_data(logs: td.TableFrame):
     )
 
     return logs
-
-

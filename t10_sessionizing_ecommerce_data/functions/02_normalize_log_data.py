@@ -50,9 +50,3 @@ def normalize_log_data(
     )
 
     return result
-
-
-if __name__ == "__main__":
-    import td_sync
-
-    td_sync.sync_with_server("session_analysis", True)
