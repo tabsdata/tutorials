@@ -1,7 +1,6 @@
 import os
 from pathlib import Path
 
-import polars as pl
 import tabsdata as td
 import tabsdata.tableframe as tdf
 from tabsdata import LogFormat
@@ -74,11 +73,6 @@ cart_schema = {
     "price": tdf.Column("price", td.Float64),
 }
 
-base_schema = {
-    "file": tdf.Column("file", td.String),
-    "message": tdf.Column("message", td.String),
-}
-
 
 path = Path(__file__).resolve().parent.parent / "logs"
 
@@ -119,9 +113,7 @@ def publish_log_files(
         if len(tfs) > 0:
             out[name] = td.concat(tfs).grok("message", pattern, schema)
         else:
-            schema = {**base_schema, **schema}
-            schema = tdf.Schema(schema.values())
-            out[name] = td.TableFrame.from_polars(pl.DataFrame(schema=schema))
+            out[name] = td.TableFrame.empty()
     return out["cart"], out["purchase"], out["web"]
 
 

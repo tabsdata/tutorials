@@ -22,7 +22,7 @@ td collection create --name "${collection}"
 
 # Register publisher and transformers
 td fn register --coll "${collection}" --path 01_publish_log_files.py::publish_log_files
-td fn register --coll "${collection}" --path 02_unify_new_log_data.py::unify_new_log_data
+td fn register --coll "${collection}" --path 02_normalize_log_data.py::normalize_log_data
 td fn register --coll "${collection}" --path 03_append_new_logs_to_master.py::append_new_logs_to_master
 td fn register --coll "${collection}" --path 04_sessionize_log_data.py::sessionize_log_data
 td fn register --coll "${collection}" --path 05_aggregate_sessions.py::aggregate_sessions

@@ -86,13 +86,13 @@ td fn register --coll session_analysis --path 01_publish_log_files.py::publish_l
 
 **Transformers**
 
-1. `02_unify_new_log_data.py::unify_new_log_data` – Standardizes the schema for each incremental batch, derives `user_action`, sorts by `user_id`/`timestamp`, and adds `time_pretty` → `new_logs_joined`.
+1. `02_normalize_log_data.py::normalize_log_data` – Standardizes the schema for each incremental batch, derives `user_action`, sorts by `user_id`/`timestamp`, and adds `time_pretty` → `new_logs_joined`.
 2. `03_append_new_logs_to_master.py::append_new_logs_to_master` – Merges the latest `new_logs_joined` batch with the persisted `all_joined_logs` history.
 3. `04_sessionize_log_data.py::sessionize_log_data` – Uses event timestamps and user id columns to identify boundaries between  sessions. Defines a session id for each event. 
 4. `05_aggregate_sessions.py::aggregate_sessions` – Aggregates event counts and duration metrics per session.
 
 ```sh
-td fn register --coll session_analysis --path 02_unify_new_log_data.py::unify_new_log_data
+td fn register --coll session_analysis --path 02_normalize_log_data.py::normalize_log_data
 td fn register --coll session_analysis --path 03_append_new_logs_to_master.py::append_new_logs_to_master
 td fn register --coll session_analysis --path 04_sessionize_log_data.py::sessionize_log_data
 td fn register --coll session_analysis --path 05_aggregate_sessions.py::aggregate_sessions

@@ -21,6 +21,8 @@ def duration_to_str_expr(col_name: str, out_name: str | None = None):
     output_tables=["aggregated_sessions"],
 )
 def aggregate_sessions(logs: td.TableFrame):
+    if logs.is_empty():
+        return td.TableFrame.empty()
     action = td.col("user_action")
     base = logs.select(["session", "user_id"]).unique(subset="session", keep="first")
     event_breakdown = logs.group_by("session").agg(
