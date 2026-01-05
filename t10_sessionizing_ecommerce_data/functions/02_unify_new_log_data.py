@@ -36,10 +36,10 @@ def unify_new_log_data(
     concat_list = [cart, web, purchase]
     empty_check = [i for i in concat_list if not i.is_empty()]
 
-    result = td.concat([cart, web, purchase], how="diagonal")
-
     if len(empty_check) == 0:
         return td.TableFrame.empty()
+
+    result = td.concat([cart, web, purchase], how="diagonal")
 
     result = result.sort("user_id", "timestamp", descending=False)
     result = result.with_columns(
