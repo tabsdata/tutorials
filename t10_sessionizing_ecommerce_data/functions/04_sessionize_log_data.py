@@ -11,6 +11,9 @@ from polar_sub import drill
 def sessionize_log_data(logs: td.TableFrame):
     threshold = 30
 
+    if logs is None or logs.is_empty():
+        return td.TableFrame.empty()
+
     logs = logs.sort("user_id", "timestamp", "event_id")
 
     logs = logs.with_columns(
@@ -57,10 +60,3 @@ def sessionize_log_data(logs: td.TableFrame):
     return logs
 
 
-if __name__ == "__main__":
-    import td_sync
-
-    x = td_sync.download_table("session_analysis", "all_joined_logs")
-
-    x = sessionize_log_data(x)
-    drill(x)
