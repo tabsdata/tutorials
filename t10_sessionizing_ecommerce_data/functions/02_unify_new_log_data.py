@@ -40,6 +40,7 @@ def unify_new_log_data(
 
     if len(empty_check) == 0:
         return td.TableFrame.empty()
+
     result = result.sort("user_id", "timestamp", descending=False)
     result = result.with_columns(
         td.col("timestamp")
