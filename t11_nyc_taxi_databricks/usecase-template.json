@@ -1,0 +1,25 @@
+{
+  "databricks": {
+    "host": "?????",
+    "token": "?????",
+    "catalog": "?????",
+    "schema": "?????",
+    "volume": "?????",
+    "warehouse_id": "?????"
+  },
+  "tabsdata": {
+    "server": "localhost:2457",
+    "user": "usecase",
+    "password": "tabsdata",
+    "project": "nyctaxi"
+  },
+  "tlc": {
+    "base_url": "https://d37ci6vzurychx.cloudfront.net",
+    "first_month": "2026-01",
+    "last_month": null
+  },
+  "dirs": {
+    "cache": "cache",
+    "landing": "landing"
+  }
+}

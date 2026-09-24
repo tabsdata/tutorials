@@ -1,0 +1,45 @@
+#
+# Copyright 2026 Tabsdata Inc.
+#
+
+# The three dashboards of the original use case, reading trip_summary as
+# published by Tabsdata. Nothing else is deployed to Databricks.
+
+bundle:
+  name: nyc-taxi-dashboards
+
+variables:
+  warehouse_id:
+    description: SQL warehouse the dashboards query through.
+  catalog:
+    description: Catalog the nyc_databricks connection writes to.
+  schema:
+    description: Schema the nyc_databricks connection writes to.
+
+# The workspace comes from DATABRICKS_HOST / DATABRICKS_TOKEN and the variables
+# from --var; run.py sets both from usecase.json.
+targets:
+  dev:
+    mode: development
+    default: true
+
+resources:
+  dashboards:
+    fleet_operations:
+      display_name: "Fleet Operations (Tabsdata)"
+      warehouse_id: ${var.warehouse_id}
+      dataset_catalog: ${var.catalog}
+      dataset_schema: ${var.schema}
+      file_path: ./src/fleet_operations.lvdash.json
+    financial_performance:
+      display_name: "Financial Performance (Tabsdata)"
+      warehouse_id: ${var.warehouse_id}
+      dataset_catalog: ${var.catalog}
+      dataset_schema: ${var.schema}
+      file_path: ./src/financial_performance.lvdash.json
+    compliance_quality:
+      display_name: "Compliance & Quality (Tabsdata)"
+      warehouse_id: ${var.warehouse_id}
+      dataset_catalog: ${var.catalog}
+      dataset_schema: ${var.schema}
+      file_path: ./src/compliance_quality.lvdash.json

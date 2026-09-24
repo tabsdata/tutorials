@@ -1,10 +1,9 @@
 import os
-import polars as pl
+from datetime import datetime
+from typing import List
+
 import requests
 import tabsdata as td
-from datetime import datetime
-import io
-from typing import List
 
 
 class NycTaxiStatsSource(td.SourcePlugin):
@@ -12,22 +11,22 @@ class NycTaxiStatsSource(td.SourcePlugin):
         filenames = []
         data = []
 
-        #get current datetime info
+        # get current datetime info
         now = datetime.now()
         year = now.year
         month = now.month
         timestamp = now.strftime("%Y%m%d%H%M%S")
 
-        #create endpoints to append to base url for data
+        # create endpoints to append to base url for data
         months = [f"{year}-{m:02d}" for m in range(1, month)]
 
-        #request to nyc taxi site and read parquet data into temp directory
+        # request to nyc taxi site and read parquet data into temp directory
         for i in months:
             endpoint = f"https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_{i}.parquet"
             try:
                 payload = requests.get(endpoint)
                 filename = f"yellow_tripdata_{i}"
-                destination_file = f"{timestamp}_{filename}.parquet" 
+                destination_file = f"{timestamp}_{filename}.parquet"
                 destination_path = os.path.join(working_dir, destination_file)
                 with open(destination_path, "wb") as f:
                     f.write(payload.content)
@@ -36,12 +35,26 @@ class NycTaxiStatsSource(td.SourcePlugin):
                 payload = None
         return [filenames]
 
+    def identify_months_to_process(self, start_date, end_date):
+        s = datetime.strptime(start_date, "%Y-%m-%d")
+        e = datetime.strptime(end_date, "%Y-%m-%d")
+
+        months = []
+        y, m = s.year, s.month
+
+        while (y, m) <= (e.year, e.month):
+            months.append(f"{y:04d}-{m:02d}")
+            m += 1
+            if m == 13:
+                m = 1
+                y += 1
+
+        print(months)
+
 
 @td.publisher(
     source=NycTaxiStatsSource(),
     tables="nyc_taxi_stats",
 )
-
 def nyc_taxi_pub(tf: List[td.TableFrame]):
     return td.concat(tf)
-
