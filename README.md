@@ -2,6 +2,18 @@
 
 In the tutorials below, we show how to make the most of Tabsdata, when working with various sources and destinations. We have shown only specific connectors in the tutorials below. However, in a real-world scenario, your data source could be any other database, or file storage location (cloud or on-prem), and the subscriber could write data to various endpoints such as a database or file system. You can check the list of source and destination connectors in [Tabsdata documentation](https://docs.tabsdata.com/latest/guide/04_01_working_with_publishers/main.html). 
 
+## Tutorial 11: Preparing NYC Taxi Data for Databricks (`t11_nyc_taxi_databricks`)
+
+In this tutorial, we'll explore how Tabsdata prepares NYC green-taxi trip data through bronze, silver, and gold layers and publishes the results to Databricks. We will do the following steps:
+
+* Set up Tabsdata and configure the Databricks destination
+* Download NYC TLC green-taxi trip files and the taxi-zone lookup
+* Register publishers and transformers that ingest, standardize, and validate the data across medallion layers
+* Publish gold dimensions, trip facts, and trip summaries to Databricks
+* Deploy dashboards for fleet operations, financial performance, and compliance and quality
+
+See the [runbook](t11_nyc_taxi_databricks/README.md) and [blog post](t11_nyc_taxi_databricks/blog/BLOG.md) for details.
+
 ## Tutorial 10: Sessionizing E-commerce Log Data (`t10_sessionizing_ecommerce_data`)
 
 In this tutorial, we'll explore how Tabsdata enables stitching multiple event streams into shopper sessions and publishing the results downstream. We will do the following steps:
