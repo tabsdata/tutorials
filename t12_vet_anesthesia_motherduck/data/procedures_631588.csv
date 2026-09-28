@@ -1,0 +1,4 @@
+procedure_event_id,case_id,procedure_name,start_time,end_time,duration_min,sequence
+proc_1_case_631588_2025-02-20,case_631588_2025-02-20,Pre-Op Radiographs,11:18,11:39,21,1
+proc_2_case_631588_2025-02-20,case_631588_2025-02-20,Arthroscopy - L stifle,11:45,12:08,23,2
+proc_3_case_631588_2025-02-20,case_631588_2025-02-20,TPLO - L,12:18,14:23,125,3

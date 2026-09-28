@@ -1,0 +1,2 @@
+case_id,patient_id,owner_id,procedure_date,physical_status,emergency_flag,recumbency,sedation_present,comments,pre_op_eval,anesthesia_start,anesthesia_end,anesthesia_duration_min,recovery_end,recovery_duration_min,recovery_quality
+case_625531_2025-03-13,625531,owner_lowell_emerson,2025-03-13,III,FALSE,Dorsal,Marked,Attempt Resuscitation; no special recommendations.,CCL rupture; on Drug M; acute lameness,09:43,13:53,250,14:25,32,Excellent

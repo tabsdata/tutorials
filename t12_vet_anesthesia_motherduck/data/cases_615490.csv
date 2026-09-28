@@ -1,0 +1,2 @@
+case_id,patient_id,owner_id,procedure_date,physical_status,emergency_flag,recumbency,sedation_present,comments,pre_op_eval,anesthesia_start,anesthesia_end,anesthesia_duration_min,recovery_end,recovery_duration_min,recovery_quality
+case_615490_2025-09-16,615490,owner_ingram_taylor,2025-09-16,III,FALSE,Dorsal,Mild,Do Not Resuscitate; painful hind end.,CCL rupture; on Drug M; lame 2 months,10:28,14:39,251,14:49,10,Good

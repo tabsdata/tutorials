@@ -1,0 +1,47 @@
+remark_id,case_id,remark_time,remark_text
+remark_1_case_631588_2025-02-20,case_631588_2025-02-20,10:09,Administered Drug F 3.1mg IV
+remark_2_case_631588_2025-02-20,case_631588_2025-02-20,10:09,Administered Drug A 0.6mg IV
+remark_3_case_631588_2025-02-20,case_631588_2025-02-20,10:29,Start of Anesthesia
+remark_4_case_631588_2025-02-20,case_631588_2025-02-20,10:29,Administered Drug C 6.2mg IV
+remark_5_case_631588_2025-02-20,case_631588_2025-02-20,10:29,Administered Drug D 124mg IV
+remark_6_case_631588_2025-02-20,case_631588_2025-02-20,10:32,Instill lubricant OU
+remark_7_case_631588_2025-02-20,case_631588_2025-02-20,10:34,Administered Drug J 31mg IV
+remark_8_case_631588_2025-02-20,case_631588_2025-02-20,10:39,Administered Drug E 684mg IV
+remark_9_case_631588_2025-02-20,case_631588_2025-02-20,10:41,"Begin IVF, Drug G IV"
+remark_10_case_631588_2025-02-20,case_631588_2025-02-20,10:41,Administered Drug G 160ml/hr IV
+remark_11_case_631588_2025-02-20,case_631588_2025-02-20,10:49,Arterial line placed
+remark_12_case_631588_2025-02-20,case_631588_2025-02-20,10:54,Moved to OR 4
+remark_13_case_631588_2025-02-20,case_631588_2025-02-20,10:59,Bair Hugger off
+remark_14_case_631588_2025-02-20,case_631588_2025-02-20,11:00,Bair Hugger off
+remark_15_case_631588_2025-02-20,case_631588_2025-02-20,11:09,Administered Drug I 47mg IV
+remark_16_case_631588_2025-02-20,case_631588_2025-02-20,11:14,Urinary catheter placed
+remark_17_case_631588_2025-02-20,case_631588_2025-02-20,11:16,Temperature probe placed
+remark_18_case_631588_2025-02-20,case_631588_2025-02-20,11:17,Bair Hugger off
+remark_19_case_631588_2025-02-20,case_631588_2025-02-20,11:29,Bair Hugger off
+remark_20_case_631588_2025-02-20,case_631588_2025-02-20,11:31,"Ventilator settings changed (TV 320 ml, IP 10 cmH2O, I:E 1:3, Rate 14)"
+remark_21_case_631588_2025-02-20,case_631588_2025-02-20,11:39,Administered Drug K (CRI) 1ug/kg/min IV
+remark_22_case_631588_2025-02-20,case_631588_2025-02-20,11:47,Urinary catheter placed
+remark_23_case_631588_2025-02-20,case_631588_2025-02-20,11:59,Administered Drug N 31mg IV
+remark_24_case_631588_2025-02-20,case_631588_2025-02-20,12:01,Arterial line placed
+remark_25_case_631588_2025-02-20,case_631588_2025-02-20,12:17,Bair Hugger off
+remark_26_case_631588_2025-02-20,case_631588_2025-02-20,12:28,"ETCO2 rising, increased RR"
+remark_27_case_631588_2025-02-20,case_631588_2025-02-20,12:30,"Ventilator settings changed (TV 320 ml, IP 10 cmH2O, I:E 1:3, Rate 14)"
+remark_28_case_631588_2025-02-20,case_631588_2025-02-20,12:32,"Ventilator settings changed (TV 320 ml, IP 10 cmH2O, I:E 1:3, Rate 14)"
+remark_29_case_631588_2025-02-20,case_631588_2025-02-20,12:35,Arterial line placed
+remark_30_case_631588_2025-02-20,case_631588_2025-02-20,12:39,Repositioned patient
+remark_31_case_631588_2025-02-20,case_631588_2025-02-20,13:17,"Ventilator settings changed (TV 320 ml, IP 10 cmH2O, I:E 1:3, Rate 14)"
+remark_32_case_631588_2025-02-20,case_631588_2025-02-20,13:22,Bair Hugger off
+remark_33_case_631588_2025-02-20,case_631588_2025-02-20,13:26,Bair Hugger on
+remark_34_case_631588_2025-02-20,case_631588_2025-02-20,13:27,"Ventilator on (TV 300 ml, IP 10 cmH2O, I:E 1:3, Rate 12)"
+remark_35_case_631588_2025-02-20,case_631588_2025-02-20,13:41,Blood pressure cuff moved to RF
+remark_36_case_631588_2025-02-20,case_631588_2025-02-20,14:09,Temperature probe placed
+remark_37_case_631588_2025-02-20,case_631588_2025-02-20,14:10,"Ventilator on (TV 300 ml, IP 10 cmH2O, I:E 1:3, Rate 12)"
+remark_38_case_631588_2025-02-20,case_631588_2025-02-20,14:13,Repositioned patient
+remark_39_case_631588_2025-02-20,case_631588_2025-02-20,14:22,Administered Drug L 165mg IV
+remark_40_case_631588_2025-02-20,case_631588_2025-02-20,14:37,Administered Drug M 68mg IV
+remark_41_case_631588_2025-02-20,case_631588_2025-02-20,14:38,Repositioned patient
+remark_42_case_631588_2025-02-20,case_631588_2025-02-20,14:52,Surgical prep complete
+remark_43_case_631588_2025-02-20,case_631588_2025-02-20,15:01,Repositioned patient
+remark_44_case_631588_2025-02-20,case_631588_2025-02-20,15:21,Drug H off
+remark_45_case_631588_2025-02-20,case_631588_2025-02-20,15:29,Extubated
+remark_46_case_631588_2025-02-20,case_631588_2025-02-20,15:31,Moved to recovery

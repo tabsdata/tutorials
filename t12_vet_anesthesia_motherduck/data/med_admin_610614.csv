@@ -1,0 +1,14 @@
+med_admin_id,case_id,drug_name,Dispensed,Dose,Administered,Discarded,Reason Given
+med_01_case_610614_2025-03-21,case_610614_2025-03-21,Drug F,3.5mg,3.5mg,3.5mg,0mg,Preanesthetic
+med_02_case_610614_2025-03-21,case_610614_2025-03-21,Drug A,0.7mg,0.7mg,0.7mg,0mg,Preanesthetic
+med_03_case_610614_2025-03-21,case_610614_2025-03-21,Drug C,7mg,7mg,7mg,0mg,Induction
+med_04_case_610614_2025-03-21,case_610614_2025-03-21,Drug D,140mg,140mg,105mg,35mg,Induction
+med_05_case_610614_2025-03-21,case_610614_2025-03-21,Drug E,770mg,770mg,770mg,0mg,Antibiotic
+med_06_case_610614_2025-03-21,case_610614_2025-03-21,Drug G,726ml,180ml/hr,726ml,0ml,Fluid
+med_07_case_610614_2025-03-21,case_610614_2025-03-21,Drug H,,,,,Maintenance
+med_08_case_610614_2025-03-21,case_610614_2025-03-21,Drug I,52mg,52mg,52mg,0mg,Local/Regional Anesthesia
+med_09_case_610614_2025-03-21,case_610614_2025-03-21,Drug J,35mg,35mg,35mg,0mg,Antiemetic
+med_10_case_610614_2025-03-21,case_610614_2025-03-21,Drug L,186mg,186mg,186mg,0mg,Local/Regional Anesthesia
+med_11_case_610614_2025-03-21,case_610614_2025-03-21,Drug K (CRI),21mg,2ug/kg/min,14mg,7mg,Hypotension
+med_12_case_610614_2025-03-21,case_610614_2025-03-21,Drug O,0.4mg,0.4mg,0.4mg,0mg,Bradycardia
+med_13_case_610614_2025-03-21,case_610614_2025-03-21,Drug F,1.8mg,1.8mg,1.8mg,0mg,Recovery

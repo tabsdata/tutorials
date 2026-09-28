@@ -1,0 +1,13 @@
+med_admin_id,case_id,drug_name,Dispensed,Dose,Administered,Discarded,Reason Given
+med_01_case_638290_2025-09-01,case_638290_2025-09-01,Drug F,3.2mg,3.2mg,3.2mg,0mg,Preanesthetic
+med_02_case_638290_2025-09-01,case_638290_2025-09-01,Drug A,0.6mg,0.6mg,0.6mg,0mg,Preanesthetic
+med_03_case_638290_2025-09-01,case_638290_2025-09-01,Drug C,6.5mg,6.5mg,6.5mg,0mg,Induction
+med_04_case_638290_2025-09-01,case_638290_2025-09-01,Drug D,130mg,130mg,130mg,0mg,Induction
+med_05_case_638290_2025-09-01,case_638290_2025-09-01,Drug E,713mg,713mg,713mg,0mg,Antibiotic
+med_06_case_638290_2025-09-01,case_638290_2025-09-01,Drug G,645ml,160ml/hr,645ml,0ml,Fluid
+med_07_case_638290_2025-09-01,case_638290_2025-09-01,Drug H,,,,,Maintenance
+med_08_case_638290_2025-09-01,case_638290_2025-09-01,Drug I,49mg,49mg,49mg,0mg,Local/Regional Anesthesia
+med_09_case_638290_2025-09-01,case_638290_2025-09-01,Drug J,32mg,32mg,32mg,0mg,Antiemetic
+med_10_case_638290_2025-09-01,case_638290_2025-09-01,Drug M,71mg,71mg,71mg,0mg,NSAID
+med_11_case_638290_2025-09-01,case_638290_2025-09-01,Drug N,32mg,32mg,32mg,0mg,Antihistamine
+med_12_case_638290_2025-09-01,case_638290_2025-09-01,Drug L,172mg,172mg,172mg,0mg,Local/Regional Anesthesia

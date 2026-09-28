@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tabsdata-conn-motherduck"
+version = "0.1.0"
+description = "Tabsdata destination connector that writes subscriber tables to MotherDuck."
+requires-python = ">=3.12"
+dependencies = [
+    "tabsdata>=2.1,<2.2",
+    "duckdb>=1.3",
+]
+
+# entry point tabsdata uses to discover the connector, same mechanism as its
+# built in connectors
+[project.entry-points."tabsdatak.connectors"]
+dest_motherduck = "tabsdata_motherduck._plugin:MOTHERDUCK_DEST"
+
+[tool.setuptools.packages.find]
+where = ["src"]

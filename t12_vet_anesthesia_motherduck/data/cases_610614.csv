@@ -1,0 +1,2 @@
+case_id,patient_id,owner_id,procedure_date,physical_status,emergency_flag,recumbency,sedation_present,comments,pre_op_eval,anesthesia_start,anesthesia_end,anesthesia_duration_min,recovery_end,recovery_duration_min,recovery_quality
+case_610614_2025-03-21,610614,owner_thorne_rowan,2025-03-21,II,FALSE,Dorsal,Mild,Drugs Only/External Cardiac Compression; no special recommendations.,CCL rupture; on Drug P; acute lameness,09:08,13:10,242,13:25,15,Excellent

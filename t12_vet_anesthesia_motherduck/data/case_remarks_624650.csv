@@ -1,0 +1,38 @@
+remark_id,case_id,remark_time,remark_text
+remark_1_case_624650_2025-09-08,case_624650_2025-09-08,13:30,Administered Drug F 2mg IV
+remark_2_case_624650_2025-09-08,case_624650_2025-09-08,13:30,Administered Drug B 60ug IV
+remark_3_case_624650_2025-09-08,case_624650_2025-09-08,13:50,Start of Anesthesia
+remark_4_case_624650_2025-09-08,case_624650_2025-09-08,13:50,Administered Drug C 4mg IV
+remark_5_case_624650_2025-09-08,case_624650_2025-09-08,13:50,Administered Drug D 80mg IV
+remark_6_case_624650_2025-09-08,case_624650_2025-09-08,13:53,Instill lubricant OU
+remark_7_case_624650_2025-09-08,case_624650_2025-09-08,13:55,Administered Drug J 20mg IV
+remark_8_case_624650_2025-09-08,case_624650_2025-09-08,14:00,Administered Drug E 440mg IV
+remark_9_case_624650_2025-09-08,case_624650_2025-09-08,14:01,Arterial line placed
+remark_10_case_624650_2025-09-08,case_624650_2025-09-08,14:02,"Begin IVF, Drug G IV"
+remark_11_case_624650_2025-09-08,case_624650_2025-09-08,14:02,Administered Drug G 100ml/hr IV
+remark_12_case_624650_2025-09-08,case_624650_2025-09-08,14:06,Surgical prep complete
+remark_13_case_624650_2025-09-08,case_624650_2025-09-08,14:12,Bair Hugger off
+remark_14_case_624650_2025-09-08,case_624650_2025-09-08,14:15,Moved to OR 1
+remark_15_case_624650_2025-09-08,case_624650_2025-09-08,14:21,Blood pressure cuff moved to RF
+remark_16_case_624650_2025-09-08,case_624650_2025-09-08,14:25,Temperature probe placed
+remark_17_case_624650_2025-09-08,case_624650_2025-09-08,14:30,Administered Drug I 30mg IV
+remark_18_case_624650_2025-09-08,case_624650_2025-09-08,14:50,Administered Drug O 0.2mg IV
+remark_19_case_624650_2025-09-08,case_624650_2025-09-08,15:00,Administered Drug K (CRI) 3ug/kg/min IV
+remark_20_case_624650_2025-09-08,case_624650_2025-09-08,15:01,Blood pressure cuff moved to RF
+remark_21_case_624650_2025-09-08,case_624650_2025-09-08,15:17,Bair Hugger on
+remark_22_case_624650_2025-09-08,case_624650_2025-09-08,15:20,Administered Drug N 20mg IV
+remark_23_case_624650_2025-09-08,case_624650_2025-09-08,16:02,"Ventilator settings changed (TV 320 ml, IP 10 cmH2O, I:E 1:3, Rate 14)"
+remark_24_case_624650_2025-09-08,case_624650_2025-09-08,16:12,Bair Hugger off
+remark_25_case_624650_2025-09-08,case_624650_2025-09-08,16:20,"ETCO2 rising, increased RR"
+remark_26_case_624650_2025-09-08,case_624650_2025-09-08,16:38,"Ventilator settings changed (TV 320 ml, IP 10 cmH2O, I:E 1:3, Rate 14)"
+remark_27_case_624650_2025-09-08,case_624650_2025-09-08,16:52,Blood pressure cuff moved to RF
+remark_28_case_624650_2025-09-08,case_624650_2025-09-08,17:03,Repositioned patient
+remark_29_case_624650_2025-09-08,case_624650_2025-09-08,17:04,Surgical prep complete
+remark_30_case_624650_2025-09-08,case_624650_2025-09-08,17:50,Administered Drug L 106mg IV
+remark_31_case_624650_2025-09-08,case_624650_2025-09-08,17:57,Bair Hugger off
+remark_32_case_624650_2025-09-08,case_624650_2025-09-08,18:10,Bair Hugger on
+remark_33_case_624650_2025-09-08,case_624650_2025-09-08,18:15,Administered Drug F 1mg IV
+remark_34_case_624650_2025-09-08,case_624650_2025-09-08,18:18,"ETCO2 rising, increased RR"
+remark_35_case_624650_2025-09-08,case_624650_2025-09-08,18:24,Drug H off
+remark_36_case_624650_2025-09-08,case_624650_2025-09-08,18:32,Extubated
+remark_37_case_624650_2025-09-08,case_624650_2025-09-08,18:34,Moved to recovery

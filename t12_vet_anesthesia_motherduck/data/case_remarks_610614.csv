@@ -1,0 +1,41 @@
+remark_id,case_id,remark_time,remark_text
+remark_1_case_610614_2025-03-21,case_610614_2025-03-21,08:48,Administered Drug F 3.5mg IV
+remark_2_case_610614_2025-03-21,case_610614_2025-03-21,08:48,Administered Drug A 0.7mg IV
+remark_3_case_610614_2025-03-21,case_610614_2025-03-21,09:08,Start of Anesthesia
+remark_4_case_610614_2025-03-21,case_610614_2025-03-21,09:08,Administered Drug C 7mg IV
+remark_5_case_610614_2025-03-21,case_610614_2025-03-21,09:08,Administered Drug D 140mg IV
+remark_6_case_610614_2025-03-21,case_610614_2025-03-21,09:11,Instill lubricant OU
+remark_7_case_610614_2025-03-21,case_610614_2025-03-21,09:13,Administered Drug J 35mg IV
+remark_8_case_610614_2025-03-21,case_610614_2025-03-21,09:18,Administered Drug E 770mg IV
+remark_9_case_610614_2025-03-21,case_610614_2025-03-21,09:20,"Begin IVF, Drug G IV"
+remark_10_case_610614_2025-03-21,case_610614_2025-03-21,09:20,Administered Drug G 180ml/hr IV
+remark_11_case_610614_2025-03-21,case_610614_2025-03-21,09:20,"Ventilator on (TV 300 ml, IP 10 cmH2O, I:E 1:3, Rate 12)"
+remark_12_case_610614_2025-03-21,case_610614_2025-03-21,09:20,"Ventilator on (TV 300 ml, IP 10 cmH2O, I:E 1:3, Rate 12)"
+remark_13_case_610614_2025-03-21,case_610614_2025-03-21,09:33,Moved to OR 3
+remark_14_case_610614_2025-03-21,case_610614_2025-03-21,09:42,Bair Hugger off
+remark_15_case_610614_2025-03-21,case_610614_2025-03-21,09:48,Administered Drug I 52mg IV
+remark_16_case_610614_2025-03-21,case_610614_2025-03-21,09:52,Repositioned patient
+remark_17_case_610614_2025-03-21,case_610614_2025-03-21,09:59,"Ventilator settings changed (TV 320 ml, IP 10 cmH2O, I:E 1:3, Rate 14)"
+remark_18_case_610614_2025-03-21,case_610614_2025-03-21,10:08,Administered Drug O 0.4mg IV
+remark_19_case_610614_2025-03-21,case_610614_2025-03-21,10:08,"Ventilator settings changed (TV 320 ml, IP 10 cmH2O, I:E 1:3, Rate 14)"
+remark_20_case_610614_2025-03-21,case_610614_2025-03-21,10:18,Administered Drug K (CRI) 2ug/kg/min IV
+remark_21_case_610614_2025-03-21,case_610614_2025-03-21,10:24,"Ventilator on (TV 300 ml, IP 10 cmH2O, I:E 1:3, Rate 12)"
+remark_22_case_610614_2025-03-21,case_610614_2025-03-21,10:40,Repositioned patient
+remark_23_case_610614_2025-03-21,case_610614_2025-03-21,10:47,Temperature probe placed
+remark_24_case_610614_2025-03-21,case_610614_2025-03-21,11:05,Blood pressure cuff moved to RF
+remark_25_case_610614_2025-03-21,case_610614_2025-03-21,11:29,"Ventilator settings changed (TV 320 ml, IP 10 cmH2O, I:E 1:3, Rate 14)"
+remark_26_case_610614_2025-03-21,case_610614_2025-03-21,11:41,Bair Hugger on
+remark_27_case_610614_2025-03-21,case_610614_2025-03-21,11:47,"Ventilator settings changed (TV 320 ml, IP 10 cmH2O, I:E 1:3, Rate 14)"
+remark_28_case_610614_2025-03-21,case_610614_2025-03-21,11:51,Surgical prep complete
+remark_29_case_610614_2025-03-21,case_610614_2025-03-21,12:14,Arterial line placed
+remark_30_case_610614_2025-03-21,case_610614_2025-03-21,12:25,"Ventilator on (TV 300 ml, IP 10 cmH2O, I:E 1:3, Rate 12)"
+remark_31_case_610614_2025-03-21,case_610614_2025-03-21,12:37,Bair Hugger on
+remark_32_case_610614_2025-03-21,case_610614_2025-03-21,12:40,Administered Drug L 186mg IV
+remark_33_case_610614_2025-03-21,case_610614_2025-03-21,12:45,Surgical prep complete
+remark_34_case_610614_2025-03-21,case_610614_2025-03-21,12:55,Bair Hugger on
+remark_35_case_610614_2025-03-21,case_610614_2025-03-21,13:04,Blood pressure cuff moved to RF
+remark_36_case_610614_2025-03-21,case_610614_2025-03-21,13:05,Administered Drug F 1.8mg IV
+remark_37_case_610614_2025-03-21,case_610614_2025-03-21,13:08,Bair Hugger on
+remark_38_case_610614_2025-03-21,case_610614_2025-03-21,13:17,Drug H off
+remark_39_case_610614_2025-03-21,case_610614_2025-03-21,13:25,Extubated
+remark_40_case_610614_2025-03-21,case_610614_2025-03-21,13:27,Moved to recovery

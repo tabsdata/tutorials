@@ -1,0 +1,4 @@
+procedure_event_id,case_id,procedure_name,start_time,end_time,duration_min,sequence
+proc_1_case_624650_2025-09-08,case_624650_2025-09-08,Arthroscopy - R stifle,14:35,14:52,17,1
+proc_2_case_624650_2025-09-08,case_624650_2025-09-08,TPLO - R,15:00,17:24,144,2
+proc_3_case_624650_2025-09-08,case_624650_2025-09-08,Post-Op Radiographs,17:31,18:00,29,3

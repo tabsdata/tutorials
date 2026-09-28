@@ -1,0 +1,16 @@
+med_admin_id,case_id,drug_name,Dispensed,Dose,Administered,Discarded,Reason Given
+med_01_case_647102_2025-06-10,case_647102_2025-06-10,Drug F,2.7mg,2.7mg,2.7mg,0mg,Preanesthetic
+med_02_case_647102_2025-06-10,case_647102_2025-06-10,Drug B,81ug,81ug,81ug,0ug,Preanesthetic
+med_03_case_647102_2025-06-10,case_647102_2025-06-10,Drug C,5.4mg,5.4mg,5.4mg,0mg,Induction
+med_04_case_647102_2025-06-10,case_647102_2025-06-10,Drug D,108mg,108mg,54mg,54mg,Induction
+med_05_case_647102_2025-06-10,case_647102_2025-06-10,Drug E,594mg,594mg,594mg,0mg,Antibiotic
+med_06_case_647102_2025-06-10,case_647102_2025-06-10,Drug G,264ml,140ml/hr,264ml,0ml,Fluid
+med_07_case_647102_2025-06-10,case_647102_2025-06-10,Drug H,,,,,Maintenance
+med_08_case_647102_2025-06-10,case_647102_2025-06-10,Drug I,40mg,40mg,40mg,0mg,Local/Regional Anesthesia
+med_09_case_647102_2025-06-10,case_647102_2025-06-10,Drug J,27mg,27mg,27mg,0mg,Antiemetic
+med_10_case_647102_2025-06-10,case_647102_2025-06-10,Drug L,143mg,143mg,143mg,0mg,Local/Regional Anesthesia
+med_11_case_647102_2025-06-10,case_647102_2025-06-10,Drug M,59mg,59mg,59mg,0mg,NSAID
+med_12_case_647102_2025-06-10,case_647102_2025-06-10,Drug F,1.4mg,1.4mg,1.4mg,0mg,Recovery
+med_13_case_647102_2025-06-10,case_647102_2025-06-10,Drug O,0.3mg,0.3mg,0.3mg,0mg,Bradycardia
+med_14_case_647102_2025-06-10,case_647102_2025-06-10,Drug K (CRI),16mg,2ug/kg/min,11mg,5.4mg,Hypotension
+med_15_case_647102_2025-06-10,case_647102_2025-06-10,Drug N,27mg,27mg,27mg,0mg,Antihistamine

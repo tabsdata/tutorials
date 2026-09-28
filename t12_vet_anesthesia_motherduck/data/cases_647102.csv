@@ -1,0 +1,2 @@
+case_id,patient_id,owner_id,procedure_date,physical_status,emergency_flag,recumbency,sedation_present,comments,pre_op_eval,anesthesia_start,anesthesia_end,anesthesia_duration_min,recovery_end,recovery_duration_min,recovery_quality
+case_647102_2025-06-10,647102,owner_marsh_jamie,2025-06-10,I,FALSE,Dorsal and Left Lateral,Mild,Attempt Resuscitation; friendly.,CCL rupture; on Drug M; lame 6 weeks,11:15,13:08,113,13:21,13,Good

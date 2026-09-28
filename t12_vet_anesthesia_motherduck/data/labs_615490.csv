@@ -1,0 +1,21 @@
+lab_result_id,case_id,test_name,result_value,unit
+lab_1_case_615490_2025-09-16,case_615490_2025-09-16,PCV,47,%
+lab_2_case_615490_2025-09-16,case_615490_2025-09-16,Total Protein,7.1,g/dl
+lab_3_case_615490_2025-09-16,case_615490_2025-09-16,Glucose,100,mg/dl
+lab_4_case_615490_2025-09-16,case_615490_2025-09-16,BUN,5-15,mg/dl
+lab_5_case_615490_2025-09-16,case_615490_2025-09-16,Pain Score (Current),1,score
+lab_6_case_615490_2025-09-16,case_615490_2025-09-16,Pain Score (Predicted),5,score
+lab_7_case_615490_2025-09-16,case_615490_2025-09-16,Auscultation Cardiac,No murmurs or arrhythmias,
+lab_8_case_615490_2025-09-16,case_615490_2025-09-16,Auscultation Respiratory,Panting; normal lung sounds,
+lab_9_case_615490_2025-09-16,case_615490_2025-09-16,Blood Gas Source,Arterial,
+lab_10_case_615490_2025-09-16,case_615490_2025-09-16,Blood Gas Time,12:03,
+lab_11_case_615490_2025-09-16,case_615490_2025-09-16,pH,7.34,
+lab_12_case_615490_2025-09-16,case_615490_2025-09-16,PCO2,52,mmHg
+lab_13_case_615490_2025-09-16,case_615490_2025-09-16,PO2,320,mmHg
+lab_14_case_615490_2025-09-16,case_615490_2025-09-16,HCO3,24.0,mmol/L
+lab_15_case_615490_2025-09-16,case_615490_2025-09-16,Lactate,1.1,mmol/L
+lab_16_case_615490_2025-09-16,case_615490_2025-09-16,Na,143,mmol/L
+lab_17_case_615490_2025-09-16,case_615490_2025-09-16,K,4.3,mmol/L
+lab_18_case_615490_2025-09-16,case_615490_2025-09-16,Cl,115,mmol/L
+lab_19_case_615490_2025-09-16,case_615490_2025-09-16,iCa,1.23,mmol/L
+lab_20_case_615490_2025-09-16,case_615490_2025-09-16,Anion Gap,9.9,mmol/L

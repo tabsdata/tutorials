@@ -1,0 +1,41 @@
+remark_id,case_id,remark_time,remark_text
+remark_1_case_643435_2025-03-24,case_643435_2025-03-24,12:57,Administered Drug F 2.8mg IV
+remark_2_case_643435_2025-03-24,case_643435_2025-03-24,12:57,Administered Drug A 0.6mg IV
+remark_3_case_643435_2025-03-24,case_643435_2025-03-24,13:17,Start of Anesthesia
+remark_4_case_643435_2025-03-24,case_643435_2025-03-24,13:17,Administered Drug C 5.6mg IV
+remark_5_case_643435_2025-03-24,case_643435_2025-03-24,13:17,Administered Drug D 113mg IV
+remark_6_case_643435_2025-03-24,case_643435_2025-03-24,13:20,Instill lubricant OU
+remark_7_case_643435_2025-03-24,case_643435_2025-03-24,13:22,Administered Drug J 28mg IV
+remark_8_case_643435_2025-03-24,case_643435_2025-03-24,13:24,Bair Hugger on
+remark_9_case_643435_2025-03-24,case_643435_2025-03-24,13:27,Administered Drug E 620mg IV
+remark_10_case_643435_2025-03-24,case_643435_2025-03-24,13:27,Repositioned patient
+remark_11_case_643435_2025-03-24,case_643435_2025-03-24,13:28,Bair Hugger on
+remark_12_case_643435_2025-03-24,case_643435_2025-03-24,13:29,"Begin IVF, Drug G IV"
+remark_13_case_643435_2025-03-24,case_643435_2025-03-24,13:29,Administered Drug G 140ml/hr IV
+remark_14_case_643435_2025-03-24,case_643435_2025-03-24,13:35,Urinary catheter placed
+remark_15_case_643435_2025-03-24,case_643435_2025-03-24,13:40,"Ventilator settings changed (TV 320 ml, IP 10 cmH2O, I:E 1:3, Rate 14)"
+remark_16_case_643435_2025-03-24,case_643435_2025-03-24,13:42,Moved to OR 2
+remark_17_case_643435_2025-03-24,case_643435_2025-03-24,13:53,Bair Hugger off
+remark_18_case_643435_2025-03-24,case_643435_2025-03-24,13:54,Bair Hugger off
+remark_19_case_643435_2025-03-24,case_643435_2025-03-24,13:57,Administered Drug I 42mg IV
+remark_20_case_643435_2025-03-24,case_643435_2025-03-24,13:58,Arterial line placed
+remark_21_case_643435_2025-03-24,case_643435_2025-03-24,14:08,"Ventilator on (TV 300 ml, IP 10 cmH2O, I:E 1:3, Rate 12)"
+remark_22_case_643435_2025-03-24,case_643435_2025-03-24,14:15,Surgical prep complete
+remark_23_case_643435_2025-03-24,case_643435_2025-03-24,14:17,Administered Drug O 0.3mg IV
+remark_24_case_643435_2025-03-24,case_643435_2025-03-24,14:19,Temperature probe placed
+remark_25_case_643435_2025-03-24,case_643435_2025-03-24,14:28,"Ventilator settings changed (TV 320 ml, IP 10 cmH2O, I:E 1:3, Rate 14)"
+remark_26_case_643435_2025-03-24,case_643435_2025-03-24,14:38,Administered Drug L 149mg IV
+remark_27_case_643435_2025-03-24,case_643435_2025-03-24,14:40,"Ventilator on (TV 300 ml, IP 10 cmH2O, I:E 1:3, Rate 12)"
+remark_28_case_643435_2025-03-24,case_643435_2025-03-24,14:43,Surgical prep complete
+remark_29_case_643435_2025-03-24,case_643435_2025-03-24,14:44,Surgical prep complete
+remark_30_case_643435_2025-03-24,case_643435_2025-03-24,14:46,Bair Hugger off
+remark_31_case_643435_2025-03-24,case_643435_2025-03-24,14:47,Administered Drug N 28mg IV
+remark_32_case_643435_2025-03-24,case_643435_2025-03-24,14:53,Administered Drug M 62mg IV
+remark_33_case_643435_2025-03-24,case_643435_2025-03-24,15:02,Blood pressure cuff moved to RF
+remark_34_case_643435_2025-03-24,case_643435_2025-03-24,15:03,Administered Drug F 1.4mg IV
+remark_35_case_643435_2025-03-24,case_643435_2025-03-24,15:04,Bair Hugger on
+remark_36_case_643435_2025-03-24,case_643435_2025-03-24,15:14,Urinary catheter placed
+remark_37_case_643435_2025-03-24,case_643435_2025-03-24,15:24,Bair Hugger off
+remark_38_case_643435_2025-03-24,case_643435_2025-03-24,15:26,Drug H off
+remark_39_case_643435_2025-03-24,case_643435_2025-03-24,15:34,Extubated
+remark_40_case_643435_2025-03-24,case_643435_2025-03-24,15:36,Moved to recovery

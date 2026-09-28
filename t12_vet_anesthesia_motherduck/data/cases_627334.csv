@@ -1,0 +1,2 @@
+case_id,patient_id,owner_id,procedure_date,physical_status,emergency_flag,recumbency,sedation_present,comments,pre_op_eval,anesthesia_start,anesthesia_end,anesthesia_duration_min,recovery_end,recovery_duration_min,recovery_quality
+case_627334_2025-08-29,627334,owner_fenwick_kendall,2025-08-29,I,FALSE,Dorsal and Left Lateral,Mild,Drugs Only/External Cardiac Compression; no special recommendations.,CCL rupture; on Drug P; lame 6 weeks,09:02,13:17,255,13:46,29,Good

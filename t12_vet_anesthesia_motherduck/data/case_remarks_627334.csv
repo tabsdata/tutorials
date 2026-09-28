@@ -1,0 +1,47 @@
+remark_id,case_id,remark_time,remark_text
+remark_1_case_627334_2025-08-29,case_627334_2025-08-29,08:42,Administered Drug F 2.3mg IV
+remark_2_case_627334_2025-08-29,case_627334_2025-08-29,08:42,Administered Drug A 0.5mg IV
+remark_3_case_627334_2025-08-29,case_627334_2025-08-29,09:02,Start of Anesthesia
+remark_4_case_627334_2025-08-29,case_627334_2025-08-29,09:02,Administered Drug C 4.5mg IV
+remark_5_case_627334_2025-08-29,case_627334_2025-08-29,09:02,Administered Drug D 90mg IV
+remark_6_case_627334_2025-08-29,case_627334_2025-08-29,09:05,Instill lubricant OU
+remark_7_case_627334_2025-08-29,case_627334_2025-08-29,09:07,Administered Drug J 23mg IV
+remark_8_case_627334_2025-08-29,case_627334_2025-08-29,09:12,Administered Drug E 497mg IV
+remark_9_case_627334_2025-08-29,case_627334_2025-08-29,09:14,"Begin IVF, Drug G IV"
+remark_10_case_627334_2025-08-29,case_627334_2025-08-29,09:14,Administered Drug G 110ml/hr IV
+remark_11_case_627334_2025-08-29,case_627334_2025-08-29,09:21,Arterial line placed
+remark_12_case_627334_2025-08-29,case_627334_2025-08-29,09:24,Blood pressure cuff moved to RF
+remark_13_case_627334_2025-08-29,case_627334_2025-08-29,09:27,Moved to OR 2
+remark_14_case_627334_2025-08-29,case_627334_2025-08-29,09:42,Administered Drug I 34mg IV
+remark_15_case_627334_2025-08-29,case_627334_2025-08-29,09:45,Surgical prep complete
+remark_16_case_627334_2025-08-29,case_627334_2025-08-29,10:01,Bair Hugger off
+remark_17_case_627334_2025-08-29,case_627334_2025-08-29,10:02,Administered Drug O 0.2mg IV
+remark_18_case_627334_2025-08-29,case_627334_2025-08-29,10:10,Temperature probe placed
+remark_19_case_627334_2025-08-29,case_627334_2025-08-29,10:12,Administered Drug K (CRI) 5ug/kg/min IV
+remark_20_case_627334_2025-08-29,case_627334_2025-08-29,10:22,Urinary catheter placed
+remark_21_case_627334_2025-08-29,case_627334_2025-08-29,10:28,Bair Hugger off
+remark_22_case_627334_2025-08-29,case_627334_2025-08-29,10:28,Bair Hugger on
+remark_23_case_627334_2025-08-29,case_627334_2025-08-29,10:32,"ETCO2 rising, increased RR"
+remark_24_case_627334_2025-08-29,case_627334_2025-08-29,10:33,"ETCO2 rising, increased RR"
+remark_25_case_627334_2025-08-29,case_627334_2025-08-29,10:37,"ETCO2 rising, increased RR"
+remark_26_case_627334_2025-08-29,case_627334_2025-08-29,10:59,"ETCO2 rising, increased RR"
+remark_27_case_627334_2025-08-29,case_627334_2025-08-29,11:01,Bair Hugger off
+remark_28_case_627334_2025-08-29,case_627334_2025-08-29,11:05,Bair Hugger on
+remark_29_case_627334_2025-08-29,case_627334_2025-08-29,11:40,Urinary catheter placed
+remark_30_case_627334_2025-08-29,case_627334_2025-08-29,12:04,Temperature probe placed
+remark_31_case_627334_2025-08-29,case_627334_2025-08-29,12:07,"Ventilator settings changed (TV 320 ml, IP 10 cmH2O, I:E 1:3, Rate 14)"
+remark_32_case_627334_2025-08-29,case_627334_2025-08-29,12:14,Bair Hugger on
+remark_33_case_627334_2025-08-29,case_627334_2025-08-29,12:19,Bair Hugger on
+remark_34_case_627334_2025-08-29,case_627334_2025-08-29,12:27,Blood pressure cuff moved to RF
+remark_35_case_627334_2025-08-29,case_627334_2025-08-29,12:30,Arterial line placed
+remark_36_case_627334_2025-08-29,case_627334_2025-08-29,12:34,Repositioned patient
+remark_37_case_627334_2025-08-29,case_627334_2025-08-29,12:47,Administered Drug L 120mg IV
+remark_38_case_627334_2025-08-29,case_627334_2025-08-29,12:51,Surgical prep complete
+remark_39_case_627334_2025-08-29,case_627334_2025-08-29,12:52,Urinary catheter placed
+remark_40_case_627334_2025-08-29,case_627334_2025-08-29,13:01,"Ventilator settings changed (TV 320 ml, IP 10 cmH2O, I:E 1:3, Rate 14)"
+remark_41_case_627334_2025-08-29,case_627334_2025-08-29,13:02,Administered Drug M 50mg IV
+remark_42_case_627334_2025-08-29,case_627334_2025-08-29,13:12,Administered Drug F 1.1mg IV
+remark_43_case_627334_2025-08-29,case_627334_2025-08-29,13:15,Temperature probe placed
+remark_44_case_627334_2025-08-29,case_627334_2025-08-29,13:38,Drug H off
+remark_45_case_627334_2025-08-29,case_627334_2025-08-29,13:46,Extubated
+remark_46_case_627334_2025-08-29,case_627334_2025-08-29,13:48,Moved to recovery

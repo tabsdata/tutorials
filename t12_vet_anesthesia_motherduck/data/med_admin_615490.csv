@@ -1,0 +1,16 @@
+med_admin_id,case_id,drug_name,Dispensed,Dose,Administered,Discarded,Reason Given
+med_01_case_615490_2025-09-16,case_615490_2025-09-16,Drug F,4.1mg,4.1mg,4.1mg,0mg,Preanesthetic
+med_02_case_615490_2025-09-16,case_615490_2025-09-16,Drug B,124ug,124ug,124ug,0ug,Preanesthetic
+med_03_case_615490_2025-09-16,case_615490_2025-09-16,Drug C,8.3mg,8.3mg,8.3mg,0mg,Induction
+med_04_case_615490_2025-09-16,case_615490_2025-09-16,Drug D,166mg,166mg,83mg,83mg,Induction
+med_05_case_615490_2025-09-16,case_615490_2025-09-16,Drug E,911mg,911mg,911mg,0mg,Antibiotic
+med_06_case_615490_2025-09-16,case_615490_2025-09-16,Drug G,878ml,210ml/hr,878ml,0ml,Fluid
+med_07_case_615490_2025-09-16,case_615490_2025-09-16,Drug H,,,,,Maintenance
+med_08_case_615490_2025-09-16,case_615490_2025-09-16,Drug I,62mg,62mg,62mg,0mg,Local/Regional Anesthesia
+med_09_case_615490_2025-09-16,case_615490_2025-09-16,Drug J,41mg,41mg,41mg,0mg,Antiemetic
+med_10_case_615490_2025-09-16,case_615490_2025-09-16,Drug L,219mg,219mg,219mg,0mg,Local/Regional Anesthesia
+med_11_case_615490_2025-09-16,case_615490_2025-09-16,Drug K (CRI),25mg,1ug/kg/min,17mg,8.3mg,Hypotension
+med_12_case_615490_2025-09-16,case_615490_2025-09-16,Drug F,2.1mg,2.1mg,2.1mg,0mg,Recovery
+med_13_case_615490_2025-09-16,case_615490_2025-09-16,Drug M,91mg,91mg,91mg,0mg,NSAID
+med_14_case_615490_2025-09-16,case_615490_2025-09-16,Drug O,0.4mg,0.4mg,0.4mg,0mg,Bradycardia
+med_15_case_615490_2025-09-16,case_615490_2025-09-16,Drug N,41mg,41mg,41mg,0mg,Antihistamine

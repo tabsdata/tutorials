@@ -1,0 +1,2 @@
+case_id,patient_id,owner_id,procedure_date,physical_status,emergency_flag,recumbency,sedation_present,comments,pre_op_eval,anesthesia_start,anesthesia_end,anesthesia_duration_min,recovery_end,recovery_duration_min,recovery_quality
+case_629339_2025-08-20,629339,owner_kettering_kendall,2025-08-20,II,FALSE,Dorsal,Marked,Attempt Resuscitation; no special recommendations.,CCL rupture; on Drug P; lame 2 months,10:08,14:49,281,15:27,38,Fair

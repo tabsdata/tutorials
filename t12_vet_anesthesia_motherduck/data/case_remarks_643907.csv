@@ -1,0 +1,43 @@
+remark_id,case_id,remark_time,remark_text
+remark_1_case_643907_2025-07-07,case_643907_2025-07-07,08:44,Administered Drug F 2.9mg IV
+remark_2_case_643907_2025-07-07,case_643907_2025-07-07,08:44,Administered Drug A 0.6mg IV
+remark_3_case_643907_2025-07-07,case_643907_2025-07-07,09:04,Start of Anesthesia
+remark_4_case_643907_2025-07-07,case_643907_2025-07-07,09:04,Administered Drug C 5.8mg IV
+remark_5_case_643907_2025-07-07,case_643907_2025-07-07,09:04,Administered Drug D 116mg IV
+remark_6_case_643907_2025-07-07,case_643907_2025-07-07,09:07,Instill lubricant OU
+remark_7_case_643907_2025-07-07,case_643907_2025-07-07,09:09,Administered Drug J 29mg IV
+remark_8_case_643907_2025-07-07,case_643907_2025-07-07,09:14,Administered Drug E 638mg IV
+remark_9_case_643907_2025-07-07,case_643907_2025-07-07,09:16,"Begin IVF, Drug G IV"
+remark_10_case_643907_2025-07-07,case_643907_2025-07-07,09:16,Administered Drug G 140ml/hr IV
+remark_11_case_643907_2025-07-07,case_643907_2025-07-07,09:29,Moved to OR 5
+remark_12_case_643907_2025-07-07,case_643907_2025-07-07,09:40,Bair Hugger off
+remark_13_case_643907_2025-07-07,case_643907_2025-07-07,09:44,Administered Drug I 44mg IV
+remark_14_case_643907_2025-07-07,case_643907_2025-07-07,09:47,Surgical prep complete
+remark_15_case_643907_2025-07-07,case_643907_2025-07-07,09:55,Surgical prep complete
+remark_16_case_643907_2025-07-07,case_643907_2025-07-07,10:04,Administered Drug O 0.3mg IV
+remark_17_case_643907_2025-07-07,case_643907_2025-07-07,10:13,"ETCO2 rising, increased RR"
+remark_18_case_643907_2025-07-07,case_643907_2025-07-07,10:15,"ETCO2 rising, increased RR"
+remark_19_case_643907_2025-07-07,case_643907_2025-07-07,10:28,Repositioned patient
+remark_20_case_643907_2025-07-07,case_643907_2025-07-07,10:31,Bair Hugger on
+remark_21_case_643907_2025-07-07,case_643907_2025-07-07,11:11,Urinary catheter placed
+remark_22_case_643907_2025-07-07,case_643907_2025-07-07,11:15,Arterial line placed
+remark_23_case_643907_2025-07-07,case_643907_2025-07-07,11:26,Urinary catheter placed
+remark_24_case_643907_2025-07-07,case_643907_2025-07-07,11:26,Repositioned patient
+remark_25_case_643907_2025-07-07,case_643907_2025-07-07,11:48,Bair Hugger off
+remark_26_case_643907_2025-07-07,case_643907_2025-07-07,12:00,Repositioned patient
+remark_27_case_643907_2025-07-07,case_643907_2025-07-07,12:05,Repositioned patient
+remark_28_case_643907_2025-07-07,case_643907_2025-07-07,12:09,"Ventilator on (TV 300 ml, IP 10 cmH2O, I:E 1:3, Rate 12)"
+remark_29_case_643907_2025-07-07,case_643907_2025-07-07,12:24,Temperature probe placed
+remark_30_case_643907_2025-07-07,case_643907_2025-07-07,12:41,Repositioned patient
+remark_31_case_643907_2025-07-07,case_643907_2025-07-07,12:53,"ETCO2 rising, increased RR"
+remark_32_case_643907_2025-07-07,case_643907_2025-07-07,12:57,"ETCO2 rising, increased RR"
+remark_33_case_643907_2025-07-07,case_643907_2025-07-07,13:01,"Ventilator on (TV 300 ml, IP 10 cmH2O, I:E 1:3, Rate 12)"
+remark_34_case_643907_2025-07-07,case_643907_2025-07-07,13:14,Urinary catheter placed
+remark_35_case_643907_2025-07-07,case_643907_2025-07-07,13:51,Blood pressure cuff moved to RF
+remark_36_case_643907_2025-07-07,case_643907_2025-07-07,13:56,Administered Drug L 154mg IV
+remark_37_case_643907_2025-07-07,case_643907_2025-07-07,14:02,Surgical prep complete
+remark_38_case_643907_2025-07-07,case_643907_2025-07-07,14:11,Administered Drug M 64mg IV
+remark_39_case_643907_2025-07-07,case_643907_2025-07-07,14:25,Temperature probe placed
+remark_40_case_643907_2025-07-07,case_643907_2025-07-07,14:28,Drug H off
+remark_41_case_643907_2025-07-07,case_643907_2025-07-07,14:36,Extubated
+remark_42_case_643907_2025-07-07,case_643907_2025-07-07,14:38,Moved to recovery

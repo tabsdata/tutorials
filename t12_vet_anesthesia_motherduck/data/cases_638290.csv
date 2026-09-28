@@ -1,0 +1,2 @@
+case_id,patient_id,owner_id,procedure_date,physical_status,emergency_flag,recumbency,sedation_present,comments,pre_op_eval,anesthesia_start,anesthesia_end,anesthesia_duration_min,recovery_end,recovery_duration_min,recovery_quality
+case_638290_2025-09-01,638290,owner_ellison_jamie,2025-09-01,I,FALSE,Dorsal,Mild,Drugs Only/External Cardiac Compression; painful hind end.,CCL rupture; on Drug M; lame 6 weeks,10:59,15:01,242,15:07,6,Excellent

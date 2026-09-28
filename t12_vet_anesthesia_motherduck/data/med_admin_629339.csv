@@ -1,0 +1,13 @@
+med_admin_id,case_id,drug_name,Dispensed,Dose,Administered,Discarded,Reason Given
+med_01_case_629339_2025-08-20,case_629339_2025-08-20,Drug F,2.8mg,2.8mg,2.8mg,0mg,Preanesthetic
+med_02_case_629339_2025-08-20,case_629339_2025-08-20,Drug A,0.6mg,0.6mg,0.6mg,0mg,Preanesthetic
+med_03_case_629339_2025-08-20,case_629339_2025-08-20,Drug C,5.7mg,5.7mg,5.7mg,0mg,Induction
+med_04_case_629339_2025-08-20,case_629339_2025-08-20,Drug D,114mg,114mg,114mg,0mg,Induction
+med_05_case_629339_2025-08-20,case_629339_2025-08-20,Drug E,625mg,625mg,625mg,0mg,Antibiotic
+med_06_case_629339_2025-08-20,case_629339_2025-08-20,Drug G,656ml,140ml/hr,656ml,0ml,Fluid
+med_07_case_629339_2025-08-20,case_629339_2025-08-20,Drug H,,,,,Maintenance
+med_08_case_629339_2025-08-20,case_629339_2025-08-20,Drug I,43mg,43mg,43mg,0mg,Local/Regional Anesthesia
+med_09_case_629339_2025-08-20,case_629339_2025-08-20,Drug J,28mg,28mg,28mg,0mg,Antiemetic
+med_10_case_629339_2025-08-20,case_629339_2025-08-20,Drug L,151mg,151mg,151mg,0mg,Local/Regional Anesthesia
+med_11_case_629339_2025-08-20,case_629339_2025-08-20,Drug K (CRI),17mg,2ug/kg/min,11mg,5.7mg,Hypotension
+med_12_case_629339_2025-08-20,case_629339_2025-08-20,Drug O,0.3mg,0.3mg,0.3mg,0mg,Bradycardia

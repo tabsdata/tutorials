@@ -1,0 +1,14 @@
+med_admin_id,case_id,drug_name,Dispensed,Dose,Administered,Discarded,Reason Given
+med_01_case_649046_2025-02-10,case_649046_2025-02-10,Drug F,3.8mg,3.8mg,3.8mg,0mg,Preanesthetic
+med_02_case_649046_2025-02-10,case_649046_2025-02-10,Drug B,114ug,114ug,114ug,0ug,Preanesthetic
+med_03_case_649046_2025-02-10,case_649046_2025-02-10,Drug C,7.6mg,7.6mg,7.6mg,0mg,Induction
+med_04_case_649046_2025-02-10,case_649046_2025-02-10,Drug D,152mg,152mg,152mg,0mg,Induction
+med_05_case_649046_2025-02-10,case_649046_2025-02-10,Drug E,836mg,836mg,836mg,0mg,Antibiotic
+med_06_case_649046_2025-02-10,case_649046_2025-02-10,Drug G,630ml,190ml/hr,630ml,0ml,Fluid
+med_07_case_649046_2025-02-10,case_649046_2025-02-10,Drug H,,,,,Maintenance
+med_08_case_649046_2025-02-10,case_649046_2025-02-10,Drug I,57mg,57mg,57mg,0mg,Local/Regional Anesthesia
+med_09_case_649046_2025-02-10,case_649046_2025-02-10,Drug J,38mg,38mg,38mg,0mg,Antiemetic
+med_10_case_649046_2025-02-10,case_649046_2025-02-10,Drug K (CRI),23mg,5ug/kg/min,15mg,7.6mg,Hypotension
+med_11_case_649046_2025-02-10,case_649046_2025-02-10,Drug F,1.9mg,1.9mg,1.9mg,0mg,Recovery
+med_12_case_649046_2025-02-10,case_649046_2025-02-10,Drug N,38mg,38mg,38mg,0mg,Antihistamine
+med_13_case_649046_2025-02-10,case_649046_2025-02-10,Drug O,0.4mg,0.4mg,0.4mg,0mg,Bradycardia

@@ -1,0 +1,25 @@
+remark_id,case_id,remark_time,remark_text
+remark_1_case_610551_2025-05-29,case_610551_2025-05-29,13:11,Administered Drug F 2.9mg IV
+remark_2_case_610551_2025-05-29,case_610551_2025-05-29,13:11,Administered Drug A 0.6mg IV
+remark_3_case_610551_2025-05-29,case_610551_2025-05-29,13:31,Start of Anesthesia
+remark_4_case_610551_2025-05-29,case_610551_2025-05-29,13:31,Administered Drug C 5.8mg IV
+remark_5_case_610551_2025-05-29,case_610551_2025-05-29,13:31,Administered Drug D 116mg IV
+remark_6_case_610551_2025-05-29,case_610551_2025-05-29,13:34,Instill lubricant OU
+remark_7_case_610551_2025-05-29,case_610551_2025-05-29,13:36,Administered Drug J 29mg IV
+remark_8_case_610551_2025-05-29,case_610551_2025-05-29,13:41,Administered Drug E 638mg IV
+remark_9_case_610551_2025-05-29,case_610551_2025-05-29,13:43,"Begin IVF, Drug G IV"
+remark_10_case_610551_2025-05-29,case_610551_2025-05-29,13:43,Administered Drug G 140ml/hr IV
+remark_11_case_610551_2025-05-29,case_610551_2025-05-29,13:56,Moved to OR 2
+remark_12_case_610551_2025-05-29,case_610551_2025-05-29,14:11,Administered Drug I 44mg IV
+remark_13_case_610551_2025-05-29,case_610551_2025-05-29,14:41,Administered Drug K (CRI) 3ug/kg/min IV
+remark_14_case_610551_2025-05-29,case_610551_2025-05-29,14:57,Surgical prep complete
+remark_15_case_610551_2025-05-29,case_610551_2025-05-29,15:08,"Ventilator settings changed (TV 320 ml, IP 10 cmH2O, I:E 1:3, Rate 14)"
+remark_16_case_610551_2025-05-29,case_610551_2025-05-29,15:22,Bair Hugger off
+remark_17_case_610551_2025-05-29,case_610551_2025-05-29,17:21,Administered Drug M 64mg IV
+remark_18_case_610551_2025-05-29,case_610551_2025-05-29,17:21,Temperature probe placed
+remark_19_case_610551_2025-05-29,case_610551_2025-05-29,17:31,Administered Drug F 1.5mg IV
+remark_20_case_610551_2025-05-29,case_610551_2025-05-29,17:31,Surgical prep complete
+remark_21_case_610551_2025-05-29,case_610551_2025-05-29,17:41,Urinary catheter placed
+remark_22_case_610551_2025-05-29,case_610551_2025-05-29,17:52,Drug H off
+remark_23_case_610551_2025-05-29,case_610551_2025-05-29,18:00,Extubated
+remark_24_case_610551_2025-05-29,case_610551_2025-05-29,18:02,Moved to recovery

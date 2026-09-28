@@ -1,0 +1,43 @@
+remark_id,case_id,remark_time,remark_text
+remark_1_case_635731_2025-08-01,case_635731_2025-08-01,08:38,Administered Drug F 1.9mg IV
+remark_2_case_635731_2025-08-01,case_635731_2025-08-01,08:38,Administered Drug B 57ug IV
+remark_3_case_635731_2025-08-01,case_635731_2025-08-01,08:58,Start of Anesthesia
+remark_4_case_635731_2025-08-01,case_635731_2025-08-01,08:58,Administered Drug C 3.8mg IV
+remark_5_case_635731_2025-08-01,case_635731_2025-08-01,08:58,Administered Drug D 76mg IV
+remark_6_case_635731_2025-08-01,case_635731_2025-08-01,09:01,Instill lubricant OU
+remark_7_case_635731_2025-08-01,case_635731_2025-08-01,09:03,Administered Drug J 19mg IV
+remark_8_case_635731_2025-08-01,case_635731_2025-08-01,09:08,Administered Drug E 418mg IV
+remark_9_case_635731_2025-08-01,case_635731_2025-08-01,09:10,"Begin IVF, Drug G IV"
+remark_10_case_635731_2025-08-01,case_635731_2025-08-01,09:10,Administered Drug G 100ml/hr IV
+remark_11_case_635731_2025-08-01,case_635731_2025-08-01,09:11,"Ventilator on (TV 300 ml, IP 10 cmH2O, I:E 1:3, Rate 12)"
+remark_12_case_635731_2025-08-01,case_635731_2025-08-01,09:20,Arterial line placed
+remark_13_case_635731_2025-08-01,case_635731_2025-08-01,09:22,Repositioned patient
+remark_14_case_635731_2025-08-01,case_635731_2025-08-01,09:23,Moved to OR 3
+remark_15_case_635731_2025-08-01,case_635731_2025-08-01,09:38,Administered Drug I 28mg IV
+remark_16_case_635731_2025-08-01,case_635731_2025-08-01,09:39,"Ventilator on (TV 300 ml, IP 10 cmH2O, I:E 1:3, Rate 12)"
+remark_17_case_635731_2025-08-01,case_635731_2025-08-01,09:46,Temperature probe placed
+remark_18_case_635731_2025-08-01,case_635731_2025-08-01,10:02,"Ventilator settings changed (TV 320 ml, IP 10 cmH2O, I:E 1:3, Rate 14)"
+remark_19_case_635731_2025-08-01,case_635731_2025-08-01,10:08,"Ventilator on (TV 300 ml, IP 10 cmH2O, I:E 1:3, Rate 12)"
+remark_20_case_635731_2025-08-01,case_635731_2025-08-01,10:13,"ETCO2 rising, increased RR"
+remark_21_case_635731_2025-08-01,case_635731_2025-08-01,10:14,"Ventilator on (TV 300 ml, IP 10 cmH2O, I:E 1:3, Rate 12)"
+remark_22_case_635731_2025-08-01,case_635731_2025-08-01,10:28,Administered Drug N 19mg IV
+remark_23_case_635731_2025-08-01,case_635731_2025-08-01,10:35,Urinary catheter placed
+remark_24_case_635731_2025-08-01,case_635731_2025-08-01,10:43,Blood pressure cuff moved to RF
+remark_25_case_635731_2025-08-01,case_635731_2025-08-01,10:48,Surgical prep complete
+remark_26_case_635731_2025-08-01,case_635731_2025-08-01,10:50,"Ventilator on (TV 300 ml, IP 10 cmH2O, I:E 1:3, Rate 12)"
+remark_27_case_635731_2025-08-01,case_635731_2025-08-01,10:56,Arterial line placed
+remark_28_case_635731_2025-08-01,case_635731_2025-08-01,11:06,Repositioned patient
+remark_29_case_635731_2025-08-01,case_635731_2025-08-01,11:13,Blood pressure cuff moved to RF
+remark_30_case_635731_2025-08-01,case_635731_2025-08-01,11:15,"Ventilator on (TV 300 ml, IP 10 cmH2O, I:E 1:3, Rate 12)"
+remark_31_case_635731_2025-08-01,case_635731_2025-08-01,11:41,Bair Hugger off
+remark_32_case_635731_2025-08-01,case_635731_2025-08-01,12:01,Arterial line placed
+remark_33_case_635731_2025-08-01,case_635731_2025-08-01,12:18,"Ventilator settings changed (TV 320 ml, IP 10 cmH2O, I:E 1:3, Rate 14)"
+remark_34_case_635731_2025-08-01,case_635731_2025-08-01,12:20,Bair Hugger off
+remark_35_case_635731_2025-08-01,case_635731_2025-08-01,12:25,Urinary catheter placed
+remark_36_case_635731_2025-08-01,case_635731_2025-08-01,12:44,"ETCO2 rising, increased RR"
+remark_37_case_635731_2025-08-01,case_635731_2025-08-01,12:54,Administered Drug M 42mg IV
+remark_38_case_635731_2025-08-01,case_635731_2025-08-01,13:07,Bair Hugger off
+remark_39_case_635731_2025-08-01,case_635731_2025-08-01,13:13,Surgical prep complete
+remark_40_case_635731_2025-08-01,case_635731_2025-08-01,13:21,Drug H off
+remark_41_case_635731_2025-08-01,case_635731_2025-08-01,13:29,Extubated
+remark_42_case_635731_2025-08-01,case_635731_2025-08-01,13:31,Moved to recovery

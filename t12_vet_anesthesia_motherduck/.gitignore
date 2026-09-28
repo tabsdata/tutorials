@@ -1,0 +1,4 @@
+# contains the motherduck token
+usecase.json
+*.egg-info/
+build/

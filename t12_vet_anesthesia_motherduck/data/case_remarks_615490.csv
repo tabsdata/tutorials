@@ -1,0 +1,30 @@
+remark_id,case_id,remark_time,remark_text
+remark_1_case_615490_2025-09-16,case_615490_2025-09-16,10:08,Administered Drug F 4.1mg IV
+remark_2_case_615490_2025-09-16,case_615490_2025-09-16,10:08,Administered Drug B 124ug IV
+remark_3_case_615490_2025-09-16,case_615490_2025-09-16,10:28,Start of Anesthesia
+remark_4_case_615490_2025-09-16,case_615490_2025-09-16,10:28,Administered Drug C 8.3mg IV
+remark_5_case_615490_2025-09-16,case_615490_2025-09-16,10:28,Administered Drug D 166mg IV
+remark_6_case_615490_2025-09-16,case_615490_2025-09-16,10:31,Instill lubricant OU
+remark_7_case_615490_2025-09-16,case_615490_2025-09-16,10:33,Administered Drug J 41mg IV
+remark_8_case_615490_2025-09-16,case_615490_2025-09-16,10:34,"ETCO2 rising, increased RR"
+remark_9_case_615490_2025-09-16,case_615490_2025-09-16,10:38,Administered Drug E 911mg IV
+remark_10_case_615490_2025-09-16,case_615490_2025-09-16,10:40,"Begin IVF, Drug G IV"
+remark_11_case_615490_2025-09-16,case_615490_2025-09-16,10:40,Administered Drug G 210ml/hr IV
+remark_12_case_615490_2025-09-16,case_615490_2025-09-16,10:48,Urinary catheter placed
+remark_13_case_615490_2025-09-16,case_615490_2025-09-16,10:53,Moved to OR 1
+remark_14_case_615490_2025-09-16,case_615490_2025-09-16,11:08,Administered Drug I 62mg IV
+remark_15_case_615490_2025-09-16,case_615490_2025-09-16,11:28,Administered Drug O 0.4mg IV
+remark_16_case_615490_2025-09-16,case_615490_2025-09-16,11:38,Administered Drug K (CRI) 1ug/kg/min IV
+remark_17_case_615490_2025-09-16,case_615490_2025-09-16,11:58,Administered Drug N 41mg IV
+remark_18_case_615490_2025-09-16,case_615490_2025-09-16,12:04,Repositioned patient
+remark_19_case_615490_2025-09-16,case_615490_2025-09-16,12:08,Arterial line placed
+remark_20_case_615490_2025-09-16,case_615490_2025-09-16,12:16,Surgical prep complete
+remark_21_case_615490_2025-09-16,case_615490_2025-09-16,12:18,Urinary catheter placed
+remark_22_case_615490_2025-09-16,case_615490_2025-09-16,12:28,Surgical prep complete
+remark_23_case_615490_2025-09-16,case_615490_2025-09-16,12:59,"Ventilator settings changed (TV 320 ml, IP 10 cmH2O, I:E 1:3, Rate 14)"
+remark_24_case_615490_2025-09-16,case_615490_2025-09-16,14:09,Administered Drug L 219mg IV
+remark_25_case_615490_2025-09-16,case_615490_2025-09-16,14:24,Administered Drug M 91mg IV
+remark_26_case_615490_2025-09-16,case_615490_2025-09-16,14:34,Administered Drug F 2.1mg IV
+remark_27_case_615490_2025-09-16,case_615490_2025-09-16,14:41,Drug H off
+remark_28_case_615490_2025-09-16,case_615490_2025-09-16,14:49,Extubated
+remark_29_case_615490_2025-09-16,case_615490_2025-09-16,14:51,Moved to recovery

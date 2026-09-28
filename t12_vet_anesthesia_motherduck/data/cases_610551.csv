@@ -1,0 +1,2 @@
+case_id,patient_id,owner_id,procedure_date,physical_status,emergency_flag,recumbency,sedation_present,comments,pre_op_eval,anesthesia_start,anesthesia_end,anesthesia_duration_min,recovery_end,recovery_duration_min,recovery_quality
+case_610551_2025-05-29,610551,owner_radley_blake,2025-05-29,II,FALSE,Dorsal and Right Lateral,Mild,Drugs Only/External Cardiac Compression; nervous temperament.,CCL rupture; on Drug P; lame 6 weeks,13:31,17:36,245,18:00,24,Fair

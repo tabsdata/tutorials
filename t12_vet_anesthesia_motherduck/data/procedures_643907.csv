@@ -1,0 +1,4 @@
+procedure_event_id,case_id,procedure_name,start_time,end_time,duration_min,sequence
+proc_1_case_643907_2025-07-07,case_643907_2025-07-07,Left Stifle Arthrotomy,09:45,10:08,23,1
+proc_2_case_643907_2025-07-07,case_643907_2025-07-07,TPLO - L,10:15,12:14,119,2
+proc_3_case_643907_2025-07-07,case_643907_2025-07-07,TPLO - L,12:19,14:00,101,3

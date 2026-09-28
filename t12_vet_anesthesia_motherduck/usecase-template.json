@@ -1,0 +1,16 @@
+{
+  "motherduck": {
+    "token": "?????",
+    "database": "vet_anesthesia"
+  },
+  "tabsdata": {
+    "instance": "tabsdata",
+    "server": "localhost:2457",
+    "user": "usecase",
+    "password": "tabsdata",
+    "project": "vetanesthesia"
+  },
+  "dirs": {
+    "data": "data"
+  }
+}

@@ -1,0 +1,13 @@
+med_admin_id,case_id,drug_name,Dispensed,Dose,Administered,Discarded,Reason Given
+med_01_case_643907_2025-07-07,case_643907_2025-07-07,Drug F,2.9mg,2.9mg,2.9mg,0mg,Preanesthetic
+med_02_case_643907_2025-07-07,case_643907_2025-07-07,Drug A,0.6mg,0.6mg,0.6mg,0mg,Preanesthetic
+med_03_case_643907_2025-07-07,case_643907_2025-07-07,Drug C,5.8mg,5.8mg,5.8mg,0mg,Induction
+med_04_case_643907_2025-07-07,case_643907_2025-07-07,Drug D,116mg,116mg,116mg,0mg,Induction
+med_05_case_643907_2025-07-07,case_643907_2025-07-07,Drug E,638mg,638mg,638mg,0mg,Antibiotic
+med_06_case_643907_2025-07-07,case_643907_2025-07-07,Drug G,751ml,140ml/hr,751ml,0ml,Fluid
+med_07_case_643907_2025-07-07,case_643907_2025-07-07,Drug H,,,,,Maintenance
+med_08_case_643907_2025-07-07,case_643907_2025-07-07,Drug I,44mg,44mg,44mg,0mg,Local/Regional Anesthesia
+med_09_case_643907_2025-07-07,case_643907_2025-07-07,Drug J,29mg,29mg,29mg,0mg,Antiemetic
+med_10_case_643907_2025-07-07,case_643907_2025-07-07,Drug M,64mg,64mg,64mg,0mg,NSAID
+med_11_case_643907_2025-07-07,case_643907_2025-07-07,Drug L,154mg,154mg,154mg,0mg,Local/Regional Anesthesia
+med_12_case_643907_2025-07-07,case_643907_2025-07-07,Drug O,0.3mg,0.3mg,0.3mg,0mg,Bradycardia

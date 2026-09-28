@@ -1,0 +1,2 @@
+case_id,patient_id,owner_id,procedure_date,physical_status,emergency_flag,recumbency,sedation_present,comments,pre_op_eval,anesthesia_start,anesthesia_end,anesthesia_duration_min,recovery_end,recovery_duration_min,recovery_quality
+case_635731_2025-08-01,635731,owner_kettering_drew,2025-08-01,III,FALSE,Dorsal and Right Lateral,Marked,Do Not Resuscitate; painful hind end.,CCL rupture; on Drug P; acute lameness,08:58,13:09,251,13:29,20,Excellent

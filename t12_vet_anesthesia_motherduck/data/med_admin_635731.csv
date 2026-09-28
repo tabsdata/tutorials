@@ -1,0 +1,12 @@
+med_admin_id,case_id,drug_name,Dispensed,Dose,Administered,Discarded,Reason Given
+med_01_case_635731_2025-08-01,case_635731_2025-08-01,Drug F,1.9mg,1.9mg,1.9mg,0mg,Preanesthetic
+med_02_case_635731_2025-08-01,case_635731_2025-08-01,Drug B,57ug,57ug,57ug,0ug,Preanesthetic
+med_03_case_635731_2025-08-01,case_635731_2025-08-01,Drug C,3.8mg,3.8mg,3.8mg,0mg,Induction
+med_04_case_635731_2025-08-01,case_635731_2025-08-01,Drug D,76mg,76mg,38mg,38mg,Induction
+med_05_case_635731_2025-08-01,case_635731_2025-08-01,Drug E,418mg,418mg,418mg,0mg,Antibiotic
+med_06_case_635731_2025-08-01,case_635731_2025-08-01,Drug G,418ml,100ml/hr,418ml,0ml,Fluid
+med_07_case_635731_2025-08-01,case_635731_2025-08-01,Drug H,,,,,Maintenance
+med_08_case_635731_2025-08-01,case_635731_2025-08-01,Drug I,28mg,28mg,28mg,0mg,Local/Regional Anesthesia
+med_09_case_635731_2025-08-01,case_635731_2025-08-01,Drug J,19mg,19mg,19mg,0mg,Antiemetic
+med_10_case_635731_2025-08-01,case_635731_2025-08-01,Drug M,42mg,42mg,42mg,0mg,NSAID
+med_11_case_635731_2025-08-01,case_635731_2025-08-01,Drug N,19mg,19mg,19mg,0mg,Antihistamine

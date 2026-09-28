@@ -1,0 +1,2 @@
+case_id,patient_id,owner_id,procedure_date,physical_status,emergency_flag,recumbency,sedation_present,comments,pre_op_eval,anesthesia_start,anesthesia_end,anesthesia_duration_min,recovery_end,recovery_duration_min,recovery_quality
+case_647131_2025-06-25,647131,owner_thorne_harper,2025-06-25,II,FALSE,Dorsal and Left Lateral,Mild,Drugs Only/External Cardiac Compression; painful hind end.,CCL rupture; on Drug P; acute lameness,11:43,15:56,253,16:12,16,Excellent

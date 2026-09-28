@@ -1,0 +1,9 @@
+lab_result_id,case_id,test_name,result_value,unit
+lab_1_case_617685_2025-04-09,case_617685_2025-04-09,PCV,40,%
+lab_2_case_617685_2025-04-09,case_617685_2025-04-09,Total Protein,7.3,g/dl
+lab_3_case_617685_2025-04-09,case_617685_2025-04-09,Glucose,116,mg/dl
+lab_4_case_617685_2025-04-09,case_617685_2025-04-09,BUN,18,mg/dl
+lab_5_case_617685_2025-04-09,case_617685_2025-04-09,Pain Score (Current),2,score
+lab_6_case_617685_2025-04-09,case_617685_2025-04-09,Pain Score (Predicted),5,score
+lab_7_case_617685_2025-04-09,case_617685_2025-04-09,Auscultation Cardiac,HR 110; no murmur,
+lab_8_case_617685_2025-04-09,case_617685_2025-04-09,Auscultation Respiratory,WNL,

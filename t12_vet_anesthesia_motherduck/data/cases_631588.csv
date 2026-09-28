@@ -1,0 +1,2 @@
+case_id,patient_id,owner_id,procedure_date,physical_status,emergency_flag,recumbency,sedation_present,comments,pre_op_eval,anesthesia_start,anesthesia_end,anesthesia_duration_min,recovery_end,recovery_duration_min,recovery_quality
+case_631588_2025-02-20,631588,owner_lowell_blake,2025-02-20,I,FALSE,Dorsal and Right Lateral,Mild,Do Not Resuscitate; no special recommendations.,CCL rupture; on Drug M; acute lameness,10:29,14:52,263,15:29,37,Fair

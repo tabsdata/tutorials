@@ -1,0 +1,12 @@
+med_admin_id,case_id,drug_name,Dispensed,Dose,Administered,Discarded,Reason Given
+med_01_case_617685_2025-04-09,case_617685_2025-04-09,Drug F,4.1mg,4.1mg,4.1mg,0mg,Preanesthetic
+med_02_case_617685_2025-04-09,case_617685_2025-04-09,Drug A,0.8mg,0.8mg,0.8mg,0mg,Preanesthetic
+med_03_case_617685_2025-04-09,case_617685_2025-04-09,Drug C,8.2mg,8.2mg,8.2mg,0mg,Induction
+med_04_case_617685_2025-04-09,case_617685_2025-04-09,Drug D,164mg,164mg,164mg,0mg,Induction
+med_05_case_617685_2025-04-09,case_617685_2025-04-09,Drug E,902mg,902mg,902mg,0mg,Antibiotic
+med_06_case_617685_2025-04-09,case_617685_2025-04-09,Drug G,867ml,200ml/hr,867ml,0ml,Fluid
+med_07_case_617685_2025-04-09,case_617685_2025-04-09,Drug H,,,,,Maintenance
+med_08_case_617685_2025-04-09,case_617685_2025-04-09,Drug I,62mg,62mg,62mg,0mg,Local/Regional Anesthesia
+med_09_case_617685_2025-04-09,case_617685_2025-04-09,Drug J,41mg,41mg,41mg,0mg,Antiemetic
+med_10_case_617685_2025-04-09,case_617685_2025-04-09,Drug M,90mg,90mg,90mg,0mg,NSAID
+med_11_case_617685_2025-04-09,case_617685_2025-04-09,Drug N,41mg,41mg,41mg,0mg,Antihistamine

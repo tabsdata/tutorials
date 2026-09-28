@@ -1,0 +1,2 @@
+case_id,patient_id,owner_id,procedure_date,physical_status,emergency_flag,recumbency,sedation_present,comments,pre_op_eval,anesthesia_start,anesthesia_end,anesthesia_duration_min,recovery_end,recovery_duration_min,recovery_quality
+case_641892_2025-02-04,641892,owner_oakley_blake,2025-02-04,III,FALSE,Dorsal and Right Lateral,Marked,Do Not Resuscitate; friendly.,CCL rupture; on Drug P; acute lameness,08:57,10:52,115,11:01,9,Good

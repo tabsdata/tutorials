@@ -1,0 +1,2 @@
+case_id,patient_id,owner_id,procedure_date,physical_status,emergency_flag,recumbency,sedation_present,comments,pre_op_eval,anesthesia_start,anesthesia_end,anesthesia_duration_min,recovery_end,recovery_duration_min,recovery_quality
+case_643907_2025-07-07,643907,owner_fenwick_casey,2025-07-07,II,FALSE,Dorsal and Right Lateral,Mild,Do Not Resuscitate; nervous temperament.,CCL rupture; on Drug P; acute lameness,09:04,14:26,322,14:36,10,Good

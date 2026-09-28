@@ -1,0 +1,4 @@
+procedure_event_id,case_id,procedure_name,start_time,end_time,duration_min,sequence
+proc_1_case_610614_2025-03-21,case_610614_2025-03-21,Right Stifle Arthrotomy,09:59,10:24,25,1
+proc_2_case_610614_2025-03-21,case_610614_2025-03-21,TPLO - R,10:35,12:26,111,2
+proc_3_case_610614_2025-03-21,case_610614_2025-03-21,Post-Op Radiographs,12:35,12:46,11,3

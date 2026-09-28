@@ -1,0 +1,2 @@
+case_id,patient_id,owner_id,procedure_date,physical_status,emergency_flag,recumbency,sedation_present,comments,pre_op_eval,anesthesia_start,anesthesia_end,anesthesia_duration_min,recovery_end,recovery_duration_min,recovery_quality
+case_625387_2025-04-11,625387,owner_garland_parker,2025-04-11,II,FALSE,Dorsal,Marked,Do Not Resuscitate; friendly.,CCL rupture; on Drug M; lame 2 months,10:29,14:55,266,15:12,17,Excellent

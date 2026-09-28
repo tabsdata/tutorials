@@ -1,0 +1,2 @@
+case_id,patient_id,owner_id,procedure_date,physical_status,emergency_flag,recumbency,sedation_present,comments,pre_op_eval,anesthesia_start,anesthesia_end,anesthesia_duration_min,recovery_end,recovery_duration_min,recovery_quality
+case_624650_2025-09-08,624650,owner_birch_logan,2025-09-08,III,FALSE,Dorsal and Left Lateral,Moderate,Do Not Resuscitate; painful hind end.,CCL rupture; on Drug P; lame 2 months,13:50,18:20,270,18:32,12,Good

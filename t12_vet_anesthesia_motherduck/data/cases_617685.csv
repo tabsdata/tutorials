@@ -1,0 +1,2 @@
+case_id,patient_id,owner_id,procedure_date,physical_status,emergency_flag,recumbency,sedation_present,comments,pre_op_eval,anesthesia_start,anesthesia_end,anesthesia_duration_min,recovery_end,recovery_duration_min,recovery_quality
+case_617685_2025-04-09,617685,owner_cedar_hayden,2025-04-09,II,FALSE,Dorsal,Moderate,Attempt Resuscitation; nervous temperament.,CCL rupture; on Drug M; lame 6 weeks,12:29,16:49,260,16:55,6,Fair

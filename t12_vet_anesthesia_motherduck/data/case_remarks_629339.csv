@@ -1,0 +1,47 @@
+remark_id,case_id,remark_time,remark_text
+remark_1_case_629339_2025-08-20,case_629339_2025-08-20,09:48,Administered Drug F 2.8mg IV
+remark_2_case_629339_2025-08-20,case_629339_2025-08-20,09:48,Administered Drug A 0.6mg IV
+remark_3_case_629339_2025-08-20,case_629339_2025-08-20,10:08,Start of Anesthesia
+remark_4_case_629339_2025-08-20,case_629339_2025-08-20,10:08,Administered Drug C 5.7mg IV
+remark_5_case_629339_2025-08-20,case_629339_2025-08-20,10:08,Administered Drug D 114mg IV
+remark_6_case_629339_2025-08-20,case_629339_2025-08-20,10:11,Instill lubricant OU
+remark_7_case_629339_2025-08-20,case_629339_2025-08-20,10:13,Administered Drug J 28mg IV
+remark_8_case_629339_2025-08-20,case_629339_2025-08-20,10:18,Administered Drug E 625mg IV
+remark_9_case_629339_2025-08-20,case_629339_2025-08-20,10:20,"Begin IVF, Drug G IV"
+remark_10_case_629339_2025-08-20,case_629339_2025-08-20,10:20,Administered Drug G 140ml/hr IV
+remark_11_case_629339_2025-08-20,case_629339_2025-08-20,10:33,Moved to OR 2
+remark_12_case_629339_2025-08-20,case_629339_2025-08-20,10:33,Repositioned patient
+remark_13_case_629339_2025-08-20,case_629339_2025-08-20,10:36,Bair Hugger on
+remark_14_case_629339_2025-08-20,case_629339_2025-08-20,10:37,Temperature probe placed
+remark_15_case_629339_2025-08-20,case_629339_2025-08-20,10:38,Bair Hugger on
+remark_16_case_629339_2025-08-20,case_629339_2025-08-20,10:41,Temperature probe placed
+remark_17_case_629339_2025-08-20,case_629339_2025-08-20,10:43,"Ventilator settings changed (TV 320 ml, IP 10 cmH2O, I:E 1:3, Rate 14)"
+remark_18_case_629339_2025-08-20,case_629339_2025-08-20,10:48,Administered Drug I 43mg IV
+remark_19_case_629339_2025-08-20,case_629339_2025-08-20,11:07,Arterial line placed
+remark_20_case_629339_2025-08-20,case_629339_2025-08-20,11:08,Administered Drug O 0.3mg IV
+remark_21_case_629339_2025-08-20,case_629339_2025-08-20,11:18,Administered Drug K (CRI) 2ug/kg/min IV
+remark_22_case_629339_2025-08-20,case_629339_2025-08-20,11:32,"ETCO2 rising, increased RR"
+remark_23_case_629339_2025-08-20,case_629339_2025-08-20,11:38,Bair Hugger on
+remark_24_case_629339_2025-08-20,case_629339_2025-08-20,12:02,Urinary catheter placed
+remark_25_case_629339_2025-08-20,case_629339_2025-08-20,12:03,Repositioned patient
+remark_26_case_629339_2025-08-20,case_629339_2025-08-20,12:14,Blood pressure cuff moved to RF
+remark_27_case_629339_2025-08-20,case_629339_2025-08-20,12:25,Bair Hugger off
+remark_28_case_629339_2025-08-20,case_629339_2025-08-20,12:34,Repositioned patient
+remark_29_case_629339_2025-08-20,case_629339_2025-08-20,12:44,Bair Hugger off
+remark_30_case_629339_2025-08-20,case_629339_2025-08-20,12:45,Blood pressure cuff moved to RF
+remark_31_case_629339_2025-08-20,case_629339_2025-08-20,13:03,Bair Hugger on
+remark_32_case_629339_2025-08-20,case_629339_2025-08-20,13:09,Arterial line placed
+remark_33_case_629339_2025-08-20,case_629339_2025-08-20,13:17,Bair Hugger off
+remark_34_case_629339_2025-08-20,case_629339_2025-08-20,13:25,"Ventilator on (TV 300 ml, IP 10 cmH2O, I:E 1:3, Rate 12)"
+remark_35_case_629339_2025-08-20,case_629339_2025-08-20,13:47,Temperature probe placed
+remark_36_case_629339_2025-08-20,case_629339_2025-08-20,13:52,Blood pressure cuff moved to RF
+remark_37_case_629339_2025-08-20,case_629339_2025-08-20,14:09,Bair Hugger off
+remark_38_case_629339_2025-08-20,case_629339_2025-08-20,14:18,Repositioned patient
+remark_39_case_629339_2025-08-20,case_629339_2025-08-20,14:19,Administered Drug L 151mg IV
+remark_40_case_629339_2025-08-20,case_629339_2025-08-20,14:28,"Ventilator settings changed (TV 320 ml, IP 10 cmH2O, I:E 1:3, Rate 14)"
+remark_41_case_629339_2025-08-20,case_629339_2025-08-20,14:46,"ETCO2 rising, increased RR"
+remark_42_case_629339_2025-08-20,case_629339_2025-08-20,14:52,"Ventilator settings changed (TV 320 ml, IP 10 cmH2O, I:E 1:3, Rate 14)"
+remark_43_case_629339_2025-08-20,case_629339_2025-08-20,15:02,Repositioned patient
+remark_44_case_629339_2025-08-20,case_629339_2025-08-20,15:19,Drug H off
+remark_45_case_629339_2025-08-20,case_629339_2025-08-20,15:27,Extubated
+remark_46_case_629339_2025-08-20,case_629339_2025-08-20,15:29,Moved to recovery

@@ -1,0 +1,2 @@
+case_id,patient_id,owner_id,procedure_date,physical_status,emergency_flag,recumbency,sedation_present,comments,pre_op_eval,anesthesia_start,anesthesia_end,anesthesia_duration_min,recovery_end,recovery_duration_min,recovery_quality
+case_632498_2025-07-30,632498,owner_marsh_blake,2025-07-30,I,FALSE,Dorsal,Marked,Attempt Resuscitation; friendly.,CCL rupture; on Drug P; lame 2 months,11:42,15:18,216,15:49,31,Fair
