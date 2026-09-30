@@ -2,6 +2,8 @@
 # Copyright 2026 Tabsdata Inc.
 #
 
+from datetime import datetime, timezone
+
 from tabsdatak.api import TableFrameSpec, TableFramesSpec, publisher
 from tabsdatak.conn.localfile import LocalFileSrc
 from tabsdatak.tableframe.functions import concat
@@ -32,10 +34,13 @@ def all_pets(pets: TableFramesSpec) -> TableFrameSpec:
 
 
 # publisher that grabs each table's csv files through glob wildcard matching and
-# publishes them as raw tables in the landing collection
+# publishes them as raw tables in the landing collection, the last modified
+# cursor makes each run pick up only the files added or changed since the
+# previous run, so every raw table version is one batch of new csvs
 @publisher(
     source=LocalFileSrc(
         paths=[f"{table}_*.csv" for table in TABLES],
+        initial_last_modified=datetime(2000, 1, 1, tzinfo=timezone.utc),
         src_cfg={"tabsdata.src_metadata.drop": True},
     ),
     output_tables=[f"raw_{table}" for table in TABLES],

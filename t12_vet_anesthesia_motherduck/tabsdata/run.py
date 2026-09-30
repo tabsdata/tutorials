@@ -8,7 +8,7 @@ in usecase.json
     python tabsdata/run.py               # runs connector, deploy and load
     python tabsdata/run.py connector     # installs the motherduck connector locally and on the server
     python tabsdata/run.py deploy        # creates the project, groups, collections and functions
-    python tabsdata/run.py load          # publishes the csvs in data/ which kicks off everything downstream
+    python tabsdata/run.py load          # publishes the csvs added or changed in data/ since the last load, which kicks off everything downstream
 """
 
 import json
