@@ -1,0 +1,16 @@
+{
+  "jev": {
+    "api_key": "?????"
+  },
+  "github": {
+    "token": "",
+    "connector": "tabsdata-conn-github @ git+https://github.com/tabsdata/tabsdata-community-connectors.git#subdirectory=github"
+  },
+  "tabsdata": {
+    "instance": "tabsdata",
+    "server": "localhost:2457",
+    "user": "admin",
+    "password": "tabsdata",
+    "project": "issuetriage"
+  }
+}

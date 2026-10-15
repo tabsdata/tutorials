@@ -1,0 +1,5 @@
+# contains the doris credentials
+creds.json
+*.egg-info/
+build/
+__pycache__/

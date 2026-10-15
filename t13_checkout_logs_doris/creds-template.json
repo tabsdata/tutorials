@@ -1,0 +1,27 @@
+{
+  "doris": {
+    "host": "127.0.0.1",
+    "port": 9030,
+    "http_port": 8040,
+    "user": "root",
+    "password": "?????",
+    "database": "checkout_logs",
+    "staging": {
+      "bucket": "",
+      "region": "",
+      "access_key": "",
+      "secret_key": "",
+      "base_path": "/tabsdata/doris"
+    }
+  },
+  "tabsdata": {
+    "instance": "tabsdata",
+    "server": "localhost:2457",
+    "user": "usecase",
+    "password": "tabsdata",
+    "project": "checkoutlogs"
+  },
+  "dirs": {
+    "data": "data"
+  }
+}

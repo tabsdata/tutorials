@@ -1,0 +1,5 @@
+# contains the jev api key and the github token
+creds.json
+# the copy of the transformer run.py registers, with the jev api key filled in
+tabsdata/build/
+__pycache__/
