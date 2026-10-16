@@ -21,7 +21,7 @@ The full walkthrough is in the [blog post](https://tabsdata.com/blog/superchargi
   tdkserver start
   ```
 
-  If you don't have a server yet, the [server quickstart](https://docs.tabsdata.com/server-admin/quickstart) has instructions on how to create one.
+  If you don't have a server yet, the [server quickstart](https://docs.tabsdata.com/guide/install) has instructions on how to create one.
 
 - A Jev API key from [TypeSafe](https://typesafe.ai)
 - A GitHub token is optional. Without one GitHub allows 60 requests an hour, which covers one load
